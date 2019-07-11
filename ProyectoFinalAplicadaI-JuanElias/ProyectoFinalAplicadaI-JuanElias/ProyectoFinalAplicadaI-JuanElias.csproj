@@ -75,6 +75,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SupermarketSoftware\Registros\rUsuarios.resx">
       <DependentUpon>rUsuarios.cs</DependentUpon>
@@ -102,6 +103,18 @@
       <Project>{7ab920f2-bf4e-4bcb-9fb5-116230ceefa0}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loupe_78347.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\controller_78338.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_78348.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\garbage_78344.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
