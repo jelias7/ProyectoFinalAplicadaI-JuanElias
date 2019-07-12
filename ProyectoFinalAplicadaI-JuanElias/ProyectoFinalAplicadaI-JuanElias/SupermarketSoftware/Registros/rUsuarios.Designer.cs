@@ -143,6 +143,7 @@
             this.NombreUsuariotextBox.Name = "NombreUsuariotextBox";
             this.NombreUsuariotextBox.Size = new System.Drawing.Size(199, 20);
             this.NombreUsuariotextBox.TabIndex = 11;
+            this.NombreUsuariotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombreUsuariotextBox_KeyPress);
             // 
             // FechaCreaciondateTimePicker
             // 
