@@ -155,14 +155,15 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Consultas
         {
             if (ConsultadataGridView.RowCount == 0)
             {
-                MessageBox.Show("No hay datos.");
+                MessageBox.Show("No se puede imprimir");
                 return;
             }
             else
             {
-                ReporteUsuarios p = new ReporteUsuarios(Lista);
-                p.ShowDialog();
+                PersonasReportViewer personasReportViewer = new PersonasReportViewer(Lista);
+                personasReportViewer.ShowDialog();
             }
+            
         }
     }
 }

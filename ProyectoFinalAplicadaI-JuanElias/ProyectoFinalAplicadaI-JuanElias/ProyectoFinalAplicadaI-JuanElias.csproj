@@ -60,12 +60,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SupermarketSoftware\Reportes\ListadoUsuarios.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ListadoUsuarios.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,16 +80,18 @@
     <Compile Include="SupermarketSoftware\Registros\rUsuarios.Designer.cs">
       <DependentUpon>rUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="SupermarketSoftware\Reportes\ReporteUsuarios.cs">
+    <Compile Include="SupermarketSoftware\Reportes\ListadoU.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadoU.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SupermarketSoftware\Reportes\PersonasReportViewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SupermarketSoftware\Reportes\ReporteUsuarios.Designer.cs">
-      <DependentUpon>ReporteUsuarios.cs</DependentUpon>
+    <Compile Include="SupermarketSoftware\Reportes\PersonasReportViewer.Designer.cs">
+      <DependentUpon>PersonasReportViewer.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SupermarketSoftware\Reportes\ListadoUsuarios.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ListadoUsuarios.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,8 +111,12 @@
     <EmbeddedResource Include="SupermarketSoftware\Registros\rUsuarios.resx">
       <DependentUpon>rUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SupermarketSoftware\Reportes\ReporteUsuarios.resx">
-      <DependentUpon>ReporteUsuarios.cs</DependentUpon>
+    <EmbeddedResource Include="SupermarketSoftware\Reportes\ListadoU.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadoU.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupermarketSoftware\Reportes\PersonasReportViewer.resx">
+      <DependentUpon>PersonasReportViewer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -164,5 +164,6 @@
   <ItemGroup>
     <None Include="Resources\printer_78349.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

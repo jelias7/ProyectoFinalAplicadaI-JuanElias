@@ -16,14 +16,14 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Reportes {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class ListadoUsuarios : ReportClass {
+    public class ListadoU : ReportClass {
         
-        public ListadoUsuarios() {
+        public ListadoU() {
         }
         
         public override string ResourceName {
             get {
-                return "ListadoUsuarios.rpt";
+                return "ListadoU.rpt";
             }
             set {
                 // Do nothing
@@ -41,8 +41,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Reportes {
         
         public override string FullResourceName {
             get {
-                return "ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Reportes.ListadoUsuarios.rpt" +
-                    "";
+                return "ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Reportes.ListadoU.rpt";
             }
             set {
                 // Do nothing
@@ -91,9 +90,9 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Reportes {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedListadoUsuarios : Component, ICachedReport {
+    public class CachedListadoU : Component, ICachedReport {
         
-        public CachedListadoUsuarios() {
+        public CachedListadoU() {
         }
         
         [Browsable(false)]
@@ -130,7 +129,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Reportes {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            ListadoUsuarios rpt = new ListadoUsuarios();
+            ListadoU rpt = new ListadoU();
             rpt.Site = this.Site;
             return rpt;
         }
