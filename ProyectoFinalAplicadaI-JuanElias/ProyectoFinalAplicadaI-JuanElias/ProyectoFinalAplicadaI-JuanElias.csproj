@@ -60,7 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ListadoUsuarios.cs">
+    <Compile Include="SupermarketSoftware\Reportes\ListadoUsuarios.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ListadoUsuarios.rpt</DependentUpon>
@@ -92,7 +92,7 @@
     <Compile Include="SupermarketSoftware\Reportes\ReporteUsuarios.Designer.cs">
       <DependentUpon>ReporteUsuarios.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ListadoUsuarios.rpt">
+    <EmbeddedResource Include="SupermarketSoftware\Reportes\ListadoUsuarios.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ListadoUsuarios.cs</LastGenOutput>
     </EmbeddedResource>
@@ -160,6 +160,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer_78349.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

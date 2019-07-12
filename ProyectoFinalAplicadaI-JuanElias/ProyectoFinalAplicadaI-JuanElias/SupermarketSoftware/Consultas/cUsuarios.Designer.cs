@@ -36,10 +36,10 @@
             this.HastadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.FiltrocomboBox = new System.Windows.Forms.ComboBox();
             this.CriteriotextBox = new System.Windows.Forms.TextBox();
-            this.Consultarbutton = new System.Windows.Forms.Button();
             this.RangocheckBox = new System.Windows.Forms.CheckBox();
             this.ConsultadataGridView = new System.Windows.Forms.DataGridView();
             this.Imprimirbutton = new System.Windows.Forms.Button();
+            this.Consultarbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,7 +83,7 @@
             // 
             this.DesdedateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.DesdedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DesdedateTimePicker.Location = new System.Drawing.Point(15, 39);
+            this.DesdedateTimePicker.Location = new System.Drawing.Point(15, 34);
             this.DesdedateTimePicker.Name = "DesdedateTimePicker";
             this.DesdedateTimePicker.Size = new System.Drawing.Size(96, 20);
             this.DesdedateTimePicker.TabIndex = 4;
@@ -92,7 +92,7 @@
             // 
             this.HastadateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.HastadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.HastadateTimePicker.Location = new System.Drawing.Point(134, 39);
+            this.HastadateTimePicker.Location = new System.Drawing.Point(134, 34);
             this.HastadateTimePicker.Name = "HastadateTimePicker";
             this.HastadateTimePicker.Size = new System.Drawing.Size(96, 20);
             this.HastadateTimePicker.TabIndex = 5;
@@ -107,32 +107,22 @@
             "Usuario",
             "Nombres",
             "Email"});
-            this.FiltrocomboBox.Location = new System.Drawing.Point(317, 37);
+            this.FiltrocomboBox.Location = new System.Drawing.Point(317, 32);
             this.FiltrocomboBox.Name = "FiltrocomboBox";
             this.FiltrocomboBox.Size = new System.Drawing.Size(175, 21);
             this.FiltrocomboBox.TabIndex = 6;
             // 
             // CriteriotextBox
             // 
-            this.CriteriotextBox.Location = new System.Drawing.Point(514, 38);
+            this.CriteriotextBox.Location = new System.Drawing.Point(514, 34);
             this.CriteriotextBox.Name = "CriteriotextBox";
             this.CriteriotextBox.Size = new System.Drawing.Size(201, 20);
             this.CriteriotextBox.TabIndex = 7;
             // 
-            // Consultarbutton
-            // 
-            this.Consultarbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.loupe_78347;
-            this.Consultarbutton.Location = new System.Drawing.Point(721, 26);
-            this.Consultarbutton.Name = "Consultarbutton";
-            this.Consultarbutton.Size = new System.Drawing.Size(51, 41);
-            this.Consultarbutton.TabIndex = 8;
-            this.Consultarbutton.UseVisualStyleBackColor = true;
-            this.Consultarbutton.Click += new System.EventHandler(this.Consultarbutton_Click);
-            // 
             // RangocheckBox
             // 
             this.RangocheckBox.AutoSize = true;
-            this.RangocheckBox.Location = new System.Drawing.Point(236, 41);
+            this.RangocheckBox.Location = new System.Drawing.Point(236, 34);
             this.RangocheckBox.Name = "RangocheckBox";
             this.RangocheckBox.Size = new System.Drawing.Size(75, 17);
             this.RangocheckBox.TabIndex = 9;
@@ -144,7 +134,7 @@
             this.ConsultadataGridView.AllowUserToAddRows = false;
             this.ConsultadataGridView.AllowUserToDeleteRows = false;
             this.ConsultadataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.ConsultadataGridView.BackgroundColor = System.Drawing.SystemColors.Desktop;
+            this.ConsultadataGridView.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.ConsultadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ConsultadataGridView.Location = new System.Drawing.Point(15, 74);
             this.ConsultadataGridView.Name = "ConsultadataGridView";
@@ -154,19 +144,29 @@
             // 
             // Imprimirbutton
             // 
-            this.Imprimirbutton.Location = new System.Drawing.Point(697, 447);
+            this.Imprimirbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.printer_78349;
+            this.Imprimirbutton.Location = new System.Drawing.Point(708, 444);
             this.Imprimirbutton.Name = "Imprimirbutton";
-            this.Imprimirbutton.Size = new System.Drawing.Size(75, 23);
+            this.Imprimirbutton.Size = new System.Drawing.Size(64, 64);
             this.Imprimirbutton.TabIndex = 11;
-            this.Imprimirbutton.Text = "Imprimir";
             this.Imprimirbutton.UseVisualStyleBackColor = true;
             this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
+            // 
+            // Consultarbutton
+            // 
+            this.Consultarbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.loupe_78347;
+            this.Consultarbutton.Location = new System.Drawing.Point(721, 21);
+            this.Consultarbutton.Name = "Consultarbutton";
+            this.Consultarbutton.Size = new System.Drawing.Size(51, 41);
+            this.Consultarbutton.TabIndex = 8;
+            this.Consultarbutton.UseVisualStyleBackColor = true;
+            this.Consultarbutton.Click += new System.EventHandler(this.Consultarbutton_Click);
             // 
             // cUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 482);
+            this.ClientSize = new System.Drawing.Size(784, 513);
             this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.ConsultadataGridView);
             this.Controls.Add(this.RangocheckBox);

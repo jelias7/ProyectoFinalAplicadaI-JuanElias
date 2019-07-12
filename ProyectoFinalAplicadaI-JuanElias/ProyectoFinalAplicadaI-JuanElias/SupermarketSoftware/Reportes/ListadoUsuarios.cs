@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProyectoFinalAplicadaI_JuanElias {
+namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Reportes {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,8 @@ namespace ProyectoFinalAplicadaI_JuanElias {
         
         public override string FullResourceName {
             get {
-                return "ProyectoFinalAplicadaI_JuanElias.ListadoUsuarios.rpt";
+                return "ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Reportes.ListadoUsuarios.rpt" +
+                    "";
             }
             set {
                 // Do nothing

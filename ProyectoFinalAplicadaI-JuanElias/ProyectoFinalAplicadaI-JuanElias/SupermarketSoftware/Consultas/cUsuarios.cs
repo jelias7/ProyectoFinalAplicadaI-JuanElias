@@ -153,7 +153,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Consultas
 
         private void Imprimirbutton_Click(object sender, EventArgs e)
         {
-            if (Lista.Count == 0)
+            if (ConsultadataGridView.RowCount == 0)
             {
                 MessageBox.Show("No hay datos.");
                 return;
