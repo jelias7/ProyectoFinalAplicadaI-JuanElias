@@ -160,6 +160,7 @@
             this.Nuevobutton.Size = new System.Drawing.Size(61, 65);
             this.Nuevobutton.TabIndex = 16;
             this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // Eliminarbutton
             // 
@@ -169,6 +170,7 @@
             this.Eliminarbutton.Size = new System.Drawing.Size(61, 65);
             this.Eliminarbutton.TabIndex = 15;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Guardarbutton
             // 
@@ -178,6 +180,7 @@
             this.Guardarbutton.Size = new System.Drawing.Size(61, 65);
             this.Guardarbutton.TabIndex = 14;
             this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Buscarbutton
             // 
@@ -187,6 +190,7 @@
             this.Buscarbutton.Size = new System.Drawing.Size(45, 40);
             this.Buscarbutton.TabIndex = 13;
             this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // rUsuarios
             // 
