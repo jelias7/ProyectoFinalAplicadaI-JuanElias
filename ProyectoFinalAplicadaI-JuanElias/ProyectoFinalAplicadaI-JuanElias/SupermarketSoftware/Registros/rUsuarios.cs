@@ -228,7 +228,13 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
 
         private void NombreUsuariotextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsWhiteSpace(e.KeyChar))
+            if (char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void EmailtextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsWhiteSpace(e.KeyChar))
                 e.Handled = true;
         }
     }

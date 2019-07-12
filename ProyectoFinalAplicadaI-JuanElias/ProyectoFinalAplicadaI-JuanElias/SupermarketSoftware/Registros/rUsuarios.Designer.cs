@@ -136,6 +136,7 @@
             this.EmailtextBox.Name = "EmailtextBox";
             this.EmailtextBox.Size = new System.Drawing.Size(199, 20);
             this.EmailtextBox.TabIndex = 10;
+            this.EmailtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EmailtextBox_KeyPress);
             // 
             // NombreUsuariotextBox
             // 

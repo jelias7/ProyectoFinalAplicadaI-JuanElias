@@ -16,5 +16,17 @@ namespace ProyectoFinalAplicadaI_JuanElias
         {
             InitializeComponent();
         }
+
+        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SupermarketSoftware.Registros.rUsuarios rUsuarios = new SupermarketSoftware.Registros.rUsuarios();
+            rUsuarios.Show();
+        }
+
+        private void usuarioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            SupermarketSoftware.Consultas.cUsuarios cUsuarios = new SupermarketSoftware.Consultas.cUsuarios();
+            cUsuarios.Show();
+        }
     }
 }
