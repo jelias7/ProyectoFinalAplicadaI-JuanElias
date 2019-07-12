@@ -1,4 +1,5 @@
 ﻿using BLL;
+using DAL;
 using Entidades;
 using System;
 using System.Collections.Generic;
@@ -58,6 +59,44 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             Usuarios usuarios = Repositorio.Buscar((int)IDnumericUpDown.Value);
             return (usuarios != null);
         }
+        public static bool RepetirUser(string descripcion)
+        {
+            RepositorioBase<Usuarios> r = new RepositorioBase<Usuarios>();
+            bool paso = false;
+            Contexto db = new Contexto();
+
+            try
+            {
+                if (db.Usuarios.Any(p => p.Usuario.Equals(descripcion)))
+                {
+                    paso = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return paso;
+        }
+        public static bool RepetirEmail(string descripcion)
+        {
+            RepositorioBase<Usuarios> r = new RepositorioBase<Usuarios>();
+            bool paso = false;
+            Contexto db = new Contexto();
+
+            try
+            {
+                if (db.Usuarios.Any(p => p.Email.Equals(descripcion)))
+                {
+                    paso = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return paso;
+        }
         private bool Validar()
         {
             bool paso = true;
@@ -88,7 +127,16 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                 MyErrorProvider.SetError(FechaCreaciondateTimePicker, "No se puede registrar esta fecha.");
                 paso = false;
             }
-
+            if (RepetirUser(NombreUsuariotextBox.Text))
+            {
+                MyErrorProvider.SetError(NombreUsuariotextBox, "No se debe repetir los usuarios.");
+                paso = false;
+            }
+            if (RepetirEmail(EmailtextBox.Text))
+            {
+                MyErrorProvider.SetError(EmailtextBox, "No se debe usar el mismo email que otro.");
+                paso = false;
+            }
             return paso;
         }
         private bool ValidarEliminar()
