@@ -39,6 +39,7 @@
             this.Consultarbutton = new System.Windows.Forms.Button();
             this.RangocheckBox = new System.Windows.Forms.CheckBox();
             this.ConsultadataGridView = new System.Windows.Forms.DataGridView();
+            this.Imprimirbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -151,11 +152,22 @@
             this.ConsultadataGridView.Size = new System.Drawing.Size(757, 364);
             this.ConsultadataGridView.TabIndex = 10;
             // 
+            // Imprimirbutton
+            // 
+            this.Imprimirbutton.Location = new System.Drawing.Point(697, 447);
+            this.Imprimirbutton.Name = "Imprimirbutton";
+            this.Imprimirbutton.Size = new System.Drawing.Size(75, 23);
+            this.Imprimirbutton.TabIndex = 11;
+            this.Imprimirbutton.Text = "Imprimir";
+            this.Imprimirbutton.UseVisualStyleBackColor = true;
+            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
+            // 
             // cUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 450);
+            this.ClientSize = new System.Drawing.Size(784, 482);
+            this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.ConsultadataGridView);
             this.Controls.Add(this.RangocheckBox);
             this.Controls.Add(this.Consultarbutton);
@@ -188,5 +200,6 @@
         private System.Windows.Forms.Button Consultarbutton;
         private System.Windows.Forms.CheckBox RangocheckBox;
         private System.Windows.Forms.DataGridView ConsultadataGridView;
+        private System.Windows.Forms.Button Imprimirbutton;
     }
 }

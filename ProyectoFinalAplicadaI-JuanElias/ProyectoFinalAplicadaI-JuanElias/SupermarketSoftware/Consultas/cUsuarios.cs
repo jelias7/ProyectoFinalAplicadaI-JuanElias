@@ -1,5 +1,6 @@
 ﻿using BLL;
 using Entidades;
+using ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Consultas
 {
     public partial class cUsuarios : Form
     {
+        private List<Usuarios> Lista;
         public cUsuarios()
         {
             InitializeComponent();
@@ -81,7 +83,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Consultas
                     listado = r.GetList(p => true);
                     listado = listado.Where(c => c.FechaCreacion.Date >= DesdedateTimePicker.Value.Date && c.FechaCreacion.Date <= HastadateTimePicker.Value.Date).ToList();
                 }
-                ConsultadataGridView.DataSource = null;
+                Lista = listado;
                 ConsultadataGridView.DataSource = listado;
             }
             else
@@ -144,8 +146,22 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Consultas
                     }
 
                 }
-                ConsultadataGridView.DataSource = null;
+                Lista = listado;
                 ConsultadataGridView.DataSource = listado;
+            }
+        }
+
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+            if (Lista.Count == 0)
+            {
+                MessageBox.Show("No hay datos.");
+                return;
+            }
+            else
+            {
+                ReporteUsuarios p = new ReporteUsuarios(Lista);
+                p.ShowDialog();
             }
         }
     }
