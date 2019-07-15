@@ -28,5 +28,10 @@ namespace ProyectoFinalAplicadaI_JuanElias
             SupermarketSoftware.Consultas.cUsuarios cUsuarios = new SupermarketSoftware.Consultas.cUsuarios();
             cUsuarios.Show();
         }
+
+        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
