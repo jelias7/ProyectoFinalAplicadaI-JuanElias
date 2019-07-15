@@ -81,6 +81,12 @@
     <Compile Include="SupermarketSoftware\Consultas\cUsuarios.Designer.cs">
       <DependentUpon>cUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="SupermarketSoftware\Registros\rInventarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupermarketSoftware\Registros\rInventarios.Designer.cs">
+      <DependentUpon>rInventarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="SupermarketSoftware\Registros\rUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     </Compile>
     <EmbeddedResource Include="SupermarketSoftware\Consultas\cUsuarios.resx">
       <DependentUpon>cUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupermarketSoftware\Registros\rInventarios.resx">
+      <DependentUpon>rInventarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SupermarketSoftware\Registros\rUsuarios.resx">
       <DependentUpon>rUsuarios.cs</DependentUpon>
