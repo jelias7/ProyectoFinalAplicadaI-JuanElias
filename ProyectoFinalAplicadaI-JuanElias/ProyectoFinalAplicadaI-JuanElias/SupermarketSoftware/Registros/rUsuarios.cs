@@ -26,6 +26,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             NombrestextBox.Text = string.Empty;
             NombreUsuariotextBox.Text = string.Empty;
             ClavetextBox.Text = string.Empty;
+            ConfirmartextBox.Text = string.Empty;
             EmailtextBox.Text = string.Empty;
             FechaCreaciondateTimePicker.Value = DateTime.Now;
             MyErrorProvider.Clear();
@@ -49,7 +50,8 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             IDnumericUpDown.Value = usuarios.UsuarioId;
             NombrestextBox.Text = usuarios.Nombres;
             NombreUsuariotextBox.Text = usuarios.Usuario;
-            ClavetextBox.Text = usuarios.Clave;
+            ClavetextBox.Text = "*****";
+            ConfirmartextBox.Text = "*****";
             EmailtextBox.Text = usuarios.Email;
             FechaCreaciondateTimePicker.Value = usuarios.FechaCreacion;
         }
@@ -135,6 +137,11 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             if (RepetirEmail(EmailtextBox.Text))
             {
                 MyErrorProvider.SetError(EmailtextBox, "No se debe usar el mismo email que otro.");
+                paso = false;
+            }
+            if (ConfirmartextBox.Text != ClavetextBox.Text)
+            {
+                MyErrorProvider.SetError(ConfirmartextBox, "La clave no coincide.");
                 paso = false;
             }
             return paso;

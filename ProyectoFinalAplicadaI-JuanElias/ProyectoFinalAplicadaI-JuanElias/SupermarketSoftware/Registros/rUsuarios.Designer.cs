@@ -46,6 +46,8 @@
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ConfirmartextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +68,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 75);
+            this.label3.Location = new System.Drawing.Point(35, 71);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 2;
@@ -75,7 +77,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(35, 169);
+            this.label4.Location = new System.Drawing.Point(35, 161);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 3;
@@ -84,7 +86,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(35, 264);
+            this.label5.Location = new System.Drawing.Point(35, 300);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 13);
             this.label5.TabIndex = 4;
@@ -93,7 +95,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(35, 217);
+            this.label6.Location = new System.Drawing.Point(35, 253);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(32, 13);
             this.label6.TabIndex = 5;
@@ -102,7 +104,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(35, 122);
+            this.label7.Location = new System.Drawing.Point(35, 118);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(98, 13);
             this.label7.TabIndex = 6;
@@ -117,7 +119,7 @@
             // 
             // NombrestextBox
             // 
-            this.NombrestextBox.Location = new System.Drawing.Point(150, 75);
+            this.NombrestextBox.Location = new System.Drawing.Point(150, 71);
             this.NombrestextBox.Name = "NombrestextBox";
             this.NombrestextBox.Size = new System.Drawing.Size(199, 20);
             this.NombrestextBox.TabIndex = 8;
@@ -125,14 +127,15 @@
             // 
             // ClavetextBox
             // 
-            this.ClavetextBox.Location = new System.Drawing.Point(150, 169);
+            this.ClavetextBox.Location = new System.Drawing.Point(150, 161);
             this.ClavetextBox.Name = "ClavetextBox";
+            this.ClavetextBox.PasswordChar = '*';
             this.ClavetextBox.Size = new System.Drawing.Size(199, 20);
             this.ClavetextBox.TabIndex = 9;
             // 
             // EmailtextBox
             // 
-            this.EmailtextBox.Location = new System.Drawing.Point(150, 217);
+            this.EmailtextBox.Location = new System.Drawing.Point(150, 253);
             this.EmailtextBox.Name = "EmailtextBox";
             this.EmailtextBox.Size = new System.Drawing.Size(199, 20);
             this.EmailtextBox.TabIndex = 10;
@@ -140,7 +143,7 @@
             // 
             // NombreUsuariotextBox
             // 
-            this.NombreUsuariotextBox.Location = new System.Drawing.Point(150, 122);
+            this.NombreUsuariotextBox.Location = new System.Drawing.Point(150, 118);
             this.NombreUsuariotextBox.Name = "NombreUsuariotextBox";
             this.NombreUsuariotextBox.Size = new System.Drawing.Size(199, 20);
             this.NombreUsuariotextBox.TabIndex = 11;
@@ -150,7 +153,7 @@
             // 
             this.FechaCreaciondateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechaCreaciondateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaCreaciondateTimePicker.Location = new System.Drawing.Point(150, 264);
+            this.FechaCreaciondateTimePicker.Location = new System.Drawing.Point(150, 300);
             this.FechaCreaciondateTimePicker.Name = "FechaCreaciondateTimePicker";
             this.FechaCreaciondateTimePicker.Size = new System.Drawing.Size(100, 20);
             this.FechaCreaciondateTimePicker.TabIndex = 12;
@@ -158,7 +161,7 @@
             // Nuevobutton
             // 
             this.Nuevobutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.controller_78338;
-            this.Nuevobutton.Location = new System.Drawing.Point(38, 308);
+            this.Nuevobutton.Location = new System.Drawing.Point(38, 344);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(61, 65);
             this.Nuevobutton.TabIndex = 16;
@@ -168,7 +171,7 @@
             // Eliminarbutton
             // 
             this.Eliminarbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.garbage_78344;
-            this.Eliminarbutton.Location = new System.Drawing.Point(288, 308);
+            this.Eliminarbutton.Location = new System.Drawing.Point(288, 344);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(61, 65);
             this.Eliminarbutton.TabIndex = 15;
@@ -178,7 +181,7 @@
             // Guardarbutton
             // 
             this.Guardarbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.save_78348;
-            this.Guardarbutton.Location = new System.Drawing.Point(164, 308);
+            this.Guardarbutton.Location = new System.Drawing.Point(164, 344);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(61, 65);
             this.Guardarbutton.TabIndex = 14;
@@ -195,11 +198,30 @@
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(35, 208);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 13);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Confirmar Clave";
+            // 
+            // ConfirmartextBox
+            // 
+            this.ConfirmartextBox.Location = new System.Drawing.Point(150, 208);
+            this.ConfirmartextBox.Name = "ConfirmartextBox";
+            this.ConfirmartextBox.PasswordChar = '*';
+            this.ConfirmartextBox.Size = new System.Drawing.Size(199, 20);
+            this.ConfirmartextBox.TabIndex = 19;
+            // 
             // rUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(365, 386);
+            this.ClientSize = new System.Drawing.Size(366, 419);
+            this.Controls.Add(this.ConfirmartextBox);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);
@@ -244,5 +266,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox ConfirmartextBox;
+        private System.Windows.Forms.Label label2;
     }
 }
