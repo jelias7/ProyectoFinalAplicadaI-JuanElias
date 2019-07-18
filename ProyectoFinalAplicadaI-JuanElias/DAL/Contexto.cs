@@ -14,6 +14,7 @@ namespace DAL
 
         public DbSet<Inventarios> Inventarios { get; set; }
 
+        public DbSet<Productos> Productos { get; set; }
         public Contexto() : base("ConStr")
         { }
     }
