@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,7 @@ namespace Entidades
         public int Cantidad { get; set; }
         public decimal ITBIS { get; set; }
         public DateTime Vencimiento { get; set; }
+        [Browsable(false)]
         public int UsuarioId { get; set; }
         public Productos()
         {

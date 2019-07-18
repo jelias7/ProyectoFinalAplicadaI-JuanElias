@@ -63,7 +63,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
         }
         public static bool RepetirUser(string descripcion)
         {
-            RepositorioBase<Usuarios> r = new RepositorioBase<Usuarios>();
             bool paso = false;
             Contexto db = new Contexto();
 
@@ -82,7 +81,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
         }
         public static bool RepetirEmail(string descripcion)
         {
-            RepositorioBase<Usuarios> r = new RepositorioBase<Usuarios>();
             bool paso = false;
             Contexto db = new Contexto();
 
@@ -96,6 +94,23 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             catch (Exception)
             {
                 throw;
+            }
+            return paso;
+        }
+        private bool ValidarRepetir()
+        {
+            bool paso = true;
+            MyErrorProvider.Clear();
+            
+            if (RepetirUser(NombreUsuariotextBox.Text))
+            {
+                MyErrorProvider.SetError(NombreUsuariotextBox, "No se debe repetir los usuarios.");
+                paso = false;
+            }
+            if (RepetirEmail(EmailtextBox.Text))
+            {
+                MyErrorProvider.SetError(EmailtextBox, "No se debe usar el mismo email que otro.");
+                paso = false;
             }
             return paso;
         }
@@ -127,16 +142,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             if (FechaCreaciondateTimePicker.Value > DateTime.Now)
             {
                 MyErrorProvider.SetError(FechaCreaciondateTimePicker, "No se puede registrar esta fecha.");
-                paso = false;
-            }
-            if (RepetirUser(NombreUsuariotextBox.Text))
-            {
-                MyErrorProvider.SetError(NombreUsuariotextBox, "No se debe repetir los usuarios.");
-                paso = false;
-            }
-            if (RepetirEmail(EmailtextBox.Text))
-            {
-                MyErrorProvider.SetError(EmailtextBox, "No se debe usar el mismo email que otro.");
                 paso = false;
             }
             if (ConfirmartextBox.Text != ClavetextBox.Text)
@@ -186,9 +191,12 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             bool paso = false;
             usuarios = LlenaClase();
 
+            if (!Validar())
+                return;
+
             if (IDnumericUpDown.Value == 0)
             {
-                if (!Validar())
+                if (!ValidarRepetir())
                     return;
                 paso = Repositorio.Guardar(usuarios);
             }

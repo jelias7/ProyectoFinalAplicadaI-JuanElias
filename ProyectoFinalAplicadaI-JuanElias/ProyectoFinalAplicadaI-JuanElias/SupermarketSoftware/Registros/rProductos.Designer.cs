@@ -41,20 +41,26 @@
             this.PrecionumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.CantidadnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.ItbisnumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.ProductotextBox = new System.Windows.Forms.TextBox();
             this.AddProveedorbutton = new System.Windows.Forms.Button();
             this.AddSeccionbutton = new System.Windows.Forms.Button();
-            this.Guardarbutton = new System.Windows.Forms.Button();
-            this.Nuevobutton = new System.Windows.Forms.Button();
-            this.Buscarbutton = new System.Windows.Forms.Button();
-            this.Eliminarbutton = new System.Windows.Forms.Button();
             this.ProveedorcomboBox = new System.Windows.Forms.ComboBox();
             this.SeccioncomboBox = new System.Windows.Forms.ComboBox();
+            this.ProductocomboBox = new System.Windows.Forms.ComboBox();
+            this.CostonumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.GanancianumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.Eliminarbutton = new System.Windows.Forms.Button();
+            this.Buscarbutton = new System.Windows.Forms.Button();
+            this.Nuevobutton = new System.Windows.Forms.Button();
+            this.Guardarbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CodigonumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItbisnumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CostonumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GanancianumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -105,7 +111,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(35, 196);
+            this.label6.Location = new System.Drawing.Point(35, 239);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(37, 13);
             this.label6.TabIndex = 5;
@@ -114,7 +120,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(35, 236);
+            this.label7.Location = new System.Drawing.Point(35, 201);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 13);
             this.label7.TabIndex = 6;
@@ -123,7 +129,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(35, 273);
+            this.label8.Location = new System.Drawing.Point(35, 312);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(34, 13);
             this.label8.TabIndex = 7;
@@ -146,14 +152,14 @@
             // PrecionumericUpDown
             // 
             this.PrecionumericUpDown.DecimalPlaces = 2;
-            this.PrecionumericUpDown.Location = new System.Drawing.Point(97, 196);
+            this.PrecionumericUpDown.Location = new System.Drawing.Point(97, 239);
             this.PrecionumericUpDown.Name = "PrecionumericUpDown";
             this.PrecionumericUpDown.Size = new System.Drawing.Size(137, 20);
             this.PrecionumericUpDown.TabIndex = 10;
             // 
             // CantidadnumericUpDown
             // 
-            this.CantidadnumericUpDown.Location = new System.Drawing.Point(97, 234);
+            this.CantidadnumericUpDown.Location = new System.Drawing.Point(97, 201);
             this.CantidadnumericUpDown.Name = "CantidadnumericUpDown";
             this.CantidadnumericUpDown.ReadOnly = true;
             this.CantidadnumericUpDown.Size = new System.Drawing.Size(71, 20);
@@ -162,18 +168,11 @@
             // ItbisnumericUpDown
             // 
             this.ItbisnumericUpDown.DecimalPlaces = 2;
-            this.ItbisnumericUpDown.Location = new System.Drawing.Point(97, 273);
+            this.ItbisnumericUpDown.Location = new System.Drawing.Point(97, 312);
             this.ItbisnumericUpDown.Name = "ItbisnumericUpDown";
             this.ItbisnumericUpDown.ReadOnly = true;
             this.ItbisnumericUpDown.Size = new System.Drawing.Size(137, 20);
             this.ItbisnumericUpDown.TabIndex = 12;
-            // 
-            // ProductotextBox
-            // 
-            this.ProductotextBox.Location = new System.Drawing.Point(97, 94);
-            this.ProductotextBox.Name = "ProductotextBox";
-            this.ProductotextBox.Size = new System.Drawing.Size(201, 20);
-            this.ProductotextBox.TabIndex = 13;
             // 
             // AddProveedorbutton
             // 
@@ -187,6 +186,7 @@
             this.AddProveedorbutton.TabIndex = 16;
             this.AddProveedorbutton.Text = "+";
             this.AddProveedorbutton.UseVisualStyleBackColor = false;
+            this.AddProveedorbutton.Click += new System.EventHandler(this.AddProveedorbutton_Click);
             // 
             // AddSeccionbutton
             // 
@@ -200,42 +200,7 @@
             this.AddSeccionbutton.TabIndex = 17;
             this.AddSeccionbutton.Text = "+";
             this.AddSeccionbutton.UseVisualStyleBackColor = false;
-            // 
-            // Guardarbutton
-            // 
-            this.Guardarbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.save_78348;
-            this.Guardarbutton.Location = new System.Drawing.Point(141, 326);
-            this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(59, 59);
-            this.Guardarbutton.TabIndex = 18;
-            this.Guardarbutton.UseVisualStyleBackColor = true;
-            // 
-            // Nuevobutton
-            // 
-            this.Nuevobutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.controller_78338;
-            this.Nuevobutton.Location = new System.Drawing.Point(38, 326);
-            this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(59, 59);
-            this.Nuevobutton.TabIndex = 19;
-            this.Nuevobutton.UseVisualStyleBackColor = true;
-            // 
-            // Buscarbutton
-            // 
-            this.Buscarbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.loupe_78347;
-            this.Buscarbutton.Location = new System.Drawing.Point(180, 9);
-            this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(45, 40);
-            this.Buscarbutton.TabIndex = 20;
-            this.Buscarbutton.UseVisualStyleBackColor = true;
-            // 
-            // Eliminarbutton
-            // 
-            this.Eliminarbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.garbage_78344;
-            this.Eliminarbutton.Location = new System.Drawing.Point(239, 326);
-            this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(59, 59);
-            this.Eliminarbutton.TabIndex = 21;
-            this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.AddSeccionbutton.Click += new System.EventHandler(this.AddSeccionbutton_Click);
             // 
             // ProveedorcomboBox
             // 
@@ -255,12 +220,97 @@
             this.SeccioncomboBox.Size = new System.Drawing.Size(201, 21);
             this.SeccioncomboBox.TabIndex = 23;
             // 
+            // ProductocomboBox
+            // 
+            this.ProductocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ProductocomboBox.FormattingEnabled = true;
+            this.ProductocomboBox.Location = new System.Drawing.Point(97, 94);
+            this.ProductocomboBox.Name = "ProductocomboBox";
+            this.ProductocomboBox.Size = new System.Drawing.Size(201, 21);
+            this.ProductocomboBox.TabIndex = 24;
+            // 
+            // CostonumericUpDown
+            // 
+            this.CostonumericUpDown.DecimalPlaces = 2;
+            this.CostonumericUpDown.Location = new System.Drawing.Point(97, 274);
+            this.CostonumericUpDown.Name = "CostonumericUpDown";
+            this.CostonumericUpDown.Size = new System.Drawing.Size(137, 20);
+            this.CostonumericUpDown.TabIndex = 25;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(35, 274);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(34, 13);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Costo";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(245, 274);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(53, 13);
+            this.label10.TabIndex = 27;
+            this.label10.Text = "Ganancia";
+            // 
+            // GanancianumericUpDown
+            // 
+            this.GanancianumericUpDown.DecimalPlaces = 2;
+            this.GanancianumericUpDown.Location = new System.Drawing.Point(313, 274);
+            this.GanancianumericUpDown.Name = "GanancianumericUpDown";
+            this.GanancianumericUpDown.ReadOnly = true;
+            this.GanancianumericUpDown.Size = new System.Drawing.Size(77, 20);
+            this.GanancianumericUpDown.TabIndex = 28;
+            // 
+            // Eliminarbutton
+            // 
+            this.Eliminarbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.garbage_78344;
+            this.Eliminarbutton.Location = new System.Drawing.Point(239, 351);
+            this.Eliminarbutton.Name = "Eliminarbutton";
+            this.Eliminarbutton.Size = new System.Drawing.Size(59, 59);
+            this.Eliminarbutton.TabIndex = 21;
+            this.Eliminarbutton.UseVisualStyleBackColor = true;
+            // 
+            // Buscarbutton
+            // 
+            this.Buscarbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.loupe_78347;
+            this.Buscarbutton.Location = new System.Drawing.Point(180, 9);
+            this.Buscarbutton.Name = "Buscarbutton";
+            this.Buscarbutton.Size = new System.Drawing.Size(45, 40);
+            this.Buscarbutton.TabIndex = 20;
+            this.Buscarbutton.UseVisualStyleBackColor = true;
+            // 
+            // Nuevobutton
+            // 
+            this.Nuevobutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.controller_78338;
+            this.Nuevobutton.Location = new System.Drawing.Point(38, 351);
+            this.Nuevobutton.Name = "Nuevobutton";
+            this.Nuevobutton.Size = new System.Drawing.Size(59, 59);
+            this.Nuevobutton.TabIndex = 19;
+            this.Nuevobutton.UseVisualStyleBackColor = true;
+            // 
+            // Guardarbutton
+            // 
+            this.Guardarbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.save_78348;
+            this.Guardarbutton.Location = new System.Drawing.Point(141, 351);
+            this.Guardarbutton.Name = "Guardarbutton";
+            this.Guardarbutton.Size = new System.Drawing.Size(59, 59);
+            this.Guardarbutton.TabIndex = 18;
+            this.Guardarbutton.UseVisualStyleBackColor = true;
+            // 
             // rProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(401, 399);
+            this.ClientSize = new System.Drawing.Size(405, 421);
+            this.Controls.Add(this.GanancianumericUpDown);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.CostonumericUpDown);
+            this.Controls.Add(this.ProductocomboBox);
             this.Controls.Add(this.SeccioncomboBox);
             this.Controls.Add(this.ProveedorcomboBox);
             this.Controls.Add(this.Eliminarbutton);
@@ -269,7 +319,6 @@
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.AddSeccionbutton);
             this.Controls.Add(this.AddProveedorbutton);
-            this.Controls.Add(this.ProductotextBox);
             this.Controls.Add(this.ItbisnumericUpDown);
             this.Controls.Add(this.CantidadnumericUpDown);
             this.Controls.Add(this.PrecionumericUpDown);
@@ -283,6 +332,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "rProductos";
             this.Text = "Registro de Productos";
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
@@ -290,6 +341,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItbisnumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CostonumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GanancianumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,7 +363,6 @@
         private System.Windows.Forms.NumericUpDown PrecionumericUpDown;
         private System.Windows.Forms.NumericUpDown CantidadnumericUpDown;
         private System.Windows.Forms.NumericUpDown ItbisnumericUpDown;
-        private System.Windows.Forms.TextBox ProductotextBox;
         private System.Windows.Forms.Button AddProveedorbutton;
         private System.Windows.Forms.Button AddSeccionbutton;
         private System.Windows.Forms.Button Guardarbutton;
@@ -319,5 +371,10 @@
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.ComboBox ProveedorcomboBox;
         private System.Windows.Forms.ComboBox SeccioncomboBox;
+        private System.Windows.Forms.ComboBox ProductocomboBox;
+        private System.Windows.Forms.NumericUpDown CostonumericUpDown;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.NumericUpDown GanancianumericUpDown;
     }
 }

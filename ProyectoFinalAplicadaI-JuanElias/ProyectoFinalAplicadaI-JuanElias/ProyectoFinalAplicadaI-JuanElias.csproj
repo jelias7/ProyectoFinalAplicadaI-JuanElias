@@ -93,6 +93,18 @@
     <Compile Include="SupermarketSoftware\Registros\rProductos.Designer.cs">
       <DependentUpon>rProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="SupermarketSoftware\Registros\rProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupermarketSoftware\Registros\rProveedores.Designer.cs">
+      <DependentUpon>rProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SupermarketSoftware\Registros\rSecciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupermarketSoftware\Registros\rSecciones.Designer.cs">
+      <DependentUpon>rSecciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="SupermarketSoftware\Registros\rUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +147,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SupermarketSoftware\Registros\rProductos.resx">
       <DependentUpon>rProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupermarketSoftware\Registros\rProveedores.resx">
+      <DependentUpon>rProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupermarketSoftware\Registros\rSecciones.resx">
+      <DependentUpon>rSecciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SupermarketSoftware\Registros\rUsuarios.resx">
       <DependentUpon>rUsuarios.cs</DependentUpon>

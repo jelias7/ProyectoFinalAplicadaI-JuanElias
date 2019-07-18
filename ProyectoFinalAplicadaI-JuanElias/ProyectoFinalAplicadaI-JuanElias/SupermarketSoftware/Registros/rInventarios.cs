@@ -53,7 +53,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
 
         public static bool RepetirProducto(string descripcion)
         {
-            RepositorioBase<Inventarios> r = new RepositorioBase<Inventarios>();
             bool paso = false;
             Contexto db = new Contexto();
 

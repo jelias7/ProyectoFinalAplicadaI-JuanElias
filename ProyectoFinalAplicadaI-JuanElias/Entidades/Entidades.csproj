@@ -44,6 +44,8 @@
   <ItemGroup>
     <Compile Include="Inventarios.cs" />
     <Compile Include="Productos.cs" />
+    <Compile Include="Proveedores.cs" />
+    <Compile Include="Secciones.cs" />
     <Compile Include="Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

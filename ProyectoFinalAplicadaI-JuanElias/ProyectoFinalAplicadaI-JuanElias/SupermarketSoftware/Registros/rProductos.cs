@@ -17,5 +17,16 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             InitializeComponent();
         }
 
+        private void AddProveedorbutton_Click(object sender, EventArgs e)
+        {
+            rProveedores r = new rProveedores();
+            r.Show();
+        }
+
+        private void AddSeccionbutton_Click(object sender, EventArgs e)
+        {
+            rSecciones r = new rSecciones();
+            r.Show();
+        }
     }
 }

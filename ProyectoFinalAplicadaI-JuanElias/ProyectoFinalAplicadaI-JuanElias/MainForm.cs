@@ -50,5 +50,11 @@ namespace ProyectoFinalAplicadaI_JuanElias
             rInventarios rInventarios = new rInventarios();
             rInventarios.Show();
         }
+
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rProductos rProductos = new rProductos();
+            rProductos.Show();
+        }
     }
 }
