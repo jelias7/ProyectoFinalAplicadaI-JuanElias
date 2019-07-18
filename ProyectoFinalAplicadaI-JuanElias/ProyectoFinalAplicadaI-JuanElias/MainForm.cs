@@ -31,7 +31,16 @@ namespace ProyectoFinalAplicadaI_JuanElias
 
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            Login login = new Login();
+            login.Show();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var select = MessageBox.Show("¿Seguro?", "Supermarket Sotfware.", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (select == DialogResult.Yes)
+                Application.Exit();
         }
     }
 }
