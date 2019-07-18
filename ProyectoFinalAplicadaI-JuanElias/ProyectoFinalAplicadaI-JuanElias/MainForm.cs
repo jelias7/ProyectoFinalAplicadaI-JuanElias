@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Consultas;
+using ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,14 +21,14 @@ namespace ProyectoFinalAplicadaI_JuanElias
 
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SupermarketSoftware.Registros.rUsuarios rUsuarios = new SupermarketSoftware.Registros.rUsuarios();
-            rUsuarios.Show();
+            rUsuarios r = new rUsuarios();
+            r.Show();
         }
 
         private void usuarioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            SupermarketSoftware.Consultas.cUsuarios cUsuarios = new SupermarketSoftware.Consultas.cUsuarios();
-            cUsuarios.Show();
+            cUsuarios c = new cUsuarios();
+            c.Show();
         }
 
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -41,6 +43,12 @@ namespace ProyectoFinalAplicadaI_JuanElias
             var select = MessageBox.Show("¿Seguro?", "Supermarket Sotfware.", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (select == DialogResult.Yes)
                 Application.Exit();
+        }
+
+        private void inventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rInventarios rInventarios = new rInventarios();
+            rInventarios.Show();
         }
     }
 }

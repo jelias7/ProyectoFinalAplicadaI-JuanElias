@@ -186,11 +186,12 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             bool paso = false;
             usuarios = LlenaClase();
 
-            if (!Validar())
-                return;
-
             if (IDnumericUpDown.Value == 0)
+            {
+                if (!Validar())
+                    return;
                 paso = Repositorio.Guardar(usuarios);
+            }
             else
             {
                 if (!ExisteEnLaBaseDeDatos())
