@@ -17,6 +17,8 @@ namespace Entidades
         public string Proveedor { get; set; }
         public string Seccion { get; set; }
         public decimal Precio { get; set; }
+        public decimal Costo { get; set; }
+        public decimal Ganancia { get; set; }
         public int Cantidad { get; set; }
         public decimal ITBIS { get; set; }
         public DateTime Vencimiento { get; set; }
@@ -30,7 +32,9 @@ namespace Entidades
             Proveedor = string.Empty;
             Seccion = string.Empty;
             Precio = 0;
+            Costo = 0;
             Cantidad = 0;
+            Ganancia = 0;
             ITBIS = 0;
             Vencimiento = DateTime.Now;
             UsuarioId = 0;
