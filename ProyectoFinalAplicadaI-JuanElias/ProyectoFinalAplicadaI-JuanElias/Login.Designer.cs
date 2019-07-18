@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -35,10 +36,12 @@
             this.ClavetextBox = new System.Windows.Forms.TextBox();
             this.Cancelarbutton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Aceptarbutton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -103,17 +106,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox1.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.user_icon_icons_com_57997;
-            this.pictureBox1.Location = new System.Drawing.Point(21, 58);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(96, 96);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
             // Aceptarbutton
             // 
             this.Aceptarbutton.BackColor = System.Drawing.Color.Green;
@@ -129,6 +121,21 @@
             this.Aceptarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Aceptarbutton.UseVisualStyleBackColor = false;
             this.Aceptarbutton.Click += new System.EventHandler(this.Aceptarbutton_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBox1.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.user_icon_icons_com_57997;
+            this.pictureBox1.Location = new System.Drawing.Point(21, 58);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(96, 96);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // MyErrorProvider
+            // 
+            this.MyErrorProvider.ContainerControl = this;
             // 
             // Login
             // 
@@ -146,6 +153,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -160,5 +168,6 @@
         private System.Windows.Forms.Button Aceptarbutton;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ErrorProvider MyErrorProvider;
     }
 }
