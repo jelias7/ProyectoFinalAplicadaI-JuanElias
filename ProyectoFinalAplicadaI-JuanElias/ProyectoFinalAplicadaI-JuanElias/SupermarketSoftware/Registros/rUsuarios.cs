@@ -20,6 +20,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
         {
             InitializeComponent();
         }
+
         private void Limpiar()
         {
 
@@ -34,42 +35,27 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
 
         }
 
-        //Clave cifrada
-        public string EncodePassword(string Data)
-        {
-            try
-            {
-                byte[] oByte = new byte[Data.Length];
-                oByte = System.Text.Encoding.UTF8.GetBytes(Data);
-                string EncodedData = "25" + Convert.ToBase64String(oByte);
-                return EncodedData;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
         private Usuarios LlenaClase()
         {
             Usuarios usuarios = new Usuarios();
             usuarios.UsuarioId = Convert.ToInt32(IDnumericUpDown.Value);
             usuarios.Nombres = NombrestextBox.Text;
             usuarios.Usuario = NombreUsuariotextBox.Text;
-            usuarios.Clave = EncodePassword(ClavetextBox.Text);
+            usuarios.Clave = Eramake.eCryptography.Encrypt(ClavetextBox.Text);
             usuarios.Email = EmailtextBox.Text;
             usuarios.FechaCreacion = FechaCreaciondateTimePicker.Value;
 
             return usuarios;
         }
 
+
         private void LlenaCampo(Usuarios usuarios)
         {
             IDnumericUpDown.Value = usuarios.UsuarioId;
             NombrestextBox.Text = usuarios.Nombres;
             NombreUsuariotextBox.Text = usuarios.Usuario;
-            ClavetextBox.Text = usuarios.Clave;
-            ConfirmartextBox.Text = usuarios.Clave;
+            ClavetextBox.Text = Eramake.eCryptography.Decrypt(usuarios.Clave);
+            ConfirmartextBox.Text = Eramake.eCryptography.Decrypt(usuarios.Clave);
             EmailtextBox.Text = usuarios.Email;
             FechaCreaciondateTimePicker.Value = usuarios.FechaCreacion;
         }
