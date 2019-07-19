@@ -56,5 +56,10 @@ namespace ProyectoFinalAplicadaI_JuanElias
             rProductos rProductos = new rProductos();
             rProductos.Show();
         }
+
+        private void ClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

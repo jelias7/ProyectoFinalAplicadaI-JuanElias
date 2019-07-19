@@ -17,6 +17,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
 {
     public partial class rProductos : Form
     {
+        //todo Poner control de fecha de vencimiento
         public rProductos()
         {
             InitializeComponent();

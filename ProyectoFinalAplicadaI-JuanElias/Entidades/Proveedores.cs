@@ -18,7 +18,7 @@ namespace Entidades
         public string Direccion { get; set; }
         public string Email { get; set; }
         public string Telefono { get; set; }
-        [ForeignKey("Usuarios")]
+       // [ForeignKey("Usuarios")]
         public int UsuarioId { get; set; }
 
         public Proveedores()

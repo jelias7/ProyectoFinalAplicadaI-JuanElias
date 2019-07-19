@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,13 +33,30 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             MyErrorProvider.Clear();
 
         }
+
+        //Clave cifrada
+        public string EncodePassword(string Data)
+        {
+            try
+            {
+                byte[] oByte = new byte[Data.Length];
+                oByte = System.Text.Encoding.UTF8.GetBytes(Data);
+                string EncodedData = "25" + Convert.ToBase64String(oByte);
+                return EncodedData;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         private Usuarios LlenaClase()
         {
             Usuarios usuarios = new Usuarios();
             usuarios.UsuarioId = Convert.ToInt32(IDnumericUpDown.Value);
             usuarios.Nombres = NombrestextBox.Text;
             usuarios.Usuario = NombreUsuariotextBox.Text;
-            usuarios.Clave = ClavetextBox.Text;
+            usuarios.Clave = EncodePassword(ClavetextBox.Text);
             usuarios.Email = EmailtextBox.Text;
             usuarios.FechaCreacion = FechaCreaciondateTimePicker.Value;
 
@@ -50,8 +68,8 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             IDnumericUpDown.Value = usuarios.UsuarioId;
             NombrestextBox.Text = usuarios.Nombres;
             NombreUsuariotextBox.Text = usuarios.Usuario;
-            ClavetextBox.Text = "*****";
-            ConfirmartextBox.Text = "*****";
+            ClavetextBox.Text = usuarios.Clave;
+            ConfirmartextBox.Text = usuarios.Clave;
             EmailtextBox.Text = usuarios.Email;
             FechaCreaciondateTimePicker.Value = usuarios.FechaCreacion;
         }
@@ -188,6 +206,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
         {
             RepositorioBase<Usuarios> Repositorio = new RepositorioBase<Usuarios>();
             Usuarios usuarios = new Usuarios();
+
             bool paso = false;
             usuarios = LlenaClase();
 

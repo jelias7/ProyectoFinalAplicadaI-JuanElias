@@ -16,7 +16,7 @@ namespace Entidades
         public string Cedula { get; set; }
         public string Telefono { get; set; }
         public string Direccion { get; set; }
-        [ForeignKey("Usuarios")]
+        //[ForeignKey("Usuarios")]
         public int UsuarioId { get; set; }
         public Clientes()
         {

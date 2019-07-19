@@ -23,13 +23,13 @@ namespace Entidades
         public int Cantidad { get; set; }
         public decimal ITBIS { get; set; }
         public DateTime Vencimiento { get; set; }
-        [ForeignKey("Usuarios")]
+        //[ForeignKey("Usuarios")]
         public int UsuarioId { get; set; }
-        [ForeignKey("Proveedores")]
+        //[ForeignKey("Proveedores")]
         public int ProveedorId { get; set; }
-        [ForeignKey("Secciones")]
+        //[ForeignKey("Secciones")]
         public int SeccionId { get; set; }
-        [ForeignKey("Inventarios")]
+        //[ForeignKey("Inventarios")]
         public int InventarioId { get;set; }
         public Productos()
         {

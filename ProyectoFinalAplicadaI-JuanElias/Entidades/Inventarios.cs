@@ -15,7 +15,7 @@ namespace Entidades
         public int InventarioId { get; set; }
         public string Producto { get; set; }
         public int Cantidad { get; set; }
-        [ForeignKey("Usuarios")]
+       // [ForeignKey("Usuarios")]
         public int UsuarioId { get; set; }
         public Inventarios()
         {
