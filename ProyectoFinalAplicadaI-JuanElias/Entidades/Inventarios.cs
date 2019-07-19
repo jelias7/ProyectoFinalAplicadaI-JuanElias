@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace Entidades
         public int InventarioId { get; set; }
         public string Producto { get; set; }
         public int Cantidad { get; set; }
-        [Browsable(false)]
+        [ForeignKey("Usuarios")]
         public int UsuarioId { get; set; }
         public Inventarios()
         {

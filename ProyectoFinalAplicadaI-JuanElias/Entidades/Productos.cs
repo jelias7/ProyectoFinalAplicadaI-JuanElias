@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,10 +23,13 @@ namespace Entidades
         public int Cantidad { get; set; }
         public decimal ITBIS { get; set; }
         public DateTime Vencimiento { get; set; }
-        [Browsable(false)]
+        [ForeignKey("Usuarios")]
         public int UsuarioId { get; set; }
+        [ForeignKey("Proveedores")]
         public int ProveedorId { get; set; }
+        [ForeignKey("Secciones")]
         public int SeccionId { get; set; }
+        [ForeignKey("Inventarios")]
         public int InventarioId { get;set; }
         public Productos()
         {
