@@ -24,6 +24,7 @@ namespace Entidades
         public DateTime Vencimiento { get; set; }
         [Browsable(false)]
         public int UsuarioId { get; set; }
+        public int ProveedorId { get; set; }
         public Productos()
         {
             ProductoId = 0;
@@ -38,6 +39,7 @@ namespace Entidades
             ITBIS = 0;
             Vencimiento = DateTime.Now;
             UsuarioId = 0;
+            ProveedorId = 0;
         }
     }
 }

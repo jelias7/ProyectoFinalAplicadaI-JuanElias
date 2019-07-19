@@ -228,6 +228,7 @@
             this.ProductocomboBox.Name = "ProductocomboBox";
             this.ProductocomboBox.Size = new System.Drawing.Size(201, 21);
             this.ProductocomboBox.TabIndex = 24;
+            this.ProductocomboBox.SelectedIndexChanged += new System.EventHandler(this.ProductocomboBox_SelectedIndexChanged);
             // 
             // CostonumericUpDown
             // 
@@ -316,7 +317,7 @@
             this.GananciatextBox.Location = new System.Drawing.Point(313, 273);
             this.GananciatextBox.Name = "GananciatextBox";
             this.GananciatextBox.ReadOnly = true;
-            this.GananciatextBox.Size = new System.Drawing.Size(80, 20);
+            this.GananciatextBox.Size = new System.Drawing.Size(75, 20);
             this.GananciatextBox.TabIndex = 28;
             // 
             // ItbistextBox

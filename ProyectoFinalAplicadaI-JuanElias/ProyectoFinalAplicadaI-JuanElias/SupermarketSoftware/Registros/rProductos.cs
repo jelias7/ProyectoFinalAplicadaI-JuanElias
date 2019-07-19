@@ -4,7 +4,9 @@ using Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,7 +21,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
         {
             InitializeComponent();
             Producto();
-            ProductocomboBox.Text = null;
+           // ProductocomboBox.Text = null;
             Proveedor();
             ProveedorcomboBox.Text = null;
             Seccion();
@@ -314,6 +316,12 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                 GananciatextBox.Text = Convert.ToString(PrecionumericUpDown.Value - CostonumericUpDown.Value);
             else
                 GananciatextBox.Text = "0";
+        }
+
+        private void ProductocomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+                Inventarios i = ProductocomboBox.SelectedItem as Inventarios;
+                CantidadtextBox.Text = Convert.ToString(i.Cantidad);
         }
     }
 }
