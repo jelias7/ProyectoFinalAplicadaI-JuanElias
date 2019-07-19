@@ -20,12 +20,13 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
         public rProductos()
         {
             InitializeComponent();
+            //todo Que no aparezcan
             Producto();
            // ProductocomboBox.Text = null;
             Proveedor();
-            ProveedorcomboBox.Text = null;
+            //ProveedorcomboBox.Text = null;
             Seccion();
-            SeccioncomboBox.Text = null;
+            //SeccioncomboBox.Text = null;
         }
         private void Producto()
         {
@@ -101,14 +102,15 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             Productos p = new Productos();
             p.ProductoId = Convert.ToInt32(IDnumericUpDown.Value);
             p.Codigo = Convert.ToInt32(CodigonumericUpDown.Value);
-            p.Producto = (string)ProductocomboBox.SelectedItem;
-            p.Proveedor = (string)ProveedorcomboBox.SelectedItem;
-            p.Seccion = (string)SeccioncomboBox.SelectedItem;
+            p.Producto = ProductocomboBox.Text;
+            p.Proveedor = ProveedorcomboBox.Text;
+            p.Seccion = SeccioncomboBox.Text;
             p.Cantidad = Convert.ToInt32(CantidadtextBox.Text);
             p.Precio = PrecionumericUpDown.Value;
             p.Costo = CostonumericUpDown.Value;
             p.Ganancia = Convert.ToDecimal(GananciatextBox.Text);
             p.ITBIS = Convert.ToDecimal(ItbistextBox.Text);
+
             return p;
         }
         private void Buscarbutton_Click(object sender, EventArgs e)
@@ -180,7 +182,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             }
             return paso;
         }
-        public static bool RepetirCodigo(string descripcion)
+        public static bool RepetirCodigo(int descripcion)
         {
             bool paso = false;
             Contexto db = new Contexto();
@@ -208,7 +210,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                 MyErrorProvider.SetError(ProductocomboBox, "No se pueden repetir.");
                 paso = false;
             }
-            if (RepetirCodigo(CodigonumericUpDown.Text))
+            if (RepetirCodigo((int)CodigonumericUpDown.Value))
             {
                 MyErrorProvider.SetError(CodigonumericUpDown, "No se pueden repetir.");
                 paso = false;
@@ -323,5 +325,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                 Inventarios i = ProductocomboBox.SelectedItem as Inventarios;
                 CantidadtextBox.Text = Convert.ToString(i.Cantidad);
         }
+
+
     }
 }

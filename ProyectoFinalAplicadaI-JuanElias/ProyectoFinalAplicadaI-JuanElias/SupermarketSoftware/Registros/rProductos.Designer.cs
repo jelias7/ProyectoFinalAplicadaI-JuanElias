@@ -281,7 +281,7 @@
             // Buscarbutton
             // 
             this.Buscarbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.loupe_78347;
-            this.Buscarbutton.Location = new System.Drawing.Point(180, 9);
+            this.Buscarbutton.Location = new System.Drawing.Point(174, 12);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(45, 40);
             this.Buscarbutton.TabIndex = 20;
@@ -341,7 +341,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(405, 421);
+            this.ClientSize = new System.Drawing.Size(401, 421);
             this.Controls.Add(this.CantidadtextBox);
             this.Controls.Add(this.ItbistextBox);
             this.Controls.Add(this.GananciatextBox);
