@@ -25,6 +25,8 @@ namespace Entidades
         [Browsable(false)]
         public int UsuarioId { get; set; }
         public int ProveedorId { get; set; }
+        public int SeccionId { get; set; }
+        public int InventarioId { get;set; }
         public Productos()
         {
             ProductoId = 0;
@@ -40,6 +42,8 @@ namespace Entidades
             Vencimiento = DateTime.Now;
             UsuarioId = 0;
             ProveedorId = 0;
+            SeccionId = 0;
+            InventarioId = 0;
         }
     }
 }
