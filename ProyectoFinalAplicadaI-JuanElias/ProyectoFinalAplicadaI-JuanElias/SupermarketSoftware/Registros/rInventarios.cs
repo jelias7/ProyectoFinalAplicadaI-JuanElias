@@ -25,6 +25,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             IDnumericUpDown.Value = 0;
             ProductotextBox.Text = string.Empty;
             CantidadnumericUpDown.Value = 0;
+            FechadateTimePicker.Value = DateTime.Now;
             MyErrorProvider.Clear();
 
         }
@@ -34,6 +35,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             i.InventarioId = Convert.ToInt32(IDnumericUpDown.Value);
             i.Producto = ProductotextBox.Text;
             i.Cantidad = (int)CantidadnumericUpDown.Value;
+            i.Fecha = FechadateTimePicker.Value;
             return i;
         }
 
@@ -41,7 +43,8 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
         {
             IDnumericUpDown.Value = i.InventarioId;
             ProductotextBox.Text = i.Producto;
-            CantidadnumericUpDown.Value = i.Cantidad;        
+            CantidadnumericUpDown.Value = i.Cantidad;
+            FechadateTimePicker.Value = i.Fecha;
         }
 
         private bool ExisteEnLaBaseDeDatos()
@@ -83,7 +86,17 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             else
                 MessageBox.Show("No encontrado.");
         }
-
+        private bool ValidarRepetir()
+        {
+            bool paso = true;
+            MyErrorProvider.Clear();
+            if (RepetirProducto(ProductotextBox.Text))
+            {
+                MyErrorProvider.SetError(ProductotextBox, "No se pueden repetir los productos.");
+                paso = false;
+            }
+            return paso;
+        }
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
             Limpiar();
@@ -103,9 +116,9 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                 MyErrorProvider.SetError(CantidadnumericUpDown, "No puede ser 0.");
                 paso = false;
             }
-            if (RepetirProducto(ProductotextBox.Text))
+            if(FechadateTimePicker.Value > DateTime.Now)
             {
-                MyErrorProvider.SetError(ProductotextBox, "No se pueden repetir los productos.");
+                MyErrorProvider.SetError(FechadateTimePicker, "No puede ser despues que hoy.");
                 paso = false;
             }
             return paso;
@@ -117,9 +130,12 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             bool paso = false;
             i = LlenaClase();
 
+            if (!Validar())
+                return;
+
             if (IDnumericUpDown.Value == 0)
             {
-                if (!Validar())
+                if (!ValidarRepetir())
                     return;
                 paso = Repositorio.Guardar(i);
             }
@@ -127,16 +143,16 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             {
                 if (!ExisteEnLaBaseDeDatos())
                 {
-                    MessageBox.Show("No se puede guardar.", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se puede guardar.", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 paso = Repositorio.Modificar(i);
             }
 
             if (paso)
-                MessageBox.Show("Guardado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Guardado", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                MessageBox.Show("No fue posible guardar", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No fue posible guardar", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Error);
             Limpiar();
         }
         private bool ValidarEliminar()

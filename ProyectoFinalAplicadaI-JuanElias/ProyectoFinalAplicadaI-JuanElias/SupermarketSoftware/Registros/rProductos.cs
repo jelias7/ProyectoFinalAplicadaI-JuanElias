@@ -251,7 +251,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             return paso;
         }
             private void Guardarbutton_Click(object sender, EventArgs e)
-        {
+            {
             RepositorioBase<Productos> Repositorio = new RepositorioBase<Productos>();
             Productos p = new Productos();
             bool paso = false;
@@ -282,7 +282,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             else
                 MessageBox.Show("No fue posible guardar", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             Limpiar();
-        }
+            }
 
         private void PrecionumericUpDown_ValueChanged(object sender, EventArgs e)
         {
