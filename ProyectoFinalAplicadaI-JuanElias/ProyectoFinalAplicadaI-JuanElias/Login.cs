@@ -37,7 +37,7 @@ namespace ProyectoFinalAplicadaI_JuanElias
 
                 if (usuario.Exists(x => x.Usuario.Equals(username)))
                 {
-                    if (usuario.Exists(x => x.Clave.Equals(password)))
+                    if (usuario.Exists(x => x.Clave.Equals(Eramake.eCryptography.Encrypt(password))))
                     {
                         MainForm f = new MainForm();
                         f.Show();

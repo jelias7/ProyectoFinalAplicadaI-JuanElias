@@ -104,7 +104,6 @@
             this.groupBox1.Size = new System.Drawing.Size(351, 168);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos";
             // 
             // Aceptarbutton
             // 
@@ -141,14 +140,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(486, 200);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
+            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Login";
+            this.Opacity = 0.8D;
             this.Text = "Login";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
