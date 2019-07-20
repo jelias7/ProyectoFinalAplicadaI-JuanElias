@@ -1,4 +1,5 @@
-﻿using ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Consultas;
+﻿using MetroFramework;
+using ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Consultas;
 using ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros;
 using System;
 using System.Collections.Generic;
@@ -61,6 +62,11 @@ namespace ProyectoFinalAplicadaI_JuanElias
         {
             rClientes rClientes = new rClientes();
             rClientes.Show();
+        }
+
+        private void InformacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MetroMessageBox.Show(this, "Sistema creado por Juan Elias Rosario Mena." + Environment.NewLine + "Ingenieria en Sistemas y Computacion." + Environment.NewLine + "Universidad Catolica Nordestana", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
