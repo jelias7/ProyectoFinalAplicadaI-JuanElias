@@ -59,7 +59,8 @@ namespace ProyectoFinalAplicadaI_JuanElias
 
         private void ClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            rClientes rClientes = new rClientes();
+            rClientes.Show();
         }
     }
 }

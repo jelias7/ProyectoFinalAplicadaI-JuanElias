@@ -39,13 +39,13 @@
             this.NombrestextBox = new System.Windows.Forms.TextBox();
             this.ContactotextBox = new System.Windows.Forms.TextBox();
             this.EmailtextBox = new System.Windows.Forms.TextBox();
-            this.TelefonotextBox = new System.Windows.Forms.TextBox();
             this.DirecciontextBox = new System.Windows.Forms.TextBox();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.TlfmaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -132,15 +132,6 @@
             this.EmailtextBox.Size = new System.Drawing.Size(159, 20);
             this.EmailtextBox.TabIndex = 9;
             // 
-            // TelefonotextBox
-            // 
-            this.TelefonotextBox.Location = new System.Drawing.Point(122, 161);
-            this.TelefonotextBox.Name = "TelefonotextBox";
-            this.TelefonotextBox.Size = new System.Drawing.Size(159, 20);
-            this.TelefonotextBox.TabIndex = 10;
-            this.TelefonotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TelefonotextBox_KeyPress);
-       
-            // 
             // DirecciontextBox
             // 
             this.DirecciontextBox.Location = new System.Drawing.Point(122, 193);
@@ -192,18 +183,26 @@
             // 
             this.MyErrorProvider.ContainerControl = this;
             // 
+            // TlfmaskedTextBox
+            // 
+            this.TlfmaskedTextBox.Location = new System.Drawing.Point(122, 161);
+            this.TlfmaskedTextBox.Mask = "(999) 000-0000";
+            this.TlfmaskedTextBox.Name = "TlfmaskedTextBox";
+            this.TlfmaskedTextBox.Size = new System.Drawing.Size(159, 20);
+            this.TlfmaskedTextBox.TabIndex = 26;
+            // 
             // rProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(353, 316);
+            this.Controls.Add(this.TlfmaskedTextBox);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.DirecciontextBox);
-            this.Controls.Add(this.TelefonotextBox);
             this.Controls.Add(this.EmailtextBox);
             this.Controls.Add(this.ContactotextBox);
             this.Controls.Add(this.NombrestextBox);
@@ -237,12 +236,12 @@
         private System.Windows.Forms.TextBox NombrestextBox;
         private System.Windows.Forms.TextBox ContactotextBox;
         private System.Windows.Forms.TextBox EmailtextBox;
-        private System.Windows.Forms.TextBox TelefonotextBox;
         private System.Windows.Forms.TextBox DirecciontextBox;
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
+        private System.Windows.Forms.MaskedTextBox TlfmaskedTextBox;
     }
 }

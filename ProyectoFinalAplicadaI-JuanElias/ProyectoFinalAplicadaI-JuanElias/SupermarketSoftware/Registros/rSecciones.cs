@@ -97,6 +97,18 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             }
             return paso;
         }
+        private bool ValidarRepeticion()
+        {
+            bool paso = true;
+            MyErrorProvider.Clear();
+
+            if (RepetirSeccion(NombretextBox.Text))
+            {
+                MyErrorProvider.SetError(NombretextBox, "No se pueden repetir.");
+                paso = false;
+            }
+            return paso;
+        }
         private bool Validar()
         {
             bool paso = true;
@@ -105,11 +117,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             if (string.IsNullOrWhiteSpace(NombretextBox.Text))
             {
                 MyErrorProvider.SetError(NombretextBox, "No puede ser vacio.");
-                paso = false;
-            }
-            if (RepetirSeccion(NombretextBox.Text))
-            {
-                MyErrorProvider.SetError(NombretextBox, "No se pueden repetir.");
                 paso = false;
             }
             return paso;
@@ -121,9 +128,12 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             bool paso = false;
             s = LlenaClase();
 
+            if (!Validar())
+                return;
+
             if (IDnumericUpDown.Value == 0)
             {
-                if (!Validar())
+                if (!ValidarRepeticion())
                     return;
                 paso = Repositorio.Guardar(s);
             }

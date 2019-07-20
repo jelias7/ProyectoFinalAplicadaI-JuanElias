@@ -26,7 +26,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             NombrestextBox.Text = string.Empty;
             ContactotextBox.Text = string.Empty;
             EmailtextBox.Text = string.Empty;
-            TelefonotextBox.Text = string.Empty;
+            TlfmaskedTextBox.Text = string.Empty;
             DirecciontextBox.Text = string.Empty;
             MyErrorProvider.Clear();
 
@@ -38,7 +38,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             p.Nombres = NombrestextBox.Text;
             p.Contacto = ContactotextBox.Text;
             p.Email = EmailtextBox.Text;
-            p.Telefono = TelefonotextBox.Text;
+            p.Telefono = TlfmaskedTextBox.Text;
             p.Direccion = DirecciontextBox.Text;
             return p;
         }
@@ -49,7 +49,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             NombrestextBox.Text = p.Nombres;
             ContactotextBox.Text = p.Contacto;
             EmailtextBox.Text = p.Email;
-            TelefonotextBox.Text = p.Telefono;
+            TlfmaskedTextBox.Text = p.Telefono;
             DirecciontextBox.Text = p.Direccion;
         }
         private bool ExisteEnLaBaseDeDatos()
@@ -204,11 +204,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                 MyErrorProvider.SetError(DirecciontextBox, "No puede ser vacio.");
                 paso = false;
             }
-            if (string.IsNullOrWhiteSpace(TelefonotextBox.Text) || TelefonotextBox.Text.Length <= 9 || TelefonotextBox.Text.Length > 10)
-            {
-                MyErrorProvider.SetError(TelefonotextBox, "No puede ser vacio o tener diferente a 10 digitos.");
-                paso = false;
-            }
             return paso;
         }
         private bool ValidarRepeticion()
@@ -231,9 +226,9 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                 MyErrorProvider.SetError(EmailtextBox, "No se pueden repetir.");
                 paso = false;
             }
-            if (RepetirTelefono(TelefonotextBox.Text))
+            if (RepetirTelefono(TlfmaskedTextBox.Text))
             {
-                MyErrorProvider.SetError(TelefonotextBox, "No se pueden repetir.");
+                MyErrorProvider.SetError(TlfmaskedTextBox, "No se pueden repetir.");
                 paso = false;
             }
             if (RepetirDireccion(DirecciontextBox.Text))

@@ -43,6 +43,11 @@ namespace ProyectoFinalAplicadaI_JuanElias
                         f.Show();
                         this.Hide();
                     }
+                    else
+                    {
+                        MessageBox.Show("Clave incorrecta.", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
                 }          
         }
 

@@ -35,7 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.NombrestextBox = new System.Windows.Forms.TextBox();
             this.CedulamaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.TlfmaskedTextBox = new System.Windows.Forms.MaskedTextBox();
@@ -45,7 +45,7 @@
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // MyErrorProvider
@@ -97,12 +97,12 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Direccion";
             // 
-            // numericUpDown1
+            // IDnumericUpDown
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(118, 28);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(67, 20);
-            this.numericUpDown1.TabIndex = 5;
+            this.IDnumericUpDown.Location = new System.Drawing.Point(118, 28);
+            this.IDnumericUpDown.Name = "IDnumericUpDown";
+            this.IDnumericUpDown.Size = new System.Drawing.Size(67, 20);
+            this.IDnumericUpDown.TabIndex = 5;
             // 
             // NombrestextBox
             // 
@@ -114,6 +114,7 @@
             // CedulamaskedTextBox
             // 
             this.CedulamaskedTextBox.Location = new System.Drawing.Point(118, 113);
+            this.CedulamaskedTextBox.Mask = "000-0000000-0";
             this.CedulamaskedTextBox.Name = "CedulamaskedTextBox";
             this.CedulamaskedTextBox.Size = new System.Drawing.Size(215, 20);
             this.CedulamaskedTextBox.TabIndex = 7;
@@ -121,6 +122,7 @@
             // TlfmaskedTextBox
             // 
             this.TlfmaskedTextBox.Location = new System.Drawing.Point(118, 164);
+            this.TlfmaskedTextBox.Mask = "(999) 000-0000";
             this.TlfmaskedTextBox.Name = "TlfmaskedTextBox";
             this.TlfmaskedTextBox.Size = new System.Drawing.Size(215, 20);
             this.TlfmaskedTextBox.TabIndex = 8;
@@ -140,6 +142,7 @@
             this.Nuevobutton.Size = new System.Drawing.Size(61, 65);
             this.Nuevobutton.TabIndex = 19;
             this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // Eliminarbutton
             // 
@@ -158,6 +161,7 @@
             this.Guardarbutton.Size = new System.Drawing.Size(61, 65);
             this.Guardarbutton.TabIndex = 17;
             this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Buscarbutton
             // 
@@ -167,6 +171,7 @@
             this.Buscarbutton.Size = new System.Drawing.Size(45, 40);
             this.Buscarbutton.TabIndex = 20;
             this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // rClientes
             // 
@@ -182,7 +187,7 @@
             this.Controls.Add(this.TlfmaskedTextBox);
             this.Controls.Add(this.CedulamaskedTextBox);
             this.Controls.Add(this.NombrestextBox);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.IDnumericUpDown);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -191,7 +196,7 @@
             this.Name = "rClientes";
             this.Text = "Registro de Clientes";
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,7 +205,7 @@
         #endregion
 
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown IDnumericUpDown;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

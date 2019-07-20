@@ -138,9 +138,10 @@
             // 
             // Login
             // 
+            this.AcceptButton = this.Aceptarbutton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(486, 200);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
@@ -149,7 +150,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Login";
-            this.Opacity = 0.8D;
+            this.Opacity = 0.95D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
