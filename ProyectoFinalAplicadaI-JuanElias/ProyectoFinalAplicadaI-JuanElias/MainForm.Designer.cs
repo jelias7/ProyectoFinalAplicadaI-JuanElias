@@ -43,6 +43,8 @@
             // 
             // menuStrip
             // 
+            this.menuStrip.AllowItemReorder = true;
+            this.menuStrip.BackColor = System.Drawing.Color.LightYellow;
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrosToolStripMenuItem,
             this.consultasToolStripMenuItem,
@@ -56,6 +58,7 @@
             // 
             // registrosToolStripMenuItem
             // 
+            this.registrosToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.registrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usuarioToolStripMenuItem,
             this.inventarioToolStripMenuItem,
@@ -95,6 +98,7 @@
             // 
             // consultasToolStripMenuItem
             // 
+            this.consultasToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usuarioToolStripMenuItem1});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
@@ -104,7 +108,7 @@
             // usuarioToolStripMenuItem1
             // 
             this.usuarioToolStripMenuItem1.Name = "usuarioToolStripMenuItem1";
-            this.usuarioToolStripMenuItem1.Size = new System.Drawing.Size(114, 22);
+            this.usuarioToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.usuarioToolStripMenuItem1.Text = "Usuario";
             this.usuarioToolStripMenuItem1.Click += new System.EventHandler(this.usuarioToolStripMenuItem1_Click);
             // 
@@ -126,11 +130,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.e5eb7412528dbbf122484c4772dfa277dac23b99;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MainForm";
-            this.Text = "Entrada";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Bienvenido a Supermarket Software!";
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.ResumeLayout(false);

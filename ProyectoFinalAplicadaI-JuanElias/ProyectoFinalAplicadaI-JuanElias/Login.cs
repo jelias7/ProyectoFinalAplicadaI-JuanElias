@@ -25,8 +25,6 @@ namespace ProyectoFinalAplicadaI_JuanElias
         public void Sesion()
         {
 
-            //todo Agregar admin cuando no exista usuarios
-
             RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
             Expression<Func<Usuarios, bool>> filtro = x => true;
             List<Usuarios> usuario = new List<Usuarios>();

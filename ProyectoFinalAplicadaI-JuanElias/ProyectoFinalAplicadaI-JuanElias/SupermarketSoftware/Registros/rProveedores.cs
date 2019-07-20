@@ -204,6 +204,11 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                 MyErrorProvider.SetError(DirecciontextBox, "No puede ser vacio.");
                 paso = false;
             }
+            if (!TlfmaskedTextBox.MaskCompleted)
+            {
+                MyErrorProvider.SetError(TlfmaskedTextBox, "No puede ser vacio.");
+                paso = false;
+            }
             return paso;
         }
         private bool ValidarRepeticion()

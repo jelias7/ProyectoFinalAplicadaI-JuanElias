@@ -21,13 +21,9 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
         public rProductos()
         {
             InitializeComponent();
-            //todo Que no aparezcan
             Producto();
-           // ProductocomboBox.Text = null;
             Proveedor();
-            //ProveedorcomboBox.Text = null;
             Seccion();
-            //SeccioncomboBox.Text = null;
         }
         private void Producto()
         {
@@ -290,27 +286,16 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
 
         private void PrecionumericUpDown_ValueChanged(object sender, EventArgs e)
         {
+           decimal defecto = 0;
+
            if(PrecionumericUpDown.Value > CostonumericUpDown.Value)
                 GananciatextBox.Text = Convert.ToString(PrecionumericUpDown.Value - CostonumericUpDown.Value);
             else
-                GananciatextBox.Text = "0";
+                GananciatextBox.Text = defecto.ToString();
 
-            //todo No esta perfecto
             double itbis = 0.18;
-            double itbisReducido = 0.16;
-            if (SeccioncomboBox.Text == "Pescaderia" || SeccioncomboBox.Text == "Farmacia" || SeccioncomboBox.Text == "Refrigerados" || SeccioncomboBox.Text == "Drogueria")
-            {
-                ItbistextBox.Text = "0";
-            }
-            else
-            {
-                if(ProductocomboBox.Text == "Yogurt" || ProductocomboBox.Text == "Mantequilla" || ProductocomboBox.Text == "Cafe" || ProductocomboBox.Text == "Vegetales" || ProductocomboBox.Text == "Azucar" || ProductocomboBox.Text == "Cacao")
-                {
-                    ItbistextBox.Text = Convert.ToString(PrecionumericUpDown.Value * (decimal)itbisReducido);
-                }
-                else
-                    ItbistextBox.Text = Convert.ToString(PrecionumericUpDown.Value * (decimal)itbis);
-            }
+
+            ItbistextBox.Text = Convert.ToString(PrecionumericUpDown.Value * (decimal)itbis);            
         }
 
         private void CostonumericUpDown_ValueChanged(object sender, EventArgs e)
