@@ -129,6 +129,12 @@
     <Compile Include="SupermarketSoftware\Registros\rUsuarios.Designer.cs">
       <DependentUpon>rUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="SupermarketSoftware\Registros\rVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupermarketSoftware\Registros\rVentas.Designer.cs">
+      <DependentUpon>rVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="SupermarketSoftware\Reportes\ListadoU.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -177,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SupermarketSoftware\Registros\rUsuarios.resx">
       <DependentUpon>rUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupermarketSoftware\Registros\rVentas.resx">
+      <DependentUpon>rVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SupermarketSoftware\Reportes\ListadoU.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
