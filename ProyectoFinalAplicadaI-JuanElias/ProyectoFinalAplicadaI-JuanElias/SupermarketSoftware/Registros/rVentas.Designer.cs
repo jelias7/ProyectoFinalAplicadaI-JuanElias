@@ -406,6 +406,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "rVentas";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Venta de Producto";
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();

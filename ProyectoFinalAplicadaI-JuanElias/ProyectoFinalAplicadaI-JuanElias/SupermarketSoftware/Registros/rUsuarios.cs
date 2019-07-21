@@ -155,19 +155,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             }
             return paso;
         }
-        private bool ValidarEliminar()
-        {
-            bool paso = true;
-            MyErrorProvider.Clear();
-
-            if (IDnumericUpDown.Value == 0)
-            {
-                MyErrorProvider.SetError(IDnumericUpDown, "Busquelo y luego eliminelo.");
-                IDnumericUpDown.Focus();
-                paso = false;
-            }
-            return paso;
-        }
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             RepositorioBase<Usuarios> Repositorio = new RepositorioBase<Usuarios>();
@@ -228,8 +215,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             RepositorioBase<Usuarios> Repositorio = new RepositorioBase<Usuarios>();
 
             MyErrorProvider.Clear();
-            if (!ValidarEliminar())
-                return;
 
             int id;
             int.TryParse(IDnumericUpDown.Text, out id);

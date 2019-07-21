@@ -21,7 +21,7 @@ namespace Entidades
         public int Cantidad { get; set; }
         [Browsable(false)]
         public int UsuarioId { get; set; }
-        public List<VentasDetalle> Detalle { get; set; }
+        public virtual List<VentasDetalle> Detalle { get; set; }
         public Ventas()
         {
             VentaId = 0;

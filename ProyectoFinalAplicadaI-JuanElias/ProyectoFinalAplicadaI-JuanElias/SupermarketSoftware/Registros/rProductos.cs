@@ -130,26 +130,11 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             Productos p = Repositorio.Buscar((int)IDnumericUpDown.Value);
             return (p != null);
         }
-        private bool ValidarEliminar()
-        {
-            bool paso = true;
-            MyErrorProvider.Clear();
-
-            if (IDnumericUpDown.Value == 0)
-            {
-                MyErrorProvider.SetError(IDnumericUpDown, "Busquelo y luego eliminelo.");
-                IDnumericUpDown.Focus();
-                paso = false;
-            }
-            return paso;
-        }
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
             RepositorioBase<Productos> Repositorio = new RepositorioBase<Productos>();
 
             MyErrorProvider.Clear();
-            if (!ValidarEliminar())
-                return;
 
             int id;
             int.TryParse(IDnumericUpDown.Text, out id);
@@ -161,24 +146,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             else
                 MyErrorProvider.SetError(IDnumericUpDown, "No existe.");
         }
-        public static bool RepetirProducto(string descripcion)
-        {
-            bool paso = false;
-            Contexto db = new Contexto();
 
-            try
-            {
-                if (db.Productos.Any(p => p.Producto.Equals(descripcion)))
-                {
-                    paso = true;
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            return paso;
-        }
         public static bool RepetirCodigo(int descripcion)
         {
             bool paso = false;
@@ -202,11 +170,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             bool paso = true;
             MyErrorProvider.Clear();
 
-            if (RepetirProducto(ProductocomboBox.Text))
-            {
-                MyErrorProvider.SetError(ProductocomboBox, "No se pueden repetir.");
-                paso = false;
-            }
             if (RepetirCodigo((int)CodigonumericUpDown.Value))
             {
                 MyErrorProvider.SetError(CodigonumericUpDown, "No se pueden repetir.");

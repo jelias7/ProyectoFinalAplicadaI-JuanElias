@@ -47,19 +47,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             Secciones s = Repositorio.Buscar((int)IDnumericUpDown.Value);
             return (s != null);
         }
-        private bool ValidarEliminar()
-        {
-            bool paso = true;
-            MyErrorProvider.Clear();
-
-            if (IDnumericUpDown.Value == 0)
-            {
-                MyErrorProvider.SetError(IDnumericUpDown, "Busquelo y luego eliminelo.");
-                IDnumericUpDown.Focus();
-                paso = false;
-            }
-            return paso;
-        }
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
             Limpiar();
@@ -162,8 +149,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             RepositorioBase<Secciones> Repositorio = new RepositorioBase<Secciones>();
 
             MyErrorProvider.Clear();
-            if (!ValidarEliminar())
-                return;
 
             int id;
             int.TryParse(IDnumericUpDown.Text, out id);

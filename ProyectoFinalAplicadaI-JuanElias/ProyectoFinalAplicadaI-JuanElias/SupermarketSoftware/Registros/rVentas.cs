@@ -14,14 +14,14 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
 {
     public partial class rVentas : Form
     {
-        public List<VentasDetalle> Detalle { get; set; }
+        public List<VentasDetalle> Detalle;
 
         public rVentas()
         {
             InitializeComponent();
             Cliente();
             Producto();
-            this.Detalle = new List<VentasDetalle>();
+            Detalle = new List<VentasDetalle>();
         }
         private void Cliente()
         {
@@ -115,7 +115,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             SubtotaltextBox.Text = v.Subtotal.ToString();
             TotaltextBox.Text = v.Total.ToString();
             ModocomboBox.Text = v.Modo;
-           //DisponiblestextBox.Visible = false;
             this.Detalle = v.Detalle;
             CargarGrid();
         }
@@ -222,27 +221,12 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                 MessageBox.Show("No fue posible guardar", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Error);
             Limpiar();
             }
-        private bool ValidarEliminar()
-        {
-            bool paso = true;
-            MyErrorProvider.Clear();
-
-            if (IDnumericUpDown.Value == 0)
-            {
-                MyErrorProvider.SetError(IDnumericUpDown, "Busquelo y luego eliminelo.");
-                IDnumericUpDown.Focus();
-                paso = false;
-            }
-            return paso;
-        }
+        
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
             RepositorioBase<Ventas> Repositorio = new RepositorioBase<Ventas>();
 
             MyErrorProvider.Clear();
-            if (!ValidarEliminar())
-                return;
-
             int id;
             int.TryParse(IDnumericUpDown.Text, out id);
 
@@ -258,40 +242,38 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
         {
             Productos p = ProductocomboBox.SelectedItem as Productos;
             PreciotextBox.Text = Convert.ToString(p.Precio);
-            DisponiblestextBox.Text = Convert.ToString(p.Cantidad - CantidadnumericUpDown.Value);
+            DisponiblestextBox.Text = Convert.ToString(p.Cantidad);
         }
 
         private void Addbutton_Click(object sender, EventArgs e)
         {
             Productos p = ProductocomboBox.SelectedItem as Productos;
 
-            if (ProductocomboBox.Text == string.Empty)
-            {
-                MessageBox.Show("No hay producto seleccionado.");
-                return;
-            }
 
             if (DetalledataGridView.DataSource != null)
                 this.Detalle = (List<VentasDetalle>)DetalledataGridView.DataSource;
 
-            this.Detalle.Add(new VentasDetalle()
+            if (PreciotextBox.Text != string.Empty)
             {
+                this.Detalle.Add(new VentasDetalle()
+                {
 
-                VentaDetalleId = (int)IDnumericUpDown.Value,
-                Producto = ProductocomboBox.Text,
-                Cantidad = (int)CantidadnumericUpDown.Value,
-                Precio = Convert.ToDecimal(PreciotextBox.Text),
-                Impuesto = p.ITBIS * CantidadnumericUpDown.Value
-            });
+                    VentaDetalleId = (int)IDnumericUpDown.Value,
+                    Producto = ProductocomboBox.Text,
+                    Cantidad = (int)CantidadnumericUpDown.Value,
+                    Precio = Convert.ToDecimal(PreciotextBox.Text),
+                    Impuesto = p.ITBIS * CantidadnumericUpDown.Value
+                });
+            }
             CargarGrid();
             CalcularItbis();
             CalcularSubtotal();
             CalcularTotal();
-            p.Cantidad -= (int)CantidadnumericUpDown.Value;
         }
 
         private void Removerbutton_Click(object sender, EventArgs e)
         {
+            Productos p = ProductocomboBox.SelectedItem as Productos;
             if (DetalledataGridView.Rows.Count > 0 && DetalledataGridView.CurrentRow != null)
             {
                 Detalle.RemoveAt(DetalledataGridView.CurrentRow.Index);

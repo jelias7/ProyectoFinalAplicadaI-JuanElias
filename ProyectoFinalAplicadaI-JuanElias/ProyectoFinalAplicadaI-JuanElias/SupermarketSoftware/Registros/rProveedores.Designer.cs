@@ -216,6 +216,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "rProveedores";
+            this.ShowIcon = false;
             this.Text = "Registro de Proveedores";
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();

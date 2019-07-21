@@ -7,6 +7,7 @@ using Entidades;
 using DAL;
 using System.Linq.Expressions;
 using System.Data.Entity;
+using System.Windows.Forms;
 
 namespace BLL
 {
@@ -68,7 +69,7 @@ namespace BLL
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("No existe.");
             }
             return paso;
         }

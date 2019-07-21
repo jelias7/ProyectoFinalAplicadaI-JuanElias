@@ -120,26 +120,13 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                 MessageBox.Show("No fue posible guardar", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Error);
             Limpiar();
         }
-        private bool ValidarEliminar()
-        {
-            bool paso = true;
-            MyErrorProvider.Clear();
 
-            if (IDnumericUpDown.Value == 0)
-            {
-                MyErrorProvider.SetError(IDnumericUpDown, "Busquelo y luego eliminelo.");
-                IDnumericUpDown.Focus();
-                paso = false;
-            }
-            return paso;
-        }
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
             RepositorioBase<Inventarios> Repositorio = new RepositorioBase<Inventarios>();
 
             MyErrorProvider.Clear();
-            if (!ValidarEliminar())
-                return;
+
 
             int id;
             int.TryParse(IDnumericUpDown.Text, out id);
