@@ -70,7 +70,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             ProductocomboBox.Text = string.Empty;
             ProveedorcomboBox.Text = string.Empty;
             SeccioncomboBox.Text = string.Empty;
-            CantidadtextBox.Text = string.Empty;
+            CantidadnumericUpDown.Value = 0;
             PrecionumericUpDown.Value = 0;
             CostonumericUpDown.Value = 0;
             GananciatextBox.Text = string.Empty;
@@ -88,7 +88,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             ProductocomboBox.Text = p.Producto;
             ProveedorcomboBox.Text = p.Proveedor;
             SeccioncomboBox.Text = p.Seccion;
-            CantidadtextBox.Text = p.Cantidad.ToString();
+            CantidadnumericUpDown.Value = p.Cantidad;
             PrecionumericUpDown.Value = p.Precio;
             CostonumericUpDown.Value = p.Costo;
             GananciatextBox.Text = p.Ganancia.ToString();
@@ -102,7 +102,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             p.Producto = ProductocomboBox.Text;
             p.Proveedor = ProveedorcomboBox.Text;
             p.Seccion = SeccioncomboBox.Text;
-            p.Cantidad = Convert.ToInt32(CantidadtextBox.Text);
+            p.Cantidad = (int)CantidadnumericUpDown.Value;
             p.Precio = PrecionumericUpDown.Value;
             p.Costo = CostonumericUpDown.Value;
             p.Ganancia = Convert.ToDecimal(GananciatextBox.Text);
@@ -233,6 +233,11 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                 MyErrorProvider.SetError(SeccioncomboBox, "No puede ser vacio.");
                 paso = false;
             }
+            if(CantidadnumericUpDown.Value == 0)
+            {
+                MyErrorProvider.SetError(CantidadnumericUpDown, "No puede ser cero.");
+                paso = false;
+            }
             if (PrecionumericUpDown.Value == 0)
             {
                 MyErrorProvider.SetError(PrecionumericUpDown, "No puede ser 0.");
@@ -255,10 +260,12 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             RepositorioBase<Productos> Repositorio = new RepositorioBase<Productos>();
             Productos p = new Productos();
             bool paso = false;
-            p = LlenaClase();
-
             if (!Validar())
                 return;
+
+            p = LlenaClase();
+
+
 
             if (IDnumericUpDown.Value == 0)
             {
@@ -306,12 +313,10 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                 GananciatextBox.Text = "0";
         }
 
-        private void ProductocomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void Inventariobutton_Click(object sender, EventArgs e)
         {
-                Inventarios i = ProductocomboBox.SelectedItem as Inventarios;
-                CantidadtextBox.Text = Convert.ToString(i.Cantidad);
+            rInventarios rInventarios = new rInventarios();
+            rInventarios.Show();
         }
-
-
     }
 }

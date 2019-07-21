@@ -186,10 +186,11 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             RepositorioBase<Clientes> Repositorio = new RepositorioBase<Clientes>();
             Clientes c = new Clientes();
             bool paso = false;
-            c = LlenaClase();
-
             if (!Validar())
                 return;
+
+            c = LlenaClase();
+
 
             if (IDnumericUpDown.Value == 0)
             {

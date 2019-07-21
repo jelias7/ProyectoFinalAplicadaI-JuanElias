@@ -194,10 +194,11 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             Usuarios usuarios = new Usuarios();
 
             bool paso = false;
-            usuarios = LlenaClase();
 
             if (!Validar())
                 return;
+
+            usuarios = LlenaClase();
 
             if (IDnumericUpDown.Value == 0)
             {

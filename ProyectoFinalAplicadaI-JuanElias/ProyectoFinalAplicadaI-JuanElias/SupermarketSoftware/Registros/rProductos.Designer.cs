@@ -55,12 +55,14 @@
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.GananciatextBox = new System.Windows.Forms.TextBox();
             this.ItbistextBox = new System.Windows.Forms.TextBox();
-            this.CantidadtextBox = new System.Windows.Forms.TextBox();
+            this.CantidadnumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.Inventariobutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CodigonumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CostonumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -228,7 +230,6 @@
             this.ProductocomboBox.Name = "ProductocomboBox";
             this.ProductocomboBox.Size = new System.Drawing.Size(201, 21);
             this.ProductocomboBox.TabIndex = 24;
-            this.ProductocomboBox.SelectedIndexChanged += new System.EventHandler(this.ProductocomboBox_SelectedIndexChanged);
             // 
             // CostonumericUpDown
             // 
@@ -328,13 +329,31 @@
             this.ItbistextBox.Size = new System.Drawing.Size(80, 20);
             this.ItbistextBox.TabIndex = 29;
             // 
-            // CantidadtextBox
+            // CantidadnumericUpDown
             // 
-            this.CantidadtextBox.Location = new System.Drawing.Point(97, 201);
-            this.CantidadtextBox.Name = "CantidadtextBox";
-            this.CantidadtextBox.ReadOnly = true;
-            this.CantidadtextBox.Size = new System.Drawing.Size(80, 20);
-            this.CantidadtextBox.TabIndex = 30;
+            this.CantidadnumericUpDown.Location = new System.Drawing.Point(97, 199);
+            this.CantidadnumericUpDown.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.CantidadnumericUpDown.Name = "CantidadnumericUpDown";
+            this.CantidadnumericUpDown.Size = new System.Drawing.Size(71, 20);
+            this.CantidadnumericUpDown.TabIndex = 30;
+            // 
+            // Inventariobutton
+            // 
+            this.Inventariobutton.BackColor = System.Drawing.Color.Teal;
+            this.Inventariobutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Inventariobutton.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Inventariobutton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Inventariobutton.Location = new System.Drawing.Point(313, 95);
+            this.Inventariobutton.Name = "Inventariobutton";
+            this.Inventariobutton.Size = new System.Drawing.Size(75, 20);
+            this.Inventariobutton.TabIndex = 31;
+            this.Inventariobutton.Text = "+";
+            this.Inventariobutton.UseVisualStyleBackColor = false;
+            this.Inventariobutton.Click += new System.EventHandler(this.Inventariobutton_Click);
             // 
             // rProductos
             // 
@@ -342,7 +361,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(401, 421);
-            this.Controls.Add(this.CantidadtextBox);
+            this.Controls.Add(this.Inventariobutton);
+            this.Controls.Add(this.CantidadnumericUpDown);
             this.Controls.Add(this.ItbistextBox);
             this.Controls.Add(this.GananciatextBox);
             this.Controls.Add(this.label10);
@@ -371,12 +391,14 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "rProductos";
+            this.ShowIcon = false;
             this.Text = "Registro de Productos";
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CodigonumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CostonumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,8 +430,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
-        private System.Windows.Forms.TextBox CantidadtextBox;
         private System.Windows.Forms.TextBox ItbistextBox;
         private System.Windows.Forms.TextBox GananciatextBox;
+        private System.Windows.Forms.NumericUpDown CantidadnumericUpDown;
+        private System.Windows.Forms.Button Inventariobutton;
     }
 }

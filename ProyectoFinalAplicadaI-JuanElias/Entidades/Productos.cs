@@ -23,14 +23,8 @@ namespace Entidades
         public int Cantidad { get; set; }
         public decimal ITBIS { get; set; }
         public DateTime Vencimiento { get; set; }
-        //[ForeignKey("Usuarios")]
+        [Browsable(false)]
         public int UsuarioId { get; set; }
-        //[ForeignKey("Proveedores")]
-        public int ProveedorId { get; set; }
-        //[ForeignKey("Secciones")]
-        public int SeccionId { get; set; }
-        //[ForeignKey("Inventarios")]
-        public int InventarioId { get;set; }
         public Productos()
         {
             ProductoId = 0;
@@ -45,9 +39,6 @@ namespace Entidades
             ITBIS = 0;
             Vencimiento = DateTime.Now;
             UsuarioId = 0;
-            ProveedorId = 0;
-            SeccionId = 0;
-            InventarioId = 0;
         }
     }
 }

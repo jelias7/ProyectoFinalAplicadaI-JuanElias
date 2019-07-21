@@ -126,10 +126,13 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             RepositorioBase<Secciones> Repositorio = new RepositorioBase<Secciones>();
             Secciones s = new Secciones();
             bool paso = false;
-            s = LlenaClase();
-
             if (!Validar())
                 return;
+
+
+            s = LlenaClase();
+
+
 
             if (IDnumericUpDown.Value == 0)
             {

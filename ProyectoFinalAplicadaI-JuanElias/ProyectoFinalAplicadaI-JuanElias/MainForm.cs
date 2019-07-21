@@ -74,5 +74,17 @@ namespace ProyectoFinalAplicadaI_JuanElias
             rVentas rVentas = new rVentas();
             rVentas.Show();
         }
+
+        private void SeccionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rSecciones rSecciones = new rSecciones();
+            rSecciones.Show();
+        }
+
+        private void ProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rProveedores rProveedores = new rProveedores();
+            rProveedores.Show();
+        }
     }
 }

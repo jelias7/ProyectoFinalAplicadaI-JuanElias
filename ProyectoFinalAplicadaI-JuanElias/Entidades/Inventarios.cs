@@ -14,7 +14,6 @@ namespace Entidades
         [Key]
         public int InventarioId { get; set; }
         public string Producto { get; set; }
-        public int Cantidad { get; set; }
         public DateTime Fecha { get; set; }
        // [ForeignKey("Usuarios")]
         public int UsuarioId { get; set; }
@@ -22,7 +21,6 @@ namespace Entidades
         {
             InventarioId = 0;
             Producto = string.Empty;
-            Cantidad = 0;
             Fecha = DateTime.Now;
             UsuarioId = 0;
         }

@@ -248,10 +248,13 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             RepositorioBase<Proveedores> Repositorio = new RepositorioBase<Proveedores>();
             Proveedores p = new Proveedores();
             bool paso = false;
-            p = LlenaClase();
 
             if (!Validar())
                 return;
+
+
+            p = LlenaClase();
+
 
             if (IDnumericUpDown.Value == 0)
             {

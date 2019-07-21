@@ -50,18 +50,23 @@ namespace ProyectoFinalAplicadaI_JuanElias
             }
             else
             {
-                if (usuario.Count == 0)
+                if (UsuariotextBox.Text == string.Empty)
+                    MessageBox.Show("Ingrese un usuario.", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
                 {
-                    Repositorio.Guardar(new Usuarios()
+                    if (usuario.Count == 0)
                     {
-                        Usuario = "admin",
-                        Clave = Eramake.eCryptography.Encrypt("admin"),
-                        Nombres = "Juan Elias",
-                        Email = "juanelias@admin.com",
-                        FechaCreacion = DateTime.Now
-                    });
-                    MessageBox.Show("Al no existir usuario se ha creado uno." + Environment.NewLine + "Usuario = admin" + Environment.NewLine + "Clave = admin", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
+                        Repositorio.Guardar(new Usuarios()
+                        {
+                            Usuario = "admin",
+                            Clave = Eramake.eCryptography.Encrypt("admin"),
+                            Nombres = "Juan Elias",
+                            Email = "juanelias@admin.com",
+                            FechaCreacion = DateTime.Now
+                        });
+                        MessageBox.Show("Al no existir usuario se ha creado uno." + Environment.NewLine + "Usuario = admin" + Environment.NewLine + "Clave = admin", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
                 }
             }      
         }

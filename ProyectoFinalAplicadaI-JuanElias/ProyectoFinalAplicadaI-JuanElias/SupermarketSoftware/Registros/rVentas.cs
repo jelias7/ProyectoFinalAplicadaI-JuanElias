@@ -74,7 +74,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             decimal total = 0;
             foreach (var item in Detalle)
             {
-                total += Convert.ToDecimal(ITBIStextBox.Text + ITBIStextBox.Text);
+                total += (item.Precio*item.Cantidad) + item.Impuesto;
             }
             TotaltextBox.Text = total.ToString();
         }
@@ -115,6 +115,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             SubtotaltextBox.Text = v.Subtotal.ToString();
             TotaltextBox.Text = v.Total.ToString();
             ModocomboBox.Text = v.Modo;
+           //DisponiblestextBox.Visible = false;
             this.Detalle = v.Detalle;
             CargarGrid();
         }
@@ -160,6 +161,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
         private bool Validar()
         {
             bool paso = true;
+            Productos p = ProductocomboBox.SelectedItem as Productos;
             MyErrorProvider.Clear();
             if (string.IsNullOrWhiteSpace(ClientecomboBox.Text))
             {
@@ -176,14 +178,14 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                 MyErrorProvider.SetError(ModocomboBox, "No puede ser vacio.");
                 paso = false;
             }
-            if (FechadateTimePicker.Value != DateTime.Now)
-            {
-                MyErrorProvider.SetError(FechadateTimePicker, "No puede ser diferente.");
-                paso = false;
-            }
             if (Detalle.Count == 0)
             {
                 MessageBox.Show("El grid esta vacio.", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                paso = false;
+            }
+            if(CantidadnumericUpDown.Value >= p.Cantidad)
+            {
+                MyErrorProvider.SetError(DisponiblestextBox, "No quedan Productos.");
                 paso = false;
             }
             return paso;
@@ -191,16 +193,18 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             private void Guardarbutton_Click(object sender, EventArgs e)
             {
             RepositorioBase<Ventas> Repositorio = new RepositorioBase<Ventas>();
-            Ventas p = new Ventas();
+            Ventas v = new Ventas();
             bool paso = false;
-            p = LlenaClase();
+
 
             if (!Validar())
                 return;
 
+            v = LlenaClase();
+
             if (IDnumericUpDown.Value == 0)
             {
-                paso = Repositorio.Guardar(p);
+                paso = Repositorio.Guardar(v);
             }
             else
             {
@@ -209,7 +213,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                     MessageBox.Show("No se puede guardar.", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                paso = Repositorio.Modificar(p);
+                paso = Repositorio.Modificar(v);
             }
 
             if (paso)
@@ -254,7 +258,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
         {
             Productos p = ProductocomboBox.SelectedItem as Productos;
             PreciotextBox.Text = Convert.ToString(p.Precio);
-            DisponiblestextBox.Text = Convert.ToString(CantidadnumericUpDown.Value - p.Cantidad);
+            DisponiblestextBox.Text = Convert.ToString(p.Cantidad - CantidadnumericUpDown.Value);
         }
 
         private void Addbutton_Click(object sender, EventArgs e)
@@ -277,12 +281,13 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                 Producto = ProductocomboBox.Text,
                 Cantidad = (int)CantidadnumericUpDown.Value,
                 Precio = Convert.ToDecimal(PreciotextBox.Text),
-                Impuesto = p.ITBIS
+                Impuesto = p.ITBIS * CantidadnumericUpDown.Value
             });
             CargarGrid();
             CalcularItbis();
             CalcularSubtotal();
             CalcularTotal();
+            p.Cantidad -= (int)CantidadnumericUpDown.Value;
         }
 
         private void Removerbutton_Click(object sender, EventArgs e)
