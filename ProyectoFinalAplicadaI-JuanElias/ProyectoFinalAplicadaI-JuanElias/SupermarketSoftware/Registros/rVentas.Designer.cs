@@ -34,7 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.ProductocomboBox = new System.Windows.Forms.ComboBox();
             this.Productobutton = new System.Windows.Forms.Button();
-            this.ModocheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.PreciotextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -58,6 +57,8 @@
             this.ClientecomboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ModocomboBox = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).BeginInit();
@@ -97,6 +98,7 @@
             this.ProductocomboBox.Name = "ProductocomboBox";
             this.ProductocomboBox.Size = new System.Drawing.Size(121, 21);
             this.ProductocomboBox.TabIndex = 3;
+            this.ProductocomboBox.SelectedIndexChanged += new System.EventHandler(this.ProductocomboBox_SelectedIndexChanged);
             // 
             // Productobutton
             // 
@@ -112,21 +114,9 @@
             this.Productobutton.UseVisualStyleBackColor = false;
             this.Productobutton.Click += new System.EventHandler(this.Productobutton_Click);
             // 
-            // ModocheckedListBox
-            // 
-            this.ModocheckedListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ModocheckedListBox.FormattingEnabled = true;
-            this.ModocheckedListBox.Items.AddRange(new object[] {
-            "Credito",
-            "Contado"});
-            this.ModocheckedListBox.Location = new System.Drawing.Point(242, 12);
-            this.ModocheckedListBox.Name = "ModocheckedListBox";
-            this.ModocheckedListBox.Size = new System.Drawing.Size(75, 30);
-            this.ModocheckedListBox.TabIndex = 5;
-            // 
             // PreciotextBox
             // 
-            this.PreciotextBox.Location = new System.Drawing.Point(101, 138);
+            this.PreciotextBox.Location = new System.Drawing.Point(101, 169);
             this.PreciotextBox.Name = "PreciotextBox";
             this.PreciotextBox.ReadOnly = true;
             this.PreciotextBox.Size = new System.Drawing.Size(121, 20);
@@ -135,7 +125,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(25, 138);
+            this.label4.Location = new System.Drawing.Point(25, 169);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 10;
@@ -144,7 +134,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(25, 175);
+            this.label5.Location = new System.Drawing.Point(25, 206);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 12;
@@ -152,7 +142,7 @@
             // 
             // DisponiblestextBox
             // 
-            this.DisponiblestextBox.Location = new System.Drawing.Point(240, 175);
+            this.DisponiblestextBox.Location = new System.Drawing.Point(240, 206);
             this.DisponiblestextBox.Name = "DisponiblestextBox";
             this.DisponiblestextBox.ReadOnly = true;
             this.DisponiblestextBox.Size = new System.Drawing.Size(62, 20);
@@ -160,7 +150,7 @@
             // 
             // CantidadnumericUpDown
             // 
-            this.CantidadnumericUpDown.Location = new System.Drawing.Point(101, 174);
+            this.CantidadnumericUpDown.Location = new System.Drawing.Point(101, 205);
             this.CantidadnumericUpDown.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -184,7 +174,7 @@
             // 
             this.FechadateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechadateTimePicker.Location = new System.Drawing.Point(374, 14);
+            this.FechadateTimePicker.Location = new System.Drawing.Point(374, 18);
             this.FechadateTimePicker.Name = "FechadateTimePicker";
             this.FechadateTimePicker.Size = new System.Drawing.Size(96, 20);
             this.FechadateTimePicker.TabIndex = 14;
@@ -196,7 +186,7 @@
             this.DetalledataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DetalledataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.DetalledataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DetalledataGridView.Location = new System.Drawing.Point(28, 213);
+            this.DetalledataGridView.Location = new System.Drawing.Point(28, 244);
             this.DetalledataGridView.Name = "DetalledataGridView";
             this.DetalledataGridView.ReadOnly = true;
             this.DetalledataGridView.Size = new System.Drawing.Size(442, 205);
@@ -215,7 +205,7 @@
             // Nuevobutton
             // 
             this.Nuevobutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.controller_78338;
-            this.Nuevobutton.Location = new System.Drawing.Point(28, 517);
+            this.Nuevobutton.Location = new System.Drawing.Point(28, 548);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(61, 65);
             this.Nuevobutton.TabIndex = 24;
@@ -225,7 +215,7 @@
             // Eliminarbutton
             // 
             this.Eliminarbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.garbage_78344;
-            this.Eliminarbutton.Location = new System.Drawing.Point(409, 517);
+            this.Eliminarbutton.Location = new System.Drawing.Point(409, 548);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(61, 65);
             this.Eliminarbutton.TabIndex = 23;
@@ -235,7 +225,7 @@
             // Guardarbutton
             // 
             this.Guardarbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.save_78348;
-            this.Guardarbutton.Location = new System.Drawing.Point(217, 517);
+            this.Guardarbutton.Location = new System.Drawing.Point(217, 548);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(61, 65);
             this.Guardarbutton.TabIndex = 22;
@@ -248,12 +238,13 @@
             this.Removerbutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Removerbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Removerbutton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Removerbutton.Location = new System.Drawing.Point(28, 424);
+            this.Removerbutton.Location = new System.Drawing.Point(28, 455);
             this.Removerbutton.Name = "Removerbutton";
             this.Removerbutton.Size = new System.Drawing.Size(132, 32);
             this.Removerbutton.TabIndex = 25;
             this.Removerbutton.Text = "- REMOVER FILA";
             this.Removerbutton.UseVisualStyleBackColor = false;
+            this.Removerbutton.Click += new System.EventHandler(this.Removerbutton_Click);
             // 
             // Addbutton
             // 
@@ -261,17 +252,18 @@
             this.Addbutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Addbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Addbutton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Addbutton.Location = new System.Drawing.Point(338, 175);
+            this.Addbutton.Location = new System.Drawing.Point(338, 206);
             this.Addbutton.Name = "Addbutton";
             this.Addbutton.Size = new System.Drawing.Size(132, 32);
             this.Addbutton.TabIndex = 26;
             this.Addbutton.Text = "+ AGREGAR";
             this.Addbutton.UseVisualStyleBackColor = false;
+            this.Addbutton.Click += new System.EventHandler(this.Addbutton_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(299, 424);
+            this.label6.Location = new System.Drawing.Point(299, 455);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(34, 13);
             this.label6.TabIndex = 27;
@@ -280,7 +272,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(299, 453);
+            this.label7.Location = new System.Drawing.Point(299, 484);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 13);
             this.label7.TabIndex = 28;
@@ -289,7 +281,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(299, 482);
+            this.label8.Location = new System.Drawing.Point(299, 513);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(42, 13);
             this.label8.TabIndex = 29;
@@ -297,7 +289,7 @@
             // 
             // ITBIStextBox
             // 
-            this.ITBIStextBox.Location = new System.Drawing.Point(374, 425);
+            this.ITBIStextBox.Location = new System.Drawing.Point(374, 456);
             this.ITBIStextBox.Name = "ITBIStextBox";
             this.ITBIStextBox.ReadOnly = true;
             this.ITBIStextBox.Size = new System.Drawing.Size(96, 20);
@@ -305,7 +297,7 @@
             // 
             // SubtotaltextBox
             // 
-            this.SubtotaltextBox.Location = new System.Drawing.Point(374, 453);
+            this.SubtotaltextBox.Location = new System.Drawing.Point(374, 484);
             this.SubtotaltextBox.Name = "SubtotaltextBox";
             this.SubtotaltextBox.ReadOnly = true;
             this.SubtotaltextBox.Size = new System.Drawing.Size(96, 20);
@@ -313,7 +305,7 @@
             // 
             // TotaltextBox
             // 
-            this.TotaltextBox.Location = new System.Drawing.Point(374, 482);
+            this.TotaltextBox.Location = new System.Drawing.Point(374, 513);
             this.TotaltextBox.Name = "TotaltextBox";
             this.TotaltextBox.ReadOnly = true;
             this.TotaltextBox.Size = new System.Drawing.Size(96, 20);
@@ -355,12 +347,35 @@
             // 
             this.MyErrorProvider.ContainerControl = this;
             // 
+            // ModocomboBox
+            // 
+            this.ModocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ModocomboBox.FormattingEnabled = true;
+            this.ModocomboBox.Items.AddRange(new object[] {
+            "Credito",
+            "Contado"});
+            this.ModocomboBox.Location = new System.Drawing.Point(101, 134);
+            this.ModocomboBox.Name = "ModocomboBox";
+            this.ModocomboBox.Size = new System.Drawing.Size(121, 21);
+            this.ModocomboBox.TabIndex = 37;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(25, 134);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(32, 13);
+            this.label9.TabIndex = 36;
+            this.label9.Text = "Pago";
+            // 
             // rVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(497, 592);
+            this.ClientSize = new System.Drawing.Size(497, 625);
+            this.Controls.Add(this.ModocomboBox);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.Clientebutton);
             this.Controls.Add(this.ClientecomboBox);
             this.Controls.Add(this.label3);
@@ -383,7 +398,6 @@
             this.Controls.Add(this.DisponiblestextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.PreciotextBox);
-            this.Controls.Add(this.ModocheckedListBox);
             this.Controls.Add(this.Productobutton);
             this.Controls.Add(this.ProductocomboBox);
             this.Controls.Add(this.label2);
@@ -410,7 +424,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox ProductocomboBox;
         private System.Windows.Forms.Button Productobutton;
-        private System.Windows.Forms.CheckedListBox ModocheckedListBox;
         private System.Windows.Forms.TextBox PreciotextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -434,5 +447,7 @@
         private System.Windows.Forms.ComboBox ClientecomboBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
+        private System.Windows.Forms.ComboBox ModocomboBox;
+        private System.Windows.Forms.Label label9;
     }
 }

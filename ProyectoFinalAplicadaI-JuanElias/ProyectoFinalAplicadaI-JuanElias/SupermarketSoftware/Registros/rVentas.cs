@@ -15,6 +15,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
     public partial class rVentas : Form
     {
         public List<VentasDetalle> Detalle { get; set; }
+
         public rVentas()
         {
             InitializeComponent();
@@ -58,6 +59,35 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             DetalledataGridView.DataSource = null;
             DetalledataGridView.DataSource = Detalle;
         }
+        public void CalcularItbis()
+        {
+            decimal itbis = 0;
+            foreach (var item in Detalle)
+            {
+                itbis += item.Impuesto;
+            }
+            ITBIStextBox.Text = itbis.ToString();
+        }
+
+        public void CalcularTotal()
+        {
+            decimal total = 0;
+            foreach (var item in Detalle)
+            {
+                total += Convert.ToDecimal(ITBIStextBox.Text + ITBIStextBox.Text);
+            }
+            TotaltextBox.Text = total.ToString();
+        }
+
+        public void CalcularSubtotal()
+        {
+            decimal subtotal = 0;
+            foreach (var item in Detalle)
+            {
+                subtotal += item.Precio * item.Cantidad;
+            }
+            SubtotaltextBox.Text = subtotal.ToString();
+        }
         private void Limpiar()
         {
             IDnumericUpDown.Value = 0;
@@ -70,7 +100,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             ITBIStextBox.Text = string.Empty;
             SubtotaltextBox.Text = string.Empty;
             TotaltextBox.Text = string.Empty;
-            ModocheckedListBox.Refresh();
+            ModocomboBox.Text = string.Empty;
             this.Detalle = new List<VentasDetalle>();
             MyErrorProvider.Clear();
             CargarGrid();
@@ -84,7 +114,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             ITBIStextBox.Text = v.Itbis.ToString();
             SubtotaltextBox.Text = v.Subtotal.ToString();
             TotaltextBox.Text = v.Total.ToString();
-            ModocheckedListBox.ToString();
+            ModocomboBox.Text = v.Modo;
             this.Detalle = v.Detalle;
             CargarGrid();
         }
@@ -115,6 +145,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             v.Cliente = ClientecomboBox.Text;
             v.Cantidad = Convert.ToInt32(CantidadnumericUpDown.Value);
             v.Fecha = FechadateTimePicker.Value;
+            v.Modo = ModocomboBox.Text;
             v.Itbis = Convert.ToDecimal(ITBIStextBox.Text);
             v.Subtotal = Convert.ToDecimal(SubtotaltextBox.Text);
             v.Total = Convert.ToDecimal(TotaltextBox.Text);
@@ -140,15 +171,25 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                 MyErrorProvider.SetError(ProductocomboBox, "No puede ser vacio.");
                 paso = false;
             }
+            if (string.IsNullOrWhiteSpace(ModocomboBox.Text))
+            {
+                MyErrorProvider.SetError(ModocomboBox, "No puede ser vacio.");
+                paso = false;
+            }
             if (FechadateTimePicker.Value != DateTime.Now)
             {
                 MyErrorProvider.SetError(FechadateTimePicker, "No puede ser diferente.");
                 paso = false;
             }
+            if (Detalle.Count == 0)
+            {
+                MessageBox.Show("El grid esta vacio.", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                paso = false;
+            }
             return paso;
         }
             private void Guardarbutton_Click(object sender, EventArgs e)
-        {
+            {
             RepositorioBase<Ventas> Repositorio = new RepositorioBase<Ventas>();
             Ventas p = new Ventas();
             bool paso = false;
@@ -176,7 +217,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             else
                 MessageBox.Show("No fue posible guardar", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Error);
             Limpiar();
-        }
+            }
         private bool ValidarEliminar()
         {
             bool paso = true;
@@ -207,6 +248,50 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                 MessageBox.Show("Eliminado");
             else
                 MyErrorProvider.SetError(IDnumericUpDown, "No existe.");
+        }
+
+        private void ProductocomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Productos p = ProductocomboBox.SelectedItem as Productos;
+            PreciotextBox.Text = Convert.ToString(p.Precio);
+            DisponiblestextBox.Text = Convert.ToString(CantidadnumericUpDown.Value - p.Cantidad);
+        }
+
+        private void Addbutton_Click(object sender, EventArgs e)
+        {
+            Productos p = ProductocomboBox.SelectedItem as Productos;
+
+            if (ProductocomboBox.Text == string.Empty)
+            {
+                MessageBox.Show("No hay producto seleccionado.");
+                return;
+            }
+
+            if (DetalledataGridView.DataSource != null)
+                this.Detalle = (List<VentasDetalle>)DetalledataGridView.DataSource;
+
+            this.Detalle.Add(new VentasDetalle()
+            {
+
+                VentaDetalleId = (int)IDnumericUpDown.Value,
+                Producto = ProductocomboBox.Text,
+                Cantidad = (int)CantidadnumericUpDown.Value,
+                Precio = Convert.ToDecimal(PreciotextBox.Text),
+                Impuesto = p.ITBIS
+            });
+            CargarGrid();
+            CalcularItbis();
+            CalcularSubtotal();
+            CalcularTotal();
+        }
+
+        private void Removerbutton_Click(object sender, EventArgs e)
+        {
+            if (DetalledataGridView.Rows.Count > 0 && DetalledataGridView.CurrentRow != null)
+            {
+                Detalle.RemoveAt(DetalledataGridView.CurrentRow.Index);
+                CargarGrid();
+            }
         }
     }
 }

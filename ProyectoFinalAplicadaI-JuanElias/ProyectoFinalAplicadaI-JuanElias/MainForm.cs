@@ -68,5 +68,11 @@ namespace ProyectoFinalAplicadaI_JuanElias
         {
             MetroMessageBox.Show(this, "Sistema creado por Juan Elias Rosario Mena." + Environment.NewLine + "Ingenieria en Sistemas y Computacion." + Environment.NewLine + "Universidad Catolica Nordestana", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rVentas rVentas = new rVentas();
+            rVentas.Show();
+        }
     }
 }
