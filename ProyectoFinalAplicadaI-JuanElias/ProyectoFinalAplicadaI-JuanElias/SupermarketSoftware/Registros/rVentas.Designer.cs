@@ -28,15 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ProductocomboBox = new System.Windows.Forms.ComboBox();
             this.Productobutton = new System.Windows.Forms.Button();
             this.ModocheckedListBox = new System.Windows.Forms.CheckedListBox();
-            this.ClientecomboBox = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.Clientebutton = new System.Windows.Forms.Button();
             this.PreciotextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -56,9 +54,14 @@
             this.ITBIStextBox = new System.Windows.Forms.TextBox();
             this.SubtotaltextBox = new System.Windows.Forms.TextBox();
             this.TotaltextBox = new System.Windows.Forms.TextBox();
+            this.Clientebutton = new System.Windows.Forms.Button();
+            this.ClientecomboBox = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // IDnumericUpDown
@@ -80,7 +83,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 58);
+            this.label2.Location = new System.Drawing.Point(25, 99);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 2;
@@ -90,7 +93,7 @@
             // 
             this.ProductocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ProductocomboBox.FormattingEnabled = true;
-            this.ProductocomboBox.Location = new System.Drawing.Point(101, 58);
+            this.ProductocomboBox.Location = new System.Drawing.Point(101, 99);
             this.ProductocomboBox.Name = "ProductocomboBox";
             this.ProductocomboBox.Size = new System.Drawing.Size(121, 21);
             this.ProductocomboBox.TabIndex = 3;
@@ -101,12 +104,13 @@
             this.Productobutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Productobutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Productobutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Productobutton.Location = new System.Drawing.Point(240, 58);
+            this.Productobutton.Location = new System.Drawing.Point(240, 99);
             this.Productobutton.Name = "Productobutton";
             this.Productobutton.Size = new System.Drawing.Size(62, 23);
             this.Productobutton.TabIndex = 4;
             this.Productobutton.Text = "+";
             this.Productobutton.UseVisualStyleBackColor = false;
+            this.Productobutton.Click += new System.EventHandler(this.Productobutton_Click);
             // 
             // ModocheckedListBox
             // 
@@ -119,37 +123,6 @@
             this.ModocheckedListBox.Name = "ModocheckedListBox";
             this.ModocheckedListBox.Size = new System.Drawing.Size(75, 30);
             this.ModocheckedListBox.TabIndex = 5;
-            // 
-            // ClientecomboBox
-            // 
-            this.ClientecomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ClientecomboBox.FormattingEnabled = true;
-            this.ClientecomboBox.Location = new System.Drawing.Point(101, 100);
-            this.ClientecomboBox.Name = "ClientecomboBox";
-            this.ClientecomboBox.Size = new System.Drawing.Size(121, 21);
-            this.ClientecomboBox.TabIndex = 7;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 100);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Cliente";
-            // 
-            // Clientebutton
-            // 
-            this.Clientebutton.BackColor = System.Drawing.Color.Teal;
-            this.Clientebutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Clientebutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Clientebutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Clientebutton.Location = new System.Drawing.Point(240, 100);
-            this.Clientebutton.Name = "Clientebutton";
-            this.Clientebutton.Size = new System.Drawing.Size(62, 23);
-            this.Clientebutton.TabIndex = 8;
-            this.Clientebutton.Text = "+";
-            this.Clientebutton.UseVisualStyleBackColor = false;
             // 
             // PreciotextBox
             // 
@@ -220,6 +193,8 @@
             // 
             this.DetalledataGridView.AllowUserToAddRows = false;
             this.DetalledataGridView.AllowUserToDeleteRows = false;
+            this.DetalledataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DetalledataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.DetalledataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DetalledataGridView.Location = new System.Drawing.Point(28, 213);
             this.DetalledataGridView.Name = "DetalledataGridView";
@@ -235,6 +210,7 @@
             this.Buscarbutton.Size = new System.Drawing.Size(45, 40);
             this.Buscarbutton.TabIndex = 21;
             this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // Nuevobutton
             // 
@@ -244,6 +220,7 @@
             this.Nuevobutton.Size = new System.Drawing.Size(61, 65);
             this.Nuevobutton.TabIndex = 24;
             this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // Eliminarbutton
             // 
@@ -253,6 +230,7 @@
             this.Eliminarbutton.Size = new System.Drawing.Size(61, 65);
             this.Eliminarbutton.TabIndex = 23;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Guardarbutton
             // 
@@ -262,6 +240,7 @@
             this.Guardarbutton.Size = new System.Drawing.Size(61, 65);
             this.Guardarbutton.TabIndex = 22;
             this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Removerbutton
             // 
@@ -340,12 +319,51 @@
             this.TotaltextBox.Size = new System.Drawing.Size(96, 20);
             this.TotaltextBox.TabIndex = 32;
             // 
+            // Clientebutton
+            // 
+            this.Clientebutton.BackColor = System.Drawing.Color.Teal;
+            this.Clientebutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Clientebutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Clientebutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Clientebutton.Location = new System.Drawing.Point(240, 60);
+            this.Clientebutton.Name = "Clientebutton";
+            this.Clientebutton.Size = new System.Drawing.Size(62, 23);
+            this.Clientebutton.TabIndex = 35;
+            this.Clientebutton.Text = "+";
+            this.Clientebutton.UseVisualStyleBackColor = false;
+            this.Clientebutton.Click += new System.EventHandler(this.Clientebutton_Click);
+            // 
+            // ClientecomboBox
+            // 
+            this.ClientecomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ClientecomboBox.FormattingEnabled = true;
+            this.ClientecomboBox.Location = new System.Drawing.Point(101, 60);
+            this.ClientecomboBox.Name = "ClientecomboBox";
+            this.ClientecomboBox.Size = new System.Drawing.Size(121, 21);
+            this.ClientecomboBox.TabIndex = 34;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(25, 60);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 13);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "Cliente";
+            // 
+            // MyErrorProvider
+            // 
+            this.MyErrorProvider.ContainerControl = this;
+            // 
             // rVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(492, 592);
+            this.ClientSize = new System.Drawing.Size(497, 592);
+            this.Controls.Add(this.Clientebutton);
+            this.Controls.Add(this.ClientecomboBox);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.TotaltextBox);
             this.Controls.Add(this.SubtotaltextBox);
             this.Controls.Add(this.ITBIStextBox);
@@ -365,9 +383,6 @@
             this.Controls.Add(this.DisponiblestextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.PreciotextBox);
-            this.Controls.Add(this.Clientebutton);
-            this.Controls.Add(this.ClientecomboBox);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.ModocheckedListBox);
             this.Controls.Add(this.Productobutton);
             this.Controls.Add(this.ProductocomboBox);
@@ -382,6 +397,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -395,9 +411,6 @@
         private System.Windows.Forms.ComboBox ProductocomboBox;
         private System.Windows.Forms.Button Productobutton;
         private System.Windows.Forms.CheckedListBox ModocheckedListBox;
-        private System.Windows.Forms.ComboBox ClientecomboBox;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button Clientebutton;
         private System.Windows.Forms.TextBox PreciotextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -417,5 +430,9 @@
         private System.Windows.Forms.TextBox ITBIStextBox;
         private System.Windows.Forms.TextBox SubtotaltextBox;
         private System.Windows.Forms.TextBox TotaltextBox;
+        private System.Windows.Forms.Button Clientebutton;
+        private System.Windows.Forms.ComboBox ClientecomboBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ErrorProvider MyErrorProvider;
     }
 }
