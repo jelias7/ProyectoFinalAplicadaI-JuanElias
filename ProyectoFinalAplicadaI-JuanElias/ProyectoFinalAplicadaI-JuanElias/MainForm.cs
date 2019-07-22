@@ -102,5 +102,23 @@ namespace ProyectoFinalAplicadaI_JuanElias
             cProveedores cProveedores = new cProveedores();
             cProveedores.Show();
         }
+
+        private void ClientesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cClientes cClientes = new cClientes();
+            cClientes.Show();
+        }
+
+        private void InventarioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cInventarios cInventarios = new cInventarios();
+            cInventarios.Show();
+        }
+
+        private void ProductosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cProductos cProductos = new cProductos();
+            cProductos.Show();
+        }
     }
 }
