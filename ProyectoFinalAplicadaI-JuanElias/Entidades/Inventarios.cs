@@ -15,7 +15,7 @@ namespace Entidades
         public int InventarioId { get; set; }
         public string Producto { get; set; }
         public DateTime Fecha { get; set; }
-       // [ForeignKey("Usuarios")]
+        [Browsable(false)]
         public int UsuarioId { get; set; }
         public Inventarios()
         {

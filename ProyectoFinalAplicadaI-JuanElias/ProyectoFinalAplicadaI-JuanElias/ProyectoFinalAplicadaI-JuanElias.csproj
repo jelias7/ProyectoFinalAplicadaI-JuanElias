@@ -123,6 +123,12 @@
     <Compile Include="SupermarketSoftware\Consultas\cUsuarios.Designer.cs">
       <DependentUpon>cUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="SupermarketSoftware\Consultas\cVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupermarketSoftware\Consultas\cVentas.Designer.cs">
+      <DependentUpon>cVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="SupermarketSoftware\Registros\rClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SupermarketSoftware\Consultas\cUsuarios.resx">
       <DependentUpon>cUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupermarketSoftware\Consultas\cVentas.resx">
+      <DependentUpon>cVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SupermarketSoftware\Registros\rClientes.resx">
       <DependentUpon>rClientes.cs</DependentUpon>
@@ -299,6 +308,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\e5eb7412528dbbf122484c4772dfa277dac23b99.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_icon-icons.com_66546.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

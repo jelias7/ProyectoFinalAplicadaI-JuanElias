@@ -120,5 +120,11 @@ namespace ProyectoFinalAplicadaI_JuanElias
             cProductos cProductos = new cProductos();
             cProductos.Show();
         }
+
+        private void ConsultarVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cVentas cVentas = new cVentas();
+            cVentas.Show();
+        }
     }
 }

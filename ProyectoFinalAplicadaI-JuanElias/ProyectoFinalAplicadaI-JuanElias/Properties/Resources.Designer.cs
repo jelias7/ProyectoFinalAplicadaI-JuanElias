@@ -169,5 +169,15 @@ namespace ProyectoFinalAplicadaI_JuanElias.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_icon_icons_com_66546 {
+            get {
+                object obj = ResourceManager.GetObject("user_icon-icons.com_66546", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

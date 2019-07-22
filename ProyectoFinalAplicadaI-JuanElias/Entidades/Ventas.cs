@@ -12,12 +12,13 @@ namespace Entidades
     {
         [Key]
         public int VentaId { get; set; }
-        public string Modo { get; set; }
         public string Cliente { get; set; }
+        public string Modo { get; set; }
         public decimal Itbis { get; set; }
         public decimal Subtotal { get; set; }
         public decimal Total { get; set; }
         public DateTime Fecha { get; set; }
+        [Browsable(false)]
         public int Cantidad { get; set; }
         [Browsable(false)]
         public int UsuarioId { get; set; }
@@ -26,8 +27,8 @@ namespace Entidades
         {
             VentaId = 0;
             UsuarioId = 0;
-            Modo = string.Empty;
             Cliente = string.Empty;
+            Modo = string.Empty;
             Itbis = 0;
             Subtotal = 0;
             Total = 0;

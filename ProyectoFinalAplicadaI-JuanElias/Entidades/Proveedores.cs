@@ -19,6 +19,7 @@ namespace Entidades
         public string Email { get; set; }
         public string Telefono { get; set; }
         public DateTime Fecha { get; set; }
+        [Browsable(false)]
         public int UsuarioId { get; set; }
 
         public Proveedores()
@@ -28,8 +29,8 @@ namespace Entidades
             Contacto = string.Empty;
             Direccion = string.Empty;
             Email = string.Empty;
-            Fecha = DateTime.Now;
             Telefono = string.Empty;
+            Fecha = DateTime.Now;
             UsuarioId = 0;
         }
     }

@@ -15,6 +15,7 @@ namespace Entidades
         public int SeccionId { get; set; }
         public string Nombre { get; set; }
         public DateTime Fecha { get; set; }
+        [Browsable(false)]
         public int UsuarioId { get; set; }
         public Secciones()
         {

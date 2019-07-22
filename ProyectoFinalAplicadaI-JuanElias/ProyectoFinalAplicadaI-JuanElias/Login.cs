@@ -75,10 +75,5 @@ namespace ProyectoFinalAplicadaI_JuanElias
         {
             Sesion();
         }
-
-        private void Cancelarbutton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
     }
 }

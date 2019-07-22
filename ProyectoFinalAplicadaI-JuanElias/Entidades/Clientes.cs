@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace Entidades
         public string Telefono { get; set; }
         public string Direccion { get; set; }
         public DateTime Fecha { get; set; }
+        [Browsable(false)]
         public int UsuarioId { get; set; }
         public Clientes()
         {
@@ -24,9 +26,9 @@ namespace Entidades
             UsuarioId = 0;
             Nombres = string.Empty;
             Cedula = string.Empty;
-            Fecha = DateTime.Now;
             Telefono = string.Empty;
             Direccion = string.Empty;
+            Fecha = DateTime.Now;
         }
     }
 }
