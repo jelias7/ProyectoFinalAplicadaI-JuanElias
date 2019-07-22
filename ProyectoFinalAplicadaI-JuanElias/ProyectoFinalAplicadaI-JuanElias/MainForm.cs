@@ -90,5 +90,17 @@ namespace ProyectoFinalAplicadaI_JuanElias
             rProveedores rProveedores = new rProveedores();
             rProveedores.Show();
         }
+
+        private void SeccionesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cSecciones cSecciones = new cSecciones();
+            cSecciones.Show();
+        }
+
+        private void ProveedoresToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cProveedores cProveedores = new cProveedores();
+            cProveedores.Show();
+        }
     }
 }

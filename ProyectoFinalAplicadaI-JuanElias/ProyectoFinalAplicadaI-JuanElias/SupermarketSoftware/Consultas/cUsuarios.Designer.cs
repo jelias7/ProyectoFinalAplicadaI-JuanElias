@@ -38,9 +38,9 @@
             this.CriteriotextBox = new System.Windows.Forms.TextBox();
             this.RangocheckBox = new System.Windows.Forms.CheckBox();
             this.ConsultadataGridView = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Imprimirbutton = new System.Windows.Forms.Button();
             this.Consultarbutton = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +66,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(338, 21);
+            this.label3.Location = new System.Drawing.Point(330, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 2;
@@ -75,7 +75,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(535, 21);
+            this.label4.Location = new System.Drawing.Point(527, 21);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 13);
             this.label4.TabIndex = 3;
@@ -109,14 +109,14 @@
             "Usuario",
             "Nombres",
             "Email"});
-            this.FiltrocomboBox.Location = new System.Drawing.Point(341, 45);
+            this.FiltrocomboBox.Location = new System.Drawing.Point(333, 45);
             this.FiltrocomboBox.Name = "FiltrocomboBox";
             this.FiltrocomboBox.Size = new System.Drawing.Size(175, 21);
             this.FiltrocomboBox.TabIndex = 6;
             // 
             // CriteriotextBox
             // 
-            this.CriteriotextBox.Location = new System.Drawing.Point(538, 46);
+            this.CriteriotextBox.Location = new System.Drawing.Point(530, 46);
             this.CriteriotextBox.Name = "CriteriotextBox";
             this.CriteriotextBox.Size = new System.Drawing.Size(201, 20);
             this.CriteriotextBox.TabIndex = 7;
@@ -139,31 +139,11 @@
             this.ConsultadataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ConsultadataGridView.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.ConsultadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ConsultadataGridView.Location = new System.Drawing.Point(29, 100);
+            this.ConsultadataGridView.Location = new System.Drawing.Point(21, 100);
             this.ConsultadataGridView.Name = "ConsultadataGridView";
             this.ConsultadataGridView.ReadOnly = true;
             this.ConsultadataGridView.Size = new System.Drawing.Size(767, 364);
             this.ConsultadataGridView.TabIndex = 10;
-            // 
-            // Imprimirbutton
-            // 
-            this.Imprimirbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.printer_78349;
-            this.Imprimirbutton.Location = new System.Drawing.Point(732, 473);
-            this.Imprimirbutton.Name = "Imprimirbutton";
-            this.Imprimirbutton.Size = new System.Drawing.Size(64, 64);
-            this.Imprimirbutton.TabIndex = 11;
-            this.Imprimirbutton.UseVisualStyleBackColor = true;
-            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
-            // 
-            // Consultarbutton
-            // 
-            this.Consultarbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.loupe_78347;
-            this.Consultarbutton.Location = new System.Drawing.Point(745, 35);
-            this.Consultarbutton.Name = "Consultarbutton";
-            this.Consultarbutton.Size = new System.Drawing.Size(51, 41);
-            this.Consultarbutton.TabIndex = 8;
-            this.Consultarbutton.UseVisualStyleBackColor = true;
-            this.Consultarbutton.Click += new System.EventHandler(this.Consultarbutton_Click);
             // 
             // groupBox1
             // 
@@ -174,11 +154,31 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(27, 6);
+            this.groupBox1.Location = new System.Drawing.Point(19, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(305, 88);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
+            // 
+            // Imprimirbutton
+            // 
+            this.Imprimirbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.printer_78349;
+            this.Imprimirbutton.Location = new System.Drawing.Point(724, 473);
+            this.Imprimirbutton.Name = "Imprimirbutton";
+            this.Imprimirbutton.Size = new System.Drawing.Size(64, 64);
+            this.Imprimirbutton.TabIndex = 11;
+            this.Imprimirbutton.UseVisualStyleBackColor = true;
+            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
+            // 
+            // Consultarbutton
+            // 
+            this.Consultarbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.loupe_78347;
+            this.Consultarbutton.Location = new System.Drawing.Point(737, 35);
+            this.Consultarbutton.Name = "Consultarbutton";
+            this.Consultarbutton.Size = new System.Drawing.Size(51, 41);
+            this.Consultarbutton.TabIndex = 8;
+            this.Consultarbutton.UseVisualStyleBackColor = true;
+            this.Consultarbutton.Click += new System.EventHandler(this.Consultarbutton_Click);
             // 
             // cUsuarios
             // 
@@ -194,7 +194,10 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "cUsuarios";
+            this.ShowIcon = false;
             this.Text = "Consulta de Usuarios";
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);

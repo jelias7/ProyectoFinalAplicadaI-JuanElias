@@ -40,12 +40,12 @@
             this.CedulamaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.TlfmaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.DirecciontextBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Buscarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
-            this.Buscarbutton = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -136,6 +136,34 @@
             this.DirecciontextBox.Size = new System.Drawing.Size(215, 20);
             this.DirecciontextBox.TabIndex = 9;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(26, 255);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 13);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Fecha";
+            // 
+            // FechadateTimePicker
+            // 
+            this.FechadateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechadateTimePicker.Location = new System.Drawing.Point(118, 255);
+            this.FechadateTimePicker.Name = "FechadateTimePicker";
+            this.FechadateTimePicker.Size = new System.Drawing.Size(98, 20);
+            this.FechadateTimePicker.TabIndex = 22;
+            // 
+            // Buscarbutton
+            // 
+            this.Buscarbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.loupe_78347;
+            this.Buscarbutton.Location = new System.Drawing.Point(235, 16);
+            this.Buscarbutton.Name = "Buscarbutton";
+            this.Buscarbutton.Size = new System.Drawing.Size(45, 40);
+            this.Buscarbutton.TabIndex = 20;
+            this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
+            // 
             // Nuevobutton
             // 
             this.Nuevobutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.controller_78338;
@@ -164,34 +192,6 @@
             this.Guardarbutton.TabIndex = 17;
             this.Guardarbutton.UseVisualStyleBackColor = true;
             this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
-            // 
-            // Buscarbutton
-            // 
-            this.Buscarbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.loupe_78347;
-            this.Buscarbutton.Location = new System.Drawing.Point(235, 16);
-            this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(45, 40);
-            this.Buscarbutton.TabIndex = 20;
-            this.Buscarbutton.UseVisualStyleBackColor = true;
-            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(29, 255);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 13);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "Fecha";
-            // 
-            // FechadateTimePicker
-            // 
-            this.FechadateTimePicker.CustomFormat = "dd/MM/yyyy";
-            this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechadateTimePicker.Location = new System.Drawing.Point(118, 255);
-            this.FechadateTimePicker.Name = "FechadateTimePicker";
-            this.FechadateTimePicker.Size = new System.Drawing.Size(98, 20);
-            this.FechadateTimePicker.TabIndex = 22;
             // 
             // rClientes
             // 

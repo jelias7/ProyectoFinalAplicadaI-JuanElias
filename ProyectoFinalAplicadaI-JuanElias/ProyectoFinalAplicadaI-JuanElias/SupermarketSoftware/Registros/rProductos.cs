@@ -113,7 +113,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             p.Ganancia = Convert.ToDecimal(GananciatextBox.Text);
             p.ITBIS = Convert.ToDecimal(ItbistextBox.Text);
             p.Vencimiento = FechadateTimePicker.Value;
-
+            
             return p;
         }
         private void Buscarbutton_Click(object sender, EventArgs e)
