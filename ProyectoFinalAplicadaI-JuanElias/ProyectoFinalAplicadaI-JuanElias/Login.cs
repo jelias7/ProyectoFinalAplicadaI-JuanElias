@@ -39,8 +39,9 @@ namespace ProyectoFinalAplicadaI_JuanElias
                 {
                     if (usuario.Exists(x => x.Clave.Equals(Eramake.eCryptography.Encrypt(password))))
                     {
-  
-                        MainForm f = new MainForm();
+
+                        List<Usuarios> id = Repositorio.GetList(U => U.Usuario == UsuariotextBox.Text);
+                        MainForm f = new MainForm(id[0].UsuarioId);
                         f.Show();
                         this.Hide();
                     }

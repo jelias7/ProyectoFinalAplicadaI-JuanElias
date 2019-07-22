@@ -15,8 +15,10 @@ namespace ProyectoFinalAplicadaI_JuanElias
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        public int id { get; set; }
+        public MainForm(int id)
         {
+            this.id = id;
             InitializeComponent();
         }
 

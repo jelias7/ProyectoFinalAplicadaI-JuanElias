@@ -15,12 +15,13 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
     public partial class rVentas : Form
     {
         public List<VentasDetalle> Detalle;
-
-        public rVentas()
+        private int id;
+        public rVentas(int id)
         {
             InitializeComponent();
             Cliente();
             Producto();
+            this.id = id;
             Detalle = new List<VentasDetalle>();
         }
         private void Cliente()
@@ -45,13 +46,13 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
         }
         private void Clientebutton_Click(object sender, EventArgs e)
         {
-            rClientes rClientes = new rClientes();
+            rClientes rClientes = new rClientes(id);
             rClientes.Show();
         }
 
         private void Productobutton_Click(object sender, EventArgs e)
         {
-            rProductos rProductos = new rProductos();
+            rProductos rProductos = new rProductos(id);
             rProductos.Show();
         }
         private void CargarGrid()
@@ -149,6 +150,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             v.Itbis = Convert.ToDecimal(ITBIStextBox.Text);
             v.Subtotal = Convert.ToDecimal(SubtotaltextBox.Text);
             v.Total = Convert.ToDecimal(TotaltextBox.Text);
+            v.UsuarioId = id;
             return v;
         }
         private bool ExisteEnLaBaseDeDatos()

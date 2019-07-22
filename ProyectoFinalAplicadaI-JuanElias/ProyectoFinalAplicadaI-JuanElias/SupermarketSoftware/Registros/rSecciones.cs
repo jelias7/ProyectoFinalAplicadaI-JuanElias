@@ -15,8 +15,10 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
 {
     public partial class rSecciones : Form
     {
-        public rSecciones()
+        private int id;
+        public rSecciones(int id)
         {
+            this.id = id;
             InitializeComponent();
         }
         private void Limpiar()
@@ -34,6 +36,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             s.SeccionId = Convert.ToInt32(IDnumericUpDown.Value);
             s.Nombre = NombretextBox.Text;
             s.Fecha = FechadateTimePicker.Value;
+            s.UsuarioId = id;
             return s;
         }
 

@@ -15,8 +15,10 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
 {
     public partial class rInventarios : Form
     {
-        public rInventarios()
+        private int id;
+        public rInventarios(int id)
         {
+            this.id = id;
             InitializeComponent();
         }
         private void Limpiar()
@@ -34,6 +36,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             i.InventarioId = Convert.ToInt32(IDnumericUpDown.Value);
             i.Producto = ProductotextBox.Text;
             i.Fecha = FechadateTimePicker.Value;
+            i.UsuarioId = id;
             return i;
         }
 

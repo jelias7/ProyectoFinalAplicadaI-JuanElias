@@ -15,8 +15,10 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
 {
     public partial class rProveedores : Form
     {
-        public rProveedores()
+        private int id;
+        public rProveedores(int id)
         {
+            this.id = id;
             InitializeComponent();
         }
         private void Limpiar()
@@ -42,6 +44,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             p.Telefono = TlfmaskedTextBox.Text;
             p.Direccion = DirecciontextBox.Text;
             p.Fecha = FechadateTimePicker.Value;
+            p.UsuarioId = id;
             return p;
         }
 

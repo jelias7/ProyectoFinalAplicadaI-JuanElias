@@ -15,8 +15,10 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
 {
     public partial class rClientes : Form
     {
-        public rClientes()
+        private int id;
+        public rClientes(int id)
         {
+            this.id = id;
             InitializeComponent();
         }
         private void Limpiar()
@@ -65,6 +67,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             c.Telefono = TlfmaskedTextBox.Text;
             c.Direccion = DirecciontextBox.Text;
             c.Fecha = FechadateTimePicker.Value;
+            c.UsuarioId = id;
             return c;
         }
         private bool ExisteEnLaBaseDeDatos()

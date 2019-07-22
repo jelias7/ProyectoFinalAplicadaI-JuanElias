@@ -17,8 +17,10 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
 {
     public partial class rProductos : Form
     {
-        public rProductos()
+        private int id;
+        public rProductos(int id)
         {
+            this.id = id;
             InitializeComponent();
             Producto();
             Proveedor();
@@ -112,7 +114,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             p.Ganancia = Convert.ToDecimal(GananciatextBox.Text);
             p.ITBIS = Convert.ToDecimal(ItbistextBox.Text);
             p.Vencimiento = FechadateTimePicker.Value;
-            
+            p.UsuarioId = id;
             return p;
         }
         private void Buscarbutton_Click(object sender, EventArgs e)
