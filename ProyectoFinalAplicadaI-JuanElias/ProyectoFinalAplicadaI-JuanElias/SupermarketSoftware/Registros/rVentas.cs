@@ -74,7 +74,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             decimal total = 0;
             foreach (var item in Detalle)
             {
-                total += (item.Precio*item.Cantidad) + item.Impuesto;
+                total += (item.Precio * item.Cantidad) + item.Impuesto;
             }
             TotaltextBox.Text = total.ToString();
         }
@@ -184,8 +184,8 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             }
             return paso;
         }
-            private void Guardarbutton_Click(object sender, EventArgs e)
-            {
+        private void Guardarbutton_Click(object sender, EventArgs e)
+        {
             RepositorioBase<Ventas> Repositorio = new RepositorioBase<Ventas>();
             Ventas v = new Ventas();
             bool paso = false;
@@ -215,8 +215,8 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             else
                 MessageBox.Show("No fue posible guardar", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Error);
             Limpiar();
-            }
-        
+        }
+
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
             RepositorioBase<Ventas> Repositorio = new RepositorioBase<Ventas>();
@@ -244,9 +244,19 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
         {
             Productos p = ProductocomboBox.SelectedItem as Productos;
 
-
             if (DetalledataGridView.DataSource != null)
                 this.Detalle = (List<VentasDetalle>)DetalledataGridView.DataSource;
+
+            string descripcion = ProductocomboBox.Text;
+
+            foreach (var item in Detalle)
+            {
+                if (descripcion == item.Producto)
+                {
+                    MessageBox.Show("Producto ya ingresado." + Environment.NewLine + "Elimina el producto y intentalo de nuevo.", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+            }
 
             if (PreciotextBox.Text != string.Empty)
             {

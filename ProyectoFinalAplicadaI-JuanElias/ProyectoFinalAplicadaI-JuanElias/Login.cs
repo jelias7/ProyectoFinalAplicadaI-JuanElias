@@ -21,6 +21,7 @@ namespace ProyectoFinalAplicadaI_JuanElias
         {
             InitializeComponent();
         }
+ 
         public void Sesion()
         {
 
@@ -31,12 +32,14 @@ namespace ProyectoFinalAplicadaI_JuanElias
             var password = ClavetextBox.Text;
             filtro = x => x.Usuario.Equals(username);
             usuario = Repositorio.GetList(filtro);
+
             if (usuario.Count > 0)
             {
                 if (usuario.Exists(x => x.Usuario.Equals(username)))
                 {
                     if (usuario.Exists(x => x.Clave.Equals(Eramake.eCryptography.Encrypt(password))))
                     {
+  
                         MainForm f = new MainForm();
                         f.Show();
                         this.Hide();
@@ -50,8 +53,8 @@ namespace ProyectoFinalAplicadaI_JuanElias
             }
             else
             {
-                if (UsuariotextBox.Text == string.Empty)
-                    MessageBox.Show("Ingrese un usuario.", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (UsuariotextBox.Text == string.Empty || ClavetextBox.Text == string.Empty)
+                    MessageBox.Show("Ingrese en todos los campos.", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                 {
                     if (usuario.Count == 0)

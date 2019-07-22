@@ -44,10 +44,10 @@
             this.seccionesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultarVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -191,6 +191,14 @@
             this.ventasToolStripMenuItem.Text = "Ventas";
             this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
+            // consultarVentaToolStripMenuItem
+            // 
+            this.consultarVentaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.consultarVentaToolStripMenuItem.Name = "consultarVentaToolStripMenuItem";
+            this.consultarVentaToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
+            this.consultarVentaToolStripMenuItem.Text = "Consultar Venta";
+            this.consultarVentaToolStripMenuItem.Click += new System.EventHandler(this.ConsultarVentaToolStripMenuItem_Click);
+            // 
             // informacionToolStripMenuItem
             // 
             this.informacionToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -215,14 +223,6 @@
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
-            // consultarVentaToolStripMenuItem
-            // 
-            this.consultarVentaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.consultarVentaToolStripMenuItem.Name = "consultarVentaToolStripMenuItem";
-            this.consultarVentaToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
-            this.consultarVentaToolStripMenuItem.Text = "Consultar Venta";
-            this.consultarVentaToolStripMenuItem.Click += new System.EventHandler(this.ConsultarVentaToolStripMenuItem_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,6 +240,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bienvenido a Supermarket Software!";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
