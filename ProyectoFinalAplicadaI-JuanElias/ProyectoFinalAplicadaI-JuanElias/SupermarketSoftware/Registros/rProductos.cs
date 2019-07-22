@@ -76,6 +76,8 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             GananciatextBox.Text = string.Empty;
             ItbistextBox.Text = string.Empty;
             ItbiscomboBox.Text = string.Empty;
+            FechadateTimePicker.Value = DateTime.Now;
+            FechadateTimePicker.Enabled = false;
             MyErrorProvider.Clear();
         }
         private void Nuevobutton_Click(object sender, EventArgs e)
@@ -94,6 +96,8 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             CostonumericUpDown.Value = p.Costo;
             GananciatextBox.Text = p.Ganancia.ToString();
             ItbistextBox.Text = p.ITBIS.ToString();
+            FechadateTimePicker.Value = p.Vencimiento;
+            FechadateTimePicker.Enabled = false;
         }
         private Productos LlenaClase()
         {
@@ -108,6 +112,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             p.Costo = CostonumericUpDown.Value;
             p.Ganancia = Convert.ToDecimal(GananciatextBox.Text);
             p.ITBIS = Convert.ToDecimal(ItbistextBox.Text);
+            p.Vencimiento = FechadateTimePicker.Value;
 
             return p;
         }
@@ -301,6 +306,15 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                     if (ItbiscomboBox.Text == "18%")
                         ItbistextBox.Text = Convert.ToString(PrecionumericUpDown.Value * (decimal)itbis18);
                 }
+            }
+        }
+
+        private void Vencimientobutton_Click(object sender, EventArgs e)
+        {
+            var select = MessageBox.Show("¿Seguro?", "Supermarket Sotfware.", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (select == DialogResult.Yes)
+            {
+                FechadateTimePicker.Enabled = true;
             }
         }
     }

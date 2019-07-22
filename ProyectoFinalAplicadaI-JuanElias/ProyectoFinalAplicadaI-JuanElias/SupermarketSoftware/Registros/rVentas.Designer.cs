@@ -39,7 +39,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.DisponiblestextBox = new System.Windows.Forms.TextBox();
             this.CantidadnumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.DetalledataGridView = new System.Windows.Forms.DataGridView();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
@@ -59,6 +58,7 @@
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ModocomboBox = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.FechadateTimePicker = new MetroFramework.Controls.MetroDateTime();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).BeginInit();
@@ -169,15 +169,6 @@
             0,
             0,
             0});
-            // 
-            // FechadateTimePicker
-            // 
-            this.FechadateTimePicker.CustomFormat = "dd/MM/yyyy";
-            this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechadateTimePicker.Location = new System.Drawing.Point(374, 18);
-            this.FechadateTimePicker.Name = "FechadateTimePicker";
-            this.FechadateTimePicker.Size = new System.Drawing.Size(96, 20);
-            this.FechadateTimePicker.TabIndex = 14;
             // 
             // DetalledataGridView
             // 
@@ -368,12 +359,23 @@
             this.label9.TabIndex = 36;
             this.label9.Text = "Pago";
             // 
+            // FechadateTimePicker
+            // 
+            this.FechadateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechadateTimePicker.Location = new System.Drawing.Point(357, 18);
+            this.FechadateTimePicker.MinimumSize = new System.Drawing.Size(0, 29);
+            this.FechadateTimePicker.Name = "FechadateTimePicker";
+            this.FechadateTimePicker.Size = new System.Drawing.Size(113, 29);
+            this.FechadateTimePicker.TabIndex = 38;
+            // 
             // rVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(497, 625);
+            this.Controls.Add(this.FechadateTimePicker);
             this.Controls.Add(this.ModocomboBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.Clientebutton);
@@ -392,7 +394,6 @@
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.DetalledataGridView);
-            this.Controls.Add(this.FechadateTimePicker);
             this.Controls.Add(this.CantidadnumericUpDown);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.DisponiblestextBox);
@@ -430,7 +431,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox DisponiblestextBox;
         private System.Windows.Forms.NumericUpDown CantidadnumericUpDown;
-        private System.Windows.Forms.DateTimePicker FechadateTimePicker;
         private System.Windows.Forms.DataGridView DetalledataGridView;
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.Button Nuevobutton;
@@ -450,5 +450,6 @@
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
         private System.Windows.Forms.ComboBox ModocomboBox;
         private System.Windows.Forms.Label label9;
+        private MetroFramework.Controls.MetroDateTime FechadateTimePicker;
     }
 }

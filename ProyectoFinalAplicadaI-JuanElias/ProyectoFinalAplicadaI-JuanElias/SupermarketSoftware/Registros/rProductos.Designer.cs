@@ -59,18 +59,22 @@
             this.Inventariobutton = new System.Windows.Forms.Button();
             this.ItbiscomboBox = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Vencimientobutton = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CodigonumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CostonumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 21);
+            this.label1.Location = new System.Drawing.Point(35, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(18, 13);
             this.label1.TabIndex = 0;
@@ -79,7 +83,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 59);
+            this.label2.Location = new System.Drawing.Point(35, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 1;
@@ -88,7 +92,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 94);
+            this.label3.Location = new System.Drawing.Point(35, 90);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 13);
             this.label3.TabIndex = 2;
@@ -97,7 +101,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(35, 126);
+            this.label4.Location = new System.Drawing.Point(35, 122);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 13);
             this.label4.TabIndex = 3;
@@ -106,7 +110,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(35, 160);
+            this.label5.Location = new System.Drawing.Point(35, 156);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 13);
             this.label5.TabIndex = 4;
@@ -115,7 +119,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(35, 234);
+            this.label6.Location = new System.Drawing.Point(35, 230);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(37, 13);
             this.label6.TabIndex = 5;
@@ -124,7 +128,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(35, 199);
+            this.label7.Location = new System.Drawing.Point(35, 195);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 13);
             this.label7.TabIndex = 6;
@@ -133,7 +137,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(226, 342);
+            this.label8.Location = new System.Drawing.Point(226, 338);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(50, 13);
             this.label8.TabIndex = 7;
@@ -141,14 +145,14 @@
             // 
             // IDnumericUpDown
             // 
-            this.IDnumericUpDown.Location = new System.Drawing.Point(97, 21);
+            this.IDnumericUpDown.Location = new System.Drawing.Point(97, 17);
             this.IDnumericUpDown.Name = "IDnumericUpDown";
             this.IDnumericUpDown.Size = new System.Drawing.Size(71, 20);
             this.IDnumericUpDown.TabIndex = 8;
             // 
             // CodigonumericUpDown
             // 
-            this.CodigonumericUpDown.Location = new System.Drawing.Point(97, 59);
+            this.CodigonumericUpDown.Location = new System.Drawing.Point(97, 55);
             this.CodigonumericUpDown.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -167,7 +171,7 @@
             0,
             0});
             this.PrecionumericUpDown.InterceptArrowKeys = false;
-            this.PrecionumericUpDown.Location = new System.Drawing.Point(97, 234);
+            this.PrecionumericUpDown.Location = new System.Drawing.Point(97, 230);
             this.PrecionumericUpDown.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -184,9 +188,9 @@
             this.AddProveedorbutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.AddProveedorbutton.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddProveedorbutton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.AddProveedorbutton.Location = new System.Drawing.Point(313, 126);
+            this.AddProveedorbutton.Location = new System.Drawing.Point(313, 122);
             this.AddProveedorbutton.Name = "AddProveedorbutton";
-            this.AddProveedorbutton.Size = new System.Drawing.Size(75, 20);
+            this.AddProveedorbutton.Size = new System.Drawing.Size(75, 21);
             this.AddProveedorbutton.TabIndex = 16;
             this.AddProveedorbutton.Text = "+";
             this.AddProveedorbutton.UseVisualStyleBackColor = false;
@@ -198,7 +202,7 @@
             this.AddSeccionbutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.AddSeccionbutton.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddSeccionbutton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.AddSeccionbutton.Location = new System.Drawing.Point(313, 160);
+            this.AddSeccionbutton.Location = new System.Drawing.Point(313, 156);
             this.AddSeccionbutton.Name = "AddSeccionbutton";
             this.AddSeccionbutton.Size = new System.Drawing.Size(75, 21);
             this.AddSeccionbutton.TabIndex = 17;
@@ -210,27 +214,27 @@
             // 
             this.ProveedorcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ProveedorcomboBox.FormattingEnabled = true;
-            this.ProveedorcomboBox.Location = new System.Drawing.Point(97, 126);
+            this.ProveedorcomboBox.Location = new System.Drawing.Point(97, 122);
             this.ProveedorcomboBox.Name = "ProveedorcomboBox";
-            this.ProveedorcomboBox.Size = new System.Drawing.Size(201, 21);
+            this.ProveedorcomboBox.Size = new System.Drawing.Size(195, 21);
             this.ProveedorcomboBox.TabIndex = 22;
             // 
             // SeccioncomboBox
             // 
             this.SeccioncomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SeccioncomboBox.FormattingEnabled = true;
-            this.SeccioncomboBox.Location = new System.Drawing.Point(97, 160);
+            this.SeccioncomboBox.Location = new System.Drawing.Point(97, 156);
             this.SeccioncomboBox.Name = "SeccioncomboBox";
-            this.SeccioncomboBox.Size = new System.Drawing.Size(201, 21);
+            this.SeccioncomboBox.Size = new System.Drawing.Size(195, 21);
             this.SeccioncomboBox.TabIndex = 23;
             // 
             // ProductocomboBox
             // 
             this.ProductocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ProductocomboBox.FormattingEnabled = true;
-            this.ProductocomboBox.Location = new System.Drawing.Point(97, 94);
+            this.ProductocomboBox.Location = new System.Drawing.Point(97, 90);
             this.ProductocomboBox.Name = "ProductocomboBox";
-            this.ProductocomboBox.Size = new System.Drawing.Size(201, 21);
+            this.ProductocomboBox.Size = new System.Drawing.Size(195, 21);
             this.ProductocomboBox.TabIndex = 24;
             // 
             // CostonumericUpDown
@@ -242,7 +246,7 @@
             0,
             0});
             this.CostonumericUpDown.InterceptArrowKeys = false;
-            this.CostonumericUpDown.Location = new System.Drawing.Point(97, 268);
+            this.CostonumericUpDown.Location = new System.Drawing.Point(97, 264);
             this.CostonumericUpDown.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -256,7 +260,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(35, 268);
+            this.label9.Location = new System.Drawing.Point(35, 264);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(34, 13);
             this.label9.TabIndex = 26;
@@ -265,7 +269,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(35, 302);
+            this.label10.Location = new System.Drawing.Point(35, 298);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(53, 13);
             this.label10.TabIndex = 27;
@@ -274,7 +278,7 @@
             // Eliminarbutton
             // 
             this.Eliminarbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.garbage_78344;
-            this.Eliminarbutton.Location = new System.Drawing.Point(329, 386);
+            this.Eliminarbutton.Location = new System.Drawing.Point(329, 382);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(59, 59);
             this.Eliminarbutton.TabIndex = 21;
@@ -284,7 +288,7 @@
             // Buscarbutton
             // 
             this.Buscarbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.loupe_78347;
-            this.Buscarbutton.Location = new System.Drawing.Point(185, 12);
+            this.Buscarbutton.Location = new System.Drawing.Point(185, 8);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(45, 40);
             this.Buscarbutton.TabIndex = 20;
@@ -294,7 +298,7 @@
             // Nuevobutton
             // 
             this.Nuevobutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.controller_78338;
-            this.Nuevobutton.Location = new System.Drawing.Point(38, 386);
+            this.Nuevobutton.Location = new System.Drawing.Point(38, 382);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(59, 59);
             this.Nuevobutton.TabIndex = 19;
@@ -304,7 +308,7 @@
             // Guardarbutton
             // 
             this.Guardarbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.save_78348;
-            this.Guardarbutton.Location = new System.Drawing.Point(185, 386);
+            this.Guardarbutton.Location = new System.Drawing.Point(185, 382);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(59, 59);
             this.Guardarbutton.TabIndex = 18;
@@ -317,7 +321,7 @@
             // 
             // GananciatextBox
             // 
-            this.GananciatextBox.Location = new System.Drawing.Point(97, 301);
+            this.GananciatextBox.Location = new System.Drawing.Point(97, 297);
             this.GananciatextBox.Name = "GananciatextBox";
             this.GananciatextBox.ReadOnly = true;
             this.GananciatextBox.Size = new System.Drawing.Size(110, 20);
@@ -325,7 +329,7 @@
             // 
             // ItbistextBox
             // 
-            this.ItbistextBox.Location = new System.Drawing.Point(282, 343);
+            this.ItbistextBox.Location = new System.Drawing.Point(282, 339);
             this.ItbistextBox.Name = "ItbistextBox";
             this.ItbistextBox.ReadOnly = true;
             this.ItbistextBox.Size = new System.Drawing.Size(106, 20);
@@ -333,7 +337,7 @@
             // 
             // CantidadnumericUpDown
             // 
-            this.CantidadnumericUpDown.Location = new System.Drawing.Point(97, 199);
+            this.CantidadnumericUpDown.Location = new System.Drawing.Point(97, 195);
             this.CantidadnumericUpDown.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -349,9 +353,9 @@
             this.Inventariobutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Inventariobutton.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Inventariobutton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Inventariobutton.Location = new System.Drawing.Point(313, 95);
+            this.Inventariobutton.Location = new System.Drawing.Point(313, 90);
             this.Inventariobutton.Name = "Inventariobutton";
-            this.Inventariobutton.Size = new System.Drawing.Size(75, 20);
+            this.Inventariobutton.Size = new System.Drawing.Size(75, 21);
             this.Inventariobutton.TabIndex = 31;
             this.Inventariobutton.Text = "+";
             this.Inventariobutton.UseVisualStyleBackColor = false;
@@ -365,7 +369,7 @@
             "Exento",
             "16%",
             "18%"});
-            this.ItbiscomboBox.Location = new System.Drawing.Point(97, 342);
+            this.ItbiscomboBox.Location = new System.Drawing.Point(97, 338);
             this.ItbiscomboBox.Name = "ItbiscomboBox";
             this.ItbiscomboBox.Size = new System.Drawing.Size(110, 21);
             this.ItbiscomboBox.TabIndex = 33;
@@ -374,18 +378,51 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(35, 342);
+            this.label11.Location = new System.Drawing.Point(35, 338);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(34, 13);
+            this.label11.Size = new System.Drawing.Size(45, 13);
             this.label11.TabIndex = 32;
-            this.label11.Text = "ITBIS";
+            this.label11.Text = "% ITBIS";
+            // 
+            // FechadateTimePicker
+            // 
+            this.FechadateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.FechadateTimePicker.Enabled = false;
+            this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechadateTimePicker.Location = new System.Drawing.Point(19, 19);
+            this.FechadateTimePicker.Name = "FechadateTimePicker";
+            this.FechadateTimePicker.Size = new System.Drawing.Size(99, 20);
+            this.FechadateTimePicker.TabIndex = 34;
+            // 
+            // Vencimientobutton
+            // 
+            this.Vencimientobutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.Vencimientobutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Vencimientobutton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Vencimientobutton.Location = new System.Drawing.Point(19, 52);
+            this.Vencimientobutton.Name = "Vencimientobutton";
+            this.Vencimientobutton.Size = new System.Drawing.Size(99, 23);
+            this.Vencimientobutton.TabIndex = 35;
+            this.Vencimientobutton.Text = "APLICAR";
+            this.Vencimientobutton.UseVisualStyleBackColor = false;
+            this.Vencimientobutton.Click += new System.EventHandler(this.Vencimientobutton_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.FechadateTimePicker);
+            this.groupBox1.Controls.Add(this.Vencimientobutton);
+            this.groupBox1.Location = new System.Drawing.Point(253, -1);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(135, 86);
+            this.groupBox1.TabIndex = 36;
+            this.groupBox1.TabStop = false;
             // 
             // rProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(401, 451);
+            this.ClientSize = new System.Drawing.Size(404, 451);
             this.Controls.Add(this.ItbiscomboBox);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.Inventariobutton);
@@ -415,6 +452,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "rProductos";
@@ -426,6 +464,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.CostonumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -463,5 +502,8 @@
         private System.Windows.Forms.Button Inventariobutton;
         private System.Windows.Forms.ComboBox ItbiscomboBox;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DateTimePicker FechadateTimePicker;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button Vencimientobutton;
     }
 }
