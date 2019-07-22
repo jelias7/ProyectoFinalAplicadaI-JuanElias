@@ -16,7 +16,7 @@ namespace Entidades
         public string Cedula { get; set; }
         public string Telefono { get; set; }
         public string Direccion { get; set; }
-        //[ForeignKey("Usuarios")]
+        public DateTime Fecha { get; set; }
         public int UsuarioId { get; set; }
         public Clientes()
         {
@@ -24,6 +24,7 @@ namespace Entidades
             UsuarioId = 0;
             Nombres = string.Empty;
             Cedula = string.Empty;
+            Fecha = DateTime.Now;
             Telefono = string.Empty;
             Direccion = string.Empty;
         }

@@ -28,6 +28,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             EmailtextBox.Text = string.Empty;
             TlfmaskedTextBox.Text = string.Empty;
             DirecciontextBox.Text = string.Empty;
+            FechadateTimePicker.Value = DateTime.Now;
             MyErrorProvider.Clear();
 
         }
@@ -40,6 +41,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             p.Email = EmailtextBox.Text;
             p.Telefono = TlfmaskedTextBox.Text;
             p.Direccion = DirecciontextBox.Text;
+            p.Fecha = FechadateTimePicker.Value;
             return p;
         }
 
@@ -51,6 +53,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             EmailtextBox.Text = p.Email;
             TlfmaskedTextBox.Text = p.Telefono;
             DirecciontextBox.Text = p.Direccion;
+            FechadateTimePicker.Value = p.Fecha;
         }
         private bool ExisteEnLaBaseDeDatos()
         {

@@ -46,6 +46,8 @@
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.TlfmaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -108,7 +110,7 @@
             // 
             this.IDnumericUpDown.Location = new System.Drawing.Point(122, 25);
             this.IDnumericUpDown.Name = "IDnumericUpDown";
-            this.IDnumericUpDown.Size = new System.Drawing.Size(79, 20);
+            this.IDnumericUpDown.Size = new System.Drawing.Size(98, 20);
             this.IDnumericUpDown.TabIndex = 6;
             // 
             // NombrestextBox
@@ -136,13 +138,13 @@
             // 
             this.DirecciontextBox.Location = new System.Drawing.Point(122, 193);
             this.DirecciontextBox.Name = "DirecciontextBox";
-            this.DirecciontextBox.Size = new System.Drawing.Size(209, 20);
+            this.DirecciontextBox.Size = new System.Drawing.Size(159, 20);
             this.DirecciontextBox.TabIndex = 11;
             // 
             // Eliminarbutton
             // 
             this.Eliminarbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.garbage_78344;
-            this.Eliminarbutton.Location = new System.Drawing.Point(272, 235);
+            this.Eliminarbutton.Location = new System.Drawing.Point(272, 259);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(59, 59);
             this.Eliminarbutton.TabIndex = 24;
@@ -152,7 +154,7 @@
             // Nuevobutton
             // 
             this.Nuevobutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.controller_78338;
-            this.Nuevobutton.Location = new System.Drawing.Point(40, 235);
+            this.Nuevobutton.Location = new System.Drawing.Point(40, 259);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(59, 59);
             this.Nuevobutton.TabIndex = 23;
@@ -162,7 +164,7 @@
             // Guardarbutton
             // 
             this.Guardarbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.save_78348;
-            this.Guardarbutton.Location = new System.Drawing.Point(161, 235);
+            this.Guardarbutton.Location = new System.Drawing.Point(161, 259);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(59, 59);
             this.Guardarbutton.TabIndex = 22;
@@ -172,7 +174,7 @@
             // Buscarbutton
             // 
             this.Buscarbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.loupe_78347;
-            this.Buscarbutton.Location = new System.Drawing.Point(207, 13);
+            this.Buscarbutton.Location = new System.Drawing.Point(236, 13);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(45, 40);
             this.Buscarbutton.TabIndex = 25;
@@ -191,12 +193,32 @@
             this.TlfmaskedTextBox.Size = new System.Drawing.Size(159, 20);
             this.TlfmaskedTextBox.TabIndex = 26;
             // 
+            // FechadateTimePicker
+            // 
+            this.FechadateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechadateTimePicker.Location = new System.Drawing.Point(122, 227);
+            this.FechadateTimePicker.Name = "FechadateTimePicker";
+            this.FechadateTimePicker.Size = new System.Drawing.Size(98, 20);
+            this.FechadateTimePicker.TabIndex = 28;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(37, 227);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(37, 13);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Fecha";
+            // 
             // rProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(353, 316);
+            this.ClientSize = new System.Drawing.Size(353, 330);
+            this.Controls.Add(this.FechadateTimePicker);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.TlfmaskedTextBox);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.Eliminarbutton);
@@ -244,5 +266,7 @@
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
         private System.Windows.Forms.MaskedTextBox TlfmaskedTextBox;
+        private System.Windows.Forms.DateTimePicker FechadateTimePicker;
+        private System.Windows.Forms.Label label7;
     }
 }

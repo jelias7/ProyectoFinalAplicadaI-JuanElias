@@ -18,7 +18,7 @@ namespace Entidades
         public string Direccion { get; set; }
         public string Email { get; set; }
         public string Telefono { get; set; }
-       // [ForeignKey("Usuarios")]
+        public DateTime Fecha { get; set; }
         public int UsuarioId { get; set; }
 
         public Proveedores()
@@ -28,6 +28,7 @@ namespace Entidades
             Contacto = string.Empty;
             Direccion = string.Empty;
             Email = string.Empty;
+            Fecha = DateTime.Now;
             Telefono = string.Empty;
             UsuarioId = 0;
         }

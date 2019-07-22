@@ -14,12 +14,13 @@ namespace Entidades
         [Key]
         public int SeccionId { get; set; }
         public string Nombre { get; set; }
-       // [ForeignKey("Usuarios")]
+        public DateTime Fecha { get; set; }
         public int UsuarioId { get; set; }
         public Secciones()
         {
             SeccionId = 0;
             Nombre = string.Empty;
+            Fecha = DateTime.Now;
             UsuarioId = 0;
         }
     }

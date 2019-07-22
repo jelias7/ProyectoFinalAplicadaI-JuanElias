@@ -57,6 +57,8 @@
             this.ItbistextBox = new System.Windows.Forms.TextBox();
             this.CantidadnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.Inventariobutton = new System.Windows.Forms.Button();
+            this.ItbiscomboBox = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CodigonumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).BeginInit();
@@ -113,7 +115,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(35, 239);
+            this.label6.Location = new System.Drawing.Point(35, 234);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(37, 13);
             this.label6.TabIndex = 5;
@@ -122,7 +124,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(35, 201);
+            this.label7.Location = new System.Drawing.Point(35, 199);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 13);
             this.label7.TabIndex = 6;
@@ -131,11 +133,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(35, 312);
+            this.label8.Location = new System.Drawing.Point(226, 342);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(34, 13);
+            this.label8.Size = new System.Drawing.Size(50, 13);
             this.label8.TabIndex = 7;
-            this.label8.Text = "ITBIS";
+            this.label8.Text = "Impuesto";
             // 
             // IDnumericUpDown
             // 
@@ -165,14 +167,14 @@
             0,
             0});
             this.PrecionumericUpDown.InterceptArrowKeys = false;
-            this.PrecionumericUpDown.Location = new System.Drawing.Point(97, 239);
+            this.PrecionumericUpDown.Location = new System.Drawing.Point(97, 234);
             this.PrecionumericUpDown.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
             this.PrecionumericUpDown.Name = "PrecionumericUpDown";
-            this.PrecionumericUpDown.Size = new System.Drawing.Size(137, 20);
+            this.PrecionumericUpDown.Size = new System.Drawing.Size(110, 20);
             this.PrecionumericUpDown.TabIndex = 10;
             this.PrecionumericUpDown.ValueChanged += new System.EventHandler(this.PrecionumericUpDown_ValueChanged);
             // 
@@ -240,21 +242,21 @@
             0,
             0});
             this.CostonumericUpDown.InterceptArrowKeys = false;
-            this.CostonumericUpDown.Location = new System.Drawing.Point(97, 274);
+            this.CostonumericUpDown.Location = new System.Drawing.Point(97, 268);
             this.CostonumericUpDown.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
             this.CostonumericUpDown.Name = "CostonumericUpDown";
-            this.CostonumericUpDown.Size = new System.Drawing.Size(137, 20);
+            this.CostonumericUpDown.Size = new System.Drawing.Size(110, 20);
             this.CostonumericUpDown.TabIndex = 25;
             this.CostonumericUpDown.ValueChanged += new System.EventHandler(this.CostonumericUpDown_ValueChanged);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(35, 274);
+            this.label9.Location = new System.Drawing.Point(35, 268);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(34, 13);
             this.label9.TabIndex = 26;
@@ -263,7 +265,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(254, 274);
+            this.label10.Location = new System.Drawing.Point(35, 302);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(53, 13);
             this.label10.TabIndex = 27;
@@ -272,7 +274,7 @@
             // Eliminarbutton
             // 
             this.Eliminarbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.garbage_78344;
-            this.Eliminarbutton.Location = new System.Drawing.Point(239, 351);
+            this.Eliminarbutton.Location = new System.Drawing.Point(329, 386);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(59, 59);
             this.Eliminarbutton.TabIndex = 21;
@@ -282,7 +284,7 @@
             // Buscarbutton
             // 
             this.Buscarbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.loupe_78347;
-            this.Buscarbutton.Location = new System.Drawing.Point(174, 12);
+            this.Buscarbutton.Location = new System.Drawing.Point(185, 12);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(45, 40);
             this.Buscarbutton.TabIndex = 20;
@@ -292,7 +294,7 @@
             // Nuevobutton
             // 
             this.Nuevobutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.controller_78338;
-            this.Nuevobutton.Location = new System.Drawing.Point(38, 351);
+            this.Nuevobutton.Location = new System.Drawing.Point(38, 386);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(59, 59);
             this.Nuevobutton.TabIndex = 19;
@@ -302,7 +304,7 @@
             // Guardarbutton
             // 
             this.Guardarbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.save_78348;
-            this.Guardarbutton.Location = new System.Drawing.Point(141, 351);
+            this.Guardarbutton.Location = new System.Drawing.Point(185, 386);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(59, 59);
             this.Guardarbutton.TabIndex = 18;
@@ -315,18 +317,18 @@
             // 
             // GananciatextBox
             // 
-            this.GananciatextBox.Location = new System.Drawing.Point(313, 273);
+            this.GananciatextBox.Location = new System.Drawing.Point(97, 301);
             this.GananciatextBox.Name = "GananciatextBox";
             this.GananciatextBox.ReadOnly = true;
-            this.GananciatextBox.Size = new System.Drawing.Size(75, 20);
+            this.GananciatextBox.Size = new System.Drawing.Size(110, 20);
             this.GananciatextBox.TabIndex = 28;
             // 
             // ItbistextBox
             // 
-            this.ItbistextBox.Location = new System.Drawing.Point(97, 312);
+            this.ItbistextBox.Location = new System.Drawing.Point(282, 343);
             this.ItbistextBox.Name = "ItbistextBox";
             this.ItbistextBox.ReadOnly = true;
-            this.ItbistextBox.Size = new System.Drawing.Size(80, 20);
+            this.ItbistextBox.Size = new System.Drawing.Size(106, 20);
             this.ItbistextBox.TabIndex = 29;
             // 
             // CantidadnumericUpDown
@@ -338,7 +340,7 @@
             0,
             0});
             this.CantidadnumericUpDown.Name = "CantidadnumericUpDown";
-            this.CantidadnumericUpDown.Size = new System.Drawing.Size(71, 20);
+            this.CantidadnumericUpDown.Size = new System.Drawing.Size(110, 20);
             this.CantidadnumericUpDown.TabIndex = 30;
             // 
             // Inventariobutton
@@ -355,12 +357,37 @@
             this.Inventariobutton.UseVisualStyleBackColor = false;
             this.Inventariobutton.Click += new System.EventHandler(this.Inventariobutton_Click);
             // 
+            // ItbiscomboBox
+            // 
+            this.ItbiscomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ItbiscomboBox.FormattingEnabled = true;
+            this.ItbiscomboBox.Items.AddRange(new object[] {
+            "Exento",
+            "16%",
+            "18%"});
+            this.ItbiscomboBox.Location = new System.Drawing.Point(97, 342);
+            this.ItbiscomboBox.Name = "ItbiscomboBox";
+            this.ItbiscomboBox.Size = new System.Drawing.Size(110, 21);
+            this.ItbiscomboBox.TabIndex = 33;
+            this.ItbiscomboBox.SelectedIndexChanged += new System.EventHandler(this.ItbiscomboBox_SelectedIndexChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(35, 342);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(34, 13);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "ITBIS";
+            // 
             // rProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(401, 421);
+            this.ClientSize = new System.Drawing.Size(401, 451);
+            this.Controls.Add(this.ItbiscomboBox);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.Inventariobutton);
             this.Controls.Add(this.CantidadnumericUpDown);
             this.Controls.Add(this.ItbistextBox);
@@ -434,5 +461,7 @@
         private System.Windows.Forms.TextBox GananciatextBox;
         private System.Windows.Forms.NumericUpDown CantidadnumericUpDown;
         private System.Windows.Forms.Button Inventariobutton;
+        private System.Windows.Forms.ComboBox ItbiscomboBox;
+        private System.Windows.Forms.Label label11;
     }
 }

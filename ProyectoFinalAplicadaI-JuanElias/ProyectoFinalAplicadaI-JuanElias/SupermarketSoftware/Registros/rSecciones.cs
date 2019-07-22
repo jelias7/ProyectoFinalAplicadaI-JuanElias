@@ -24,6 +24,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
 
             IDnumericUpDown.Value = 0;
             NombretextBox.Text = string.Empty;
+            FechadateTimePicker.Value = DateTime.Now;
             MyErrorProvider.Clear();
 
         }
@@ -32,14 +33,15 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             Secciones s = new Secciones();
             s.SeccionId = Convert.ToInt32(IDnumericUpDown.Value);
             s.Nombre = NombretextBox.Text;
-
+            s.Fecha = FechadateTimePicker.Value;
             return s;
         }
 
         private void LlenaCampo(Secciones s)
         {
             IDnumericUpDown.Value = s.SeccionId;
-            NombretextBox.Text = s.Nombre;           
+            NombretextBox.Text = s.Nombre;
+            FechadateTimePicker.Value = s.Fecha;
         }
         private bool ExisteEnLaBaseDeDatos()
         {

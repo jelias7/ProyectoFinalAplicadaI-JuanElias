@@ -26,6 +26,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             CedulamaskedTextBox.Text = string.Empty;
             TlfmaskedTextBox.Text = string.Empty;
             DirecciontextBox.Text = string.Empty;
+            FechadateTimePicker.Value = DateTime.Now;
             MyErrorProvider.Clear();
         }
         private void Nuevobutton_Click(object sender, EventArgs e)
@@ -39,6 +40,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             CedulamaskedTextBox.Text = c.Cedula;
             TlfmaskedTextBox.Text = c.Telefono;
             DirecciontextBox.Text = c.Direccion;
+            FechadateTimePicker.Value = c.Fecha;
         }
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
@@ -62,6 +64,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             c.Cedula = CedulamaskedTextBox.Text;
             c.Telefono = TlfmaskedTextBox.Text;
             c.Direccion = DirecciontextBox.Text;
+            c.Fecha = FechadateTimePicker.Value;
             return c;
         }
         private bool ExisteEnLaBaseDeDatos()
@@ -124,30 +127,13 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             }
             return paso;
         }
-        public static bool RepetirDireccion(string descripcion)
-        {
-            bool paso = false;
-            Contexto db = new Contexto();
 
-            try
-            {
-                if (db.Clientes.Any(p => p.Direccion.Equals(descripcion)))
-                {
-                    paso = true;
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            return paso;
-        }
         private bool ValidarRepeticion()
         {
             bool paso = true;
             MyErrorProvider.Clear();
 
-            if (RepetirNombre(NombrestextBox.Text) || RepetirCedula(CedulamaskedTextBox.Text) || RepetirTelefono(TlfmaskedTextBox.Text) || RepetirDireccion(DirecciontextBox.Text))
+            if (RepetirNombre(NombrestextBox.Text) || RepetirCedula(CedulamaskedTextBox.Text) || RepetirTelefono(TlfmaskedTextBox.Text))
             {
                 MessageBox.Show("Ya existe uno igual, escriba otro.", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 paso = false;

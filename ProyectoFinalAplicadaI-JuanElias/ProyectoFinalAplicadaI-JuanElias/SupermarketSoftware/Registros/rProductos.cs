@@ -75,6 +75,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             CostonumericUpDown.Value = 0;
             GananciatextBox.Text = string.Empty;
             ItbistextBox.Text = string.Empty;
+            ItbiscomboBox.Text = string.Empty;
             MyErrorProvider.Clear();
         }
         private void Nuevobutton_Click(object sender, EventArgs e)
@@ -216,6 +217,11 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                 MyErrorProvider.SetError(CostonumericUpDown, "Costo no puede ser mayor que Precio.");
                 paso = false;
             }
+            if (string.IsNullOrWhiteSpace(ItbiscomboBox.Text))
+            {
+                MyErrorProvider.SetError(ItbiscomboBox, "No puede ser vacio.");
+                paso = false;
+            }
             return paso;
         }
             private void Guardarbutton_Click(object sender, EventArgs e)
@@ -262,10 +268,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                 GananciatextBox.Text = Convert.ToString(PrecionumericUpDown.Value - CostonumericUpDown.Value);
             else
                 GananciatextBox.Text = defecto.ToString();
-
-            double itbis = 0.18;
-
-            ItbistextBox.Text = Convert.ToString(PrecionumericUpDown.Value * (decimal)itbis);            
         }
 
         private void CostonumericUpDown_ValueChanged(object sender, EventArgs e)
@@ -280,6 +282,26 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
         {
             rInventarios rInventarios = new rInventarios();
             rInventarios.Show();
+        }
+
+        private void ItbiscomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            double exento = 0;
+            double itbis16 = 0.16;
+            double itbis18 = 0.18;
+
+            if (ItbiscomboBox.Text == "Exento")
+                ItbistextBox.Text = Convert.ToString(exento);
+            else
+            {
+                if (PrecionumericUpDown.Value > 0)
+                {
+                    if (ItbiscomboBox.Text == "16%")
+                        ItbistextBox.Text = Convert.ToString(PrecionumericUpDown.Value * (decimal)itbis16);
+                    if (ItbiscomboBox.Text == "18%")
+                        ItbistextBox.Text = Convert.ToString(PrecionumericUpDown.Value * (decimal)itbis18);
+                }
+            }
         }
     }
 }

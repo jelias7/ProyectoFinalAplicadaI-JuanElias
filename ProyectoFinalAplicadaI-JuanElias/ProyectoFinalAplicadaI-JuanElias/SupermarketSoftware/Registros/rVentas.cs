@@ -182,11 +182,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                 MessageBox.Show("El grid esta vacio.", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 paso = false;
             }
-            if(CantidadnumericUpDown.Value >= p.Cantidad)
-            {
-                MyErrorProvider.SetError(DisponiblestextBox, "No quedan Productos.");
-                paso = false;
-            }
             return paso;
         }
             private void Guardarbutton_Click(object sender, EventArgs e)
