@@ -88,18 +88,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Consultas
                                 listado = r.GetList(p => p.Total == ga);
                             }
                             break;
-                        case "Cantidad":
-                            int parse5;
-                            if (!int.TryParse(CriteriotextBox.Text, out parse5))
-                            {
-                                MessageBox.Show("Solo numeros.");
-                            }
-                            else
-                            {
-                                int ca = Convert.ToInt32(CriteriotextBox.Text);
-                                listado = r.GetList(p => p.Cantidad == ca);
-                            }
-                            break;
 
                     }
                     listado = listado.Where(c => c.Fecha.Date >= DesdedateTimePicker.Value.Date && c.Fecha.Date <= HastadateTimePicker.Value.Date).ToList();
@@ -186,18 +174,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Consultas
                             {
                                 decimal ga = Convert.ToInt32(CriteriotextBox.Text);
                                 listado = r.GetList(p => p.Total == ga);
-                            }
-                            break;
-                        case "Cantidad":
-                            int parse5;
-                            if (!int.TryParse(CriteriotextBox.Text, out parse5))
-                            {
-                                MessageBox.Show("Solo numeros.");
-                            }
-                            else
-                            {
-                                int ca = Convert.ToInt32(CriteriotextBox.Text);
-                                listado = r.GetList(p => p.Cantidad == ca);
                             }
                             break;
                     }

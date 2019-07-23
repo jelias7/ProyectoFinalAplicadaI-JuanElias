@@ -55,13 +55,13 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
         }
         private void AddProveedorbutton_Click(object sender, EventArgs e)
         {
-            rProveedores r = new rProveedores();
+            rProveedores r = new rProveedores(id);
             r.Show();
         }
 
         private void AddSeccionbutton_Click(object sender, EventArgs e)
         {
-            rSecciones r = new rSecciones();
+            rSecciones r = new rSecciones(id);
             r.Show();
         }
         private void Limpiar()
@@ -286,7 +286,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
 
         private void Inventariobutton_Click(object sender, EventArgs e)
         {
-            rInventarios rInventarios = new rInventarios();
+            rInventarios rInventarios = new rInventarios(id);
             rInventarios.Show();
         }
 

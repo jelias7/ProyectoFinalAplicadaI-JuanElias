@@ -279,5 +279,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Consultas
                 ConsultadataGridView.DataSource = listado;
             }
         }
+
     }
 }

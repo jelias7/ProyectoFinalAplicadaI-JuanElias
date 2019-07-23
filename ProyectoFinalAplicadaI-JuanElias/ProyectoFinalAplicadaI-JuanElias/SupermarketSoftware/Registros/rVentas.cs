@@ -110,7 +110,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
         {
             IDnumericUpDown.Value = v.VentaId;
             ClientecomboBox.Text = v.Cliente;
-            CantidadnumericUpDown.Value = v.Cantidad;
+            CantidadnumericUpDown.Value = 1;
             FechadateTimePicker.Value = v.Fecha;
             ITBIStextBox.Text = v.Itbis.ToString();
             SubtotaltextBox.Text = v.Subtotal.ToString();
@@ -144,7 +144,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             v.Detalle = this.Detalle;
             v.VentaId = Convert.ToInt32(IDnumericUpDown.Value);
             v.Cliente = ClientecomboBox.Text;
-            v.Cantidad = Convert.ToInt32(CantidadnumericUpDown.Value);
             v.Fecha = FechadateTimePicker.Value;
             v.Modo = ModocomboBox.Text;
             v.Itbis = Convert.ToDecimal(ITBIStextBox.Text);

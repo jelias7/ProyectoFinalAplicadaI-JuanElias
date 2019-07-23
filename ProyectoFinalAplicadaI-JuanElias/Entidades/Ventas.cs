@@ -19,8 +19,6 @@ namespace Entidades
         public decimal Total { get; set; }
         public DateTime Fecha { get; set; }
         [Browsable(false)]
-        public int Cantidad { get; set; }
-        [Browsable(false)]
         public int UsuarioId { get; set; }
         public virtual List<VentasDetalle> Detalle { get; set; }
         public Ventas()
@@ -32,7 +30,6 @@ namespace Entidades
             Itbis = 0;
             Subtotal = 0;
             Total = 0;
-            Cantidad = 0;
             Fecha = DateTime.Now;
             Detalle = new List<VentasDetalle>();
         }

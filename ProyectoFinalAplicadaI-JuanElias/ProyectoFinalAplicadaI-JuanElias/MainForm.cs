@@ -39,7 +39,7 @@ namespace ProyectoFinalAplicadaI_JuanElias
             var select = MessageBox.Show("¿Seguro?", "Supermarket Sotfware.", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (select == DialogResult.Yes)
             {
-                this.Hide();
+                this.Close();
                 Login login = new Login();
                 login.Show();
             }
@@ -54,19 +54,19 @@ namespace ProyectoFinalAplicadaI_JuanElias
 
         private void inventarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rInventarios rInventarios = new rInventarios();
+            rInventarios rInventarios = new rInventarios(id);
             rInventarios.Show();
         }
 
         private void productosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rProductos rProductos = new rProductos();
+            rProductos rProductos = new rProductos(id);
             rProductos.Show();
         }
 
         private void ClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rClientes rClientes = new rClientes();
+            rClientes rClientes = new rClientes(id);
             rClientes.Show();
         }
 
@@ -77,19 +77,19 @@ namespace ProyectoFinalAplicadaI_JuanElias
 
         private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rVentas rVentas = new rVentas();
+            rVentas rVentas = new rVentas(id);
             rVentas.Show();
         }
 
         private void SeccionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rSecciones rSecciones = new rSecciones();
+            rSecciones rSecciones = new rSecciones(id);
             rSecciones.Show();
         }
 
         private void ProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rProveedores rProveedores = new rProveedores();
+            rProveedores rProveedores = new rProveedores(id);
             rProveedores.Show();
         }
 

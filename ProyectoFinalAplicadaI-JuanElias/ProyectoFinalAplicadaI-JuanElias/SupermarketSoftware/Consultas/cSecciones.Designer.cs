@@ -124,6 +124,7 @@
             this.Consultarbutton.Size = new System.Drawing.Size(51, 41);
             this.Consultarbutton.TabIndex = 26;
             this.Consultarbutton.UseVisualStyleBackColor = true;
+            this.Consultarbutton.Click += new System.EventHandler(this.Consultarbutton_Click);
             // 
             // FiltrocomboBox
             // 
