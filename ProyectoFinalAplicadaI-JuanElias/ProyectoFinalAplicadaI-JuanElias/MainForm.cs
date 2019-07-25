@@ -34,24 +34,6 @@ namespace ProyectoFinalAplicadaI_JuanElias
             c.Show();
         }
 
-        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var select = MessageBox.Show("¿Seguro?", "Supermarket Sotfware.", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if (select == DialogResult.Yes)
-            {
-                this.Close();
-                Login login = new Login();
-                login.Show();
-            }
-        }
-
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var select = MessageBox.Show("¿Seguro?", "Supermarket Sotfware.", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if (select == DialogResult.Yes)
-                Application.Exit();
-        }
-
         private void inventarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rInventarios rInventarios = new rInventarios(id);
@@ -72,7 +54,8 @@ namespace ProyectoFinalAplicadaI_JuanElias
 
         private void InformacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MetroMessageBox.Show(this, "Sistema creado por Juan Elias Rosario Mena." + Environment.NewLine + "Ingenieria en Sistemas y Computacion." + Environment.NewLine + "Universidad Catolica Nordestana", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Ayuda a = new Ayuda();
+            a.Show();
         }
 
         private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -127,6 +110,24 @@ namespace ProyectoFinalAplicadaI_JuanElias
         {
             cVentas cVentas = new cVentas();
             cVentas.Show();
+        }
+
+        private void DesconectarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var select = MessageBox.Show("¿Seguro?", "Supermarket Sotfware.", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (select == DialogResult.Yes)
+            {
+                this.Close();
+                Login login = new Login();
+                login.Show();
+            }
+        }
+
+        private void SalirToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var select = MessageBox.Show("¿Seguro?", "Supermarket Sotfware.", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (select == DialogResult.Yes)
+                Application.Exit();
         }
     }
 }
