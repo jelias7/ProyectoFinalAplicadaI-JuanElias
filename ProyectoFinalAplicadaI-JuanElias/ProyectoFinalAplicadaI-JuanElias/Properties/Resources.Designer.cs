@@ -93,16 +93,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap flat_style_circle_add_icon_icons_com_66944 {
-            get {
-                object obj = ResourceManager.GetObject("flat-style-circle-add_icon-icons.com_66944", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap garbage_78344 {
             get {
                 object obj = ResourceManager.GetObject("garbage_78344", resourceCulture);
@@ -146,16 +136,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.Properties {
         internal static System.Drawing.Bitmap save_78348 {
             get {
                 object obj = ResourceManager.GetObject("save_78348", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Search_find_locate_1542 {
-            get {
-                object obj = ResourceManager.GetObject("Search_find_locate_1542", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

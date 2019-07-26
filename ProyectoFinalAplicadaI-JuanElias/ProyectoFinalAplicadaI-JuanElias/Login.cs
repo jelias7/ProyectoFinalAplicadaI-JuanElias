@@ -37,7 +37,7 @@ namespace ProyectoFinalAplicadaI_JuanElias
             {
                 if (usuario.Exists(x => x.Usuario.Equals(username)))
                 {
-                    if (usuario.Exists(x => x.Clave.Equals(Eramake.eCryptography.Encrypt(password))))
+                    if (usuario.Exists(x => x.Clave.Equals(password)))
                     {
 
                         List<Usuarios> id = Repositorio.GetList(U => U.Usuario == UsuariotextBox.Text);
@@ -56,23 +56,9 @@ namespace ProyectoFinalAplicadaI_JuanElias
             {
                 if (UsuariotextBox.Text == string.Empty || ClavetextBox.Text == string.Empty)
                     MessageBox.Show("Ingrese en todos los campos.", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                else
-                {
-                    if (usuario.Count == 0)
-                    {
-                        Repositorio.Guardar(new Usuarios()
-                        {
-                            Usuario = "admin",
-                            Clave = Eramake.eCryptography.Encrypt("admin"),
-                            Nombres = "Juan Elias",
-                            Email = "juanelias@admin.com",
-                            FechaCreacion = DateTime.Now
-                        });
-                        MessageBox.Show("Al no existir usuario se ha creado uno." + Environment.NewLine + "Usuario = admin" + Environment.NewLine + "Clave = admin", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-                }
-            }      
+                else if (!usuario.Exists(x => x.Usuario.Equals(username)))
+                    MessageBox.Show("Usuario no existe.", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void Aceptarbutton_Click(object sender, EventArgs e)

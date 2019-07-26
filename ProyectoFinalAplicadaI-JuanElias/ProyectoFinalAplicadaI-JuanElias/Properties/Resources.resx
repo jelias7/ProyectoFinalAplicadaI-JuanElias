@@ -133,14 +133,8 @@
   <data name="e5eb7412528dbbf122484c4772dfa277dac23b99" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\e5eb7412528dbbf122484c4772dfa277dac23b99.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Search_find_locate_1542" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Search_find_locate_1542.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="save_78348" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\save_78348.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="flat-style-circle-add_icon-icons.com_66944" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\flat-style-circle-add_icon-icons.com_66944.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="garbage_78344" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\garbage_78344.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
