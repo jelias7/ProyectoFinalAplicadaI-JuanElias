@@ -233,7 +233,26 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             else
                 MyErrorProvider.SetError(IDnumericUpDown, "No existe.");
         }
+        private bool Existe()
+        {
+            bool paso = true;
 
+            string id_prod = ProductocomboBox.SelectedValue.ToString();
+
+            if (DetalledataGridView.RowCount > 0)
+            {
+                for (int i = 0; i < DetalledataGridView.RowCount; i++)
+                {
+                    if (Convert.ToInt16(DetalledataGridView.Rows[i].Cells["ProductoId"].Value) == Convert.ToInt16(id_prod))
+                    {
+                        MessageBox.Show("El producto ya ha sido ingresado");
+                    }
+                    paso = false;
+
+                }
+            }
+            return paso;
+        }
         private void ProductocomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             Productos p = ProductocomboBox.SelectedItem as Productos;
@@ -248,21 +267,16 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             if (DetalledataGridView.DataSource != null)
                 this.Detalle = (List<VentasDetalle>)DetalledataGridView.DataSource;
 
-            string descripcion = ProductocomboBox.Text;
-
-            foreach (var item in Detalle)
+            if (Existe() == false)
             {
-                if (descripcion == item.Producto)
-                {
-                    MessageBox.Show("Producto ya ingresado." + Environment.NewLine + "Elimina el producto y intentalo de nuevo.", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
+                MyErrorProvider.SetError(Addbutton, "Seleccione un producto diferente.");
+                Addbutton.Focus();
             }
 
-            if(CantidadnumericUpDown.Value > Convert.ToInt32(DisponiblestextBox.Text))
+            if (CantidadnumericUpDown.Value > Convert.ToInt32(DisponiblestextBox.Text))
             {
                 MyErrorProvider.SetError(DisponiblestextBox, "No quedan disponibles.");
-                return;
+                DisponiblestextBox.Focus();
             }
 
             if (PreciotextBox.Text != string.Empty)
@@ -271,7 +285,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                 {
 
                     VentaDetalleId = (int)IDnumericUpDown.Value,
-                    Producto = ProductocomboBox.Text,
+                    ProductoId = ProductocomboBox.SelectedIndex,
                     Cantidad = (int)CantidadnumericUpDown.Value,
                     Precio = Convert.ToDecimal(PreciotextBox.Text),
                     Impuesto = p.ITBIS * CantidadnumericUpDown.Value

@@ -12,7 +12,7 @@ namespace Entidades
     {
         [Key]
         public int VentaDetalleId { get; set; }
-        public string Producto { get; set; }
+        public int ProductoId { get; set; }
         public decimal Precio { get; set; }
         public int Cantidad { get; set; }
         public decimal Impuesto { get; set; }
@@ -22,7 +22,7 @@ namespace Entidades
             Precio = 0;
             Cantidad = 0;
             Impuesto = 0;
-            Producto = string.Empty;
+            ProductoId = 0;
         }
     }
 }
