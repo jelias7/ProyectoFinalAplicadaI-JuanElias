@@ -153,7 +153,24 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             else
                 MyErrorProvider.SetError(IDnumericUpDown, "No existe.");
         }
+        public static bool RepetirProducto(string descripcion)
+        {
+            bool paso = false;
+            Contexto db = new Contexto();
 
+            try
+            {
+                if (db.Productos.Any(p => p.Producto.Equals(descripcion)))
+                {
+                    paso = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return paso;
+        }
         public static bool RepetirCodigo(int descripcion)
         {
             bool paso = false;
@@ -180,6 +197,11 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             if (RepetirCodigo((int)CodigonumericUpDown.Value))
             {
                 MyErrorProvider.SetError(CodigonumericUpDown, "No se pueden repetir.");
+                paso = false;
+            }
+            if (RepetirProducto(ProductocomboBox.Text))
+            {
+                MyErrorProvider.SetError(ProductocomboBox, "No se pueden repetir.");
                 paso = false;
             }
             return paso;

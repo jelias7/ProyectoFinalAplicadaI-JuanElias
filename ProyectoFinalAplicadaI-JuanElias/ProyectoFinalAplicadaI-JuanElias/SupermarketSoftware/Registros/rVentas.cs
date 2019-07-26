@@ -259,6 +259,12 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                 }
             }
 
+            if(CantidadnumericUpDown.Value > Convert.ToInt32(DisponiblestextBox.Text))
+            {
+                MyErrorProvider.SetError(DisponiblestextBox, "No quedan disponibles.");
+                return;
+            }
+
             if (PreciotextBox.Text != string.Empty)
             {
                 this.Detalle.Add(new VentasDetalle()
@@ -275,6 +281,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             CalcularItbis();
             CalcularSubtotal();
             CalcularTotal();
+            DisponiblestextBox.Text = Convert.ToString(p.Cantidad - CantidadnumericUpDown.Value);
         }
 
         private void Removerbutton_Click(object sender, EventArgs e)
@@ -286,5 +293,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                 CargarGrid();
             }
         }
+
     }
 }

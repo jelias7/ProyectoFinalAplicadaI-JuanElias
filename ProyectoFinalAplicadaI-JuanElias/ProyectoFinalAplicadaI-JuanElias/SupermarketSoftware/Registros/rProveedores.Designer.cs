@@ -126,6 +126,7 @@
             this.ContactotextBox.Name = "ContactotextBox";
             this.ContactotextBox.Size = new System.Drawing.Size(159, 20);
             this.ContactotextBox.TabIndex = 8;
+            this.ContactotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ContactotextBox_KeyPress);
             // 
             // EmailtextBox
             // 
@@ -133,6 +134,7 @@
             this.EmailtextBox.Name = "EmailtextBox";
             this.EmailtextBox.Size = new System.Drawing.Size(159, 20);
             this.EmailtextBox.TabIndex = 9;
+            this.EmailtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EmailtextBox_KeyPress);
             // 
             // DirecciontextBox
             // 
