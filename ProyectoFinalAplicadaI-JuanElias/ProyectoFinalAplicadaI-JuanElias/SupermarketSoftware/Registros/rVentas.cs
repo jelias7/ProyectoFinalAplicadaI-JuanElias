@@ -187,7 +187,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
         }
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            RepositorioBase<Ventas> Repositorio = new RepositorioBase<Ventas>();
             Ventas v = new Ventas();
             bool paso = false;
 
@@ -199,7 +198,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
 
             if (IDnumericUpDown.Value == 0)
             {
-                paso = Repositorio.Guardar(v);
+                paso = VentaBLL.Guardar(v);
             }
             else
             {
@@ -208,7 +207,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                     MessageBox.Show("No se puede guardar.", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                paso = Repositorio.Modificar(v);
+               // paso = Repositorio.Modificar(v);
             }
 
             if (paso)
@@ -220,7 +219,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            RepositorioBase<Ventas> Repositorio = new RepositorioBase<Ventas>();
 
             MyErrorProvider.Clear();
             int id;
@@ -228,7 +226,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
 
             Limpiar();
 
-            if (Repositorio.Eliminar(id))
+            if (VentaBLL.Eliminar(id))
                 MessageBox.Show("Eliminado");
             else
                 MyErrorProvider.SetError(IDnumericUpDown, "No existe.");
