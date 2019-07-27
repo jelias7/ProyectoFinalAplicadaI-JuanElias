@@ -284,7 +284,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             CalcularItbis();
             CalcularSubtotal();
             CalcularTotal();
-           // DisponiblestextBox.Text = Convert.ToString(p.Cantidad - CantidadnumericUpDown.Value);
         }
 
         private void Removerbutton_Click(object sender, EventArgs e)
@@ -298,7 +297,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                 CalcularSubtotal();
                 CalcularTotal();
             }
-          //  DisponiblestextBox.Text = Convert.ToString(p.Cantidad + CantidadnumericUpDown.Value);
         }
 
         private void RVentas_Load(object sender, EventArgs e)
