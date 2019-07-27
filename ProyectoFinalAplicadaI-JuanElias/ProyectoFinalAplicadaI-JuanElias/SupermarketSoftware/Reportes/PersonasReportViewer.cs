@@ -22,7 +22,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Reportes
 
         private void crystalReportViewer1_Load(object sender, EventArgs e)
         {
-            ListadoU listado = new ListadoU();
+            ListadoU1 listado = new ListadoU1();
             listado.SetDataSource(ListaUsuarios);
 
             crystalReportViewer1.ReportSource = ListaUsuarios;

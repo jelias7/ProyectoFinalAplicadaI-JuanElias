@@ -16,9 +16,9 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Reportes {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class ListadoU1 : ReportClass {
+    public class ListadoU : ReportClass {
         
-        public ListadoU1() {
+        public ListadoU() {
         }
         
         public override string ResourceName {
@@ -90,9 +90,9 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Reportes {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedListadoU1 : Component, ICachedReport {
+    public class CachedListadoU : Component, ICachedReport {
         
-        public CachedListadoU1() {
+        public CachedListadoU() {
         }
         
         [Browsable(false)]
