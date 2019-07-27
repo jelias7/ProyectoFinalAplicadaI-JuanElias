@@ -6,6 +6,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BLL
 {
@@ -56,7 +57,7 @@ namespace BLL
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("No existe");
             }
             finally
             {

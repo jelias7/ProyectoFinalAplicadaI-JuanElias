@@ -249,8 +249,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             if (DetalledataGridView.DataSource != null)
                 this.Detalle = (List<VentasDetalle>)DetalledataGridView.DataSource;
 
-            MyErrorProvider.Clear();
-
             if (ProductocomboBox.SelectedValue != null)
             {
                 int d = (int)ProductocomboBox.SelectedValue;
@@ -274,7 +272,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             {
                 this.Detalle.Add(new VentasDetalle()
                 {
-                    VentaDetalleId = (int)IDnumericUpDown.Value,
                     ProductoId = (int)ProductocomboBox.SelectedValue,
                     Cantidad = (int)CantidadnumericUpDown.Value,
                     Precio = Convert.ToDecimal(PreciotextBox.Text),

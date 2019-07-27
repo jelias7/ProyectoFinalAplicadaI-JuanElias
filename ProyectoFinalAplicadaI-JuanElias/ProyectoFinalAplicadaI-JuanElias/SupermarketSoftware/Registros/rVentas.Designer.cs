@@ -39,7 +39,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.DisponiblestextBox = new System.Windows.Forms.TextBox();
             this.CantidadnumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.DetalledataGridView = new System.Windows.Forms.DataGridView();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
@@ -59,10 +58,11 @@
             this.ModocomboBox = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.FechadateTimePicker = new MetroFramework.Controls.MetroDateTime();
+            this.DetalledataGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // IDnumericUpDown
@@ -169,19 +169,6 @@
             0,
             0,
             0});
-            // 
-            // DetalledataGridView
-            // 
-            this.DetalledataGridView.AllowUserToAddRows = false;
-            this.DetalledataGridView.AllowUserToDeleteRows = false;
-            this.DetalledataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DetalledataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DetalledataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DetalledataGridView.Location = new System.Drawing.Point(28, 244);
-            this.DetalledataGridView.Name = "DetalledataGridView";
-            this.DetalledataGridView.ReadOnly = true;
-            this.DetalledataGridView.Size = new System.Drawing.Size(442, 205);
-            this.DetalledataGridView.TabIndex = 15;
             // 
             // Buscarbutton
             // 
@@ -369,12 +356,26 @@
             this.FechadateTimePicker.Size = new System.Drawing.Size(113, 29);
             this.FechadateTimePicker.TabIndex = 38;
             // 
+            // DetalledataGridView
+            // 
+            this.DetalledataGridView.AllowUserToAddRows = false;
+            this.DetalledataGridView.AllowUserToDeleteRows = false;
+            this.DetalledataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DetalledataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.DetalledataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DetalledataGridView.Location = new System.Drawing.Point(28, 244);
+            this.DetalledataGridView.Name = "DetalledataGridView";
+            this.DetalledataGridView.ReadOnly = true;
+            this.DetalledataGridView.Size = new System.Drawing.Size(442, 205);
+            this.DetalledataGridView.TabIndex = 39;
+            // 
             // rVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(497, 625);
+            this.Controls.Add(this.DetalledataGridView);
             this.Controls.Add(this.FechadateTimePicker);
             this.Controls.Add(this.ModocomboBox);
             this.Controls.Add(this.label9);
@@ -393,7 +394,6 @@
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.Buscarbutton);
-            this.Controls.Add(this.DetalledataGridView);
             this.Controls.Add(this.CantidadnumericUpDown);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.DisponiblestextBox);
@@ -414,8 +414,8 @@
             this.Load += new System.EventHandler(this.RVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -433,7 +433,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox DisponiblestextBox;
         private System.Windows.Forms.NumericUpDown CantidadnumericUpDown;
-        private System.Windows.Forms.DataGridView DetalledataGridView;
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Button Eliminarbutton;
@@ -453,5 +452,6 @@
         private System.Windows.Forms.ComboBox ModocomboBox;
         private System.Windows.Forms.Label label9;
         private MetroFramework.Controls.MetroDateTime FechadateTimePicker;
+        private System.Windows.Forms.DataGridView DetalledataGridView;
     }
 }
