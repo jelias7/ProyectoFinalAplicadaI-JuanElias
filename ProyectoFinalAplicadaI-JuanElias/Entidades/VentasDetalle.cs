@@ -11,6 +11,7 @@ namespace Entidades
     public class VentasDetalle
     {
         [Key]
+        [Browsable(false)]
         public int VentaDetalleId { get; set; }
         public int ProductoId { get; set; }
         public decimal Precio { get; set; }

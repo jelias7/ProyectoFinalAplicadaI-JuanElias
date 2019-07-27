@@ -63,7 +63,52 @@ namespace BLL
             }
             return paso;
         }
+        public static bool Modificar(Ventas ventas)
+        {
+            bool paso = false;
+            Contexto db = new Contexto();
+            RepositorioBase<Ventas> vent = new RepositorioBase<Ventas>();
+            RepositorioBase<Productos> prod = new RepositorioBase<Productos>();
+            try
+            {
+                var venta = vent.Buscar(ventas.VentaId);
 
- 
+
+                if (ventas != null)
+                {
+                    foreach (var item in venta.Detalle)
+                    {
+                        db.Productos.Find(item.ProductoId).Cantidad += item.Cantidad;
+
+                        if (!ventas.Detalle.ToList().Exists(v => v.VentaDetalleId == item.VentaDetalleId))
+                        {
+
+                            db.Entry(item).State = EntityState.Deleted;
+                        }
+                    }
+
+                    foreach (var item in ventas.Detalle)
+                    {
+                        db.Productos.Find(item.ProductoId).Cantidad -= item.Cantidad;
+                        var estado = item.VentaDetalleId > 0 ? EntityState.Modified : EntityState.Added;
+                        db.Entry(item).State = estado;
+                    }
+
+                    db.Entry(ventas).State = EntityState.Modified;
+                }
+
+                if (db.SaveChanges() > 0)
+                {
+                    paso = true;
+                }
+                db.Dispose();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return paso;
+        }
+
     }
 }

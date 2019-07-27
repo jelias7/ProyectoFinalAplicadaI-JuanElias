@@ -207,7 +207,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                     MessageBox.Show("No se puede guardar.", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-               // paso = Repositorio.Modificar(v);
+                paso = VentaBLL.Modificar(v);
             }
 
             if (paso)
@@ -265,25 +265,24 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             if (DetalledataGridView.DataSource != null)
                 this.Detalle = (List<VentasDetalle>)DetalledataGridView.DataSource;
 
-            if (Existe() == false)
+            MyErrorProvider.Clear();
+           /* if (Existe() == false)
             {
                 MyErrorProvider.SetError(Addbutton, "Seleccione un producto diferente.");
-                Addbutton.Focus();
-            }
+                return;
+            }*/
 
             if (CantidadnumericUpDown.Value > Convert.ToInt32(DisponiblestextBox.Text))
             {
                 MyErrorProvider.SetError(DisponiblestextBox, "No quedan disponibles.");
-                DisponiblestextBox.Focus();
+                return;
             }
 
             if (PreciotextBox.Text != string.Empty)
             {
                 this.Detalle.Add(new VentasDetalle()
                 {
-
-                    VentaDetalleId = (int)IDnumericUpDown.Value,
-                    ProductoId = ProductocomboBox.SelectedIndex,
+                    ProductoId = (int)ProductocomboBox.SelectedValue,
                     Cantidad = (int)CantidadnumericUpDown.Value,
                     Precio = Convert.ToDecimal(PreciotextBox.Text),
                     Impuesto = p.ITBIS * CantidadnumericUpDown.Value
@@ -293,7 +292,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             CalcularItbis();
             CalcularSubtotal();
             CalcularTotal();
-            DisponiblestextBox.Text = Convert.ToString(p.Cantidad - CantidadnumericUpDown.Value);
+           // DisponiblestextBox.Text = Convert.ToString(p.Cantidad - CantidadnumericUpDown.Value);
         }
 
         private void Removerbutton_Click(object sender, EventArgs e)
@@ -303,8 +302,11 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             {
                 Detalle.RemoveAt(DetalledataGridView.CurrentRow.Index);
                 CargarGrid();
+                CalcularItbis();
+                CalcularSubtotal();
+                CalcularTotal();
             }
+          //  DisponiblestextBox.Text = Convert.ToString(p.Cantidad + CantidadnumericUpDown.Value);
         }
-
     }
 }
