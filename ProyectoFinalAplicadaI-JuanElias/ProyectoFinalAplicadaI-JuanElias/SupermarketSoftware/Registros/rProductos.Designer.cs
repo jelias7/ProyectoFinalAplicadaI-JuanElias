@@ -44,7 +44,6 @@
             this.AddSeccionbutton = new System.Windows.Forms.Button();
             this.ProveedorcomboBox = new System.Windows.Forms.ComboBox();
             this.SeccioncomboBox = new System.Windows.Forms.ComboBox();
-            this.ProductocomboBox = new System.Windows.Forms.ComboBox();
             this.CostonumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -55,19 +54,18 @@
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.GananciatextBox = new System.Windows.Forms.TextBox();
             this.ItbistextBox = new System.Windows.Forms.TextBox();
-            this.CantidadnumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.Inventariobutton = new System.Windows.Forms.Button();
             this.ItbiscomboBox = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.Vencimientobutton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ProductotextBox = new System.Windows.Forms.TextBox();
+            this.CantidadtextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CodigonumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CostonumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -228,15 +226,6 @@
             this.SeccioncomboBox.Size = new System.Drawing.Size(195, 21);
             this.SeccioncomboBox.TabIndex = 23;
             // 
-            // ProductocomboBox
-            // 
-            this.ProductocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ProductocomboBox.FormattingEnabled = true;
-            this.ProductocomboBox.Location = new System.Drawing.Point(97, 90);
-            this.ProductocomboBox.Name = "ProductocomboBox";
-            this.ProductocomboBox.Size = new System.Drawing.Size(195, 21);
-            this.ProductocomboBox.TabIndex = 24;
-            // 
             // CostonumericUpDown
             // 
             this.CostonumericUpDown.DecimalPlaces = 2;
@@ -335,32 +324,6 @@
             this.ItbistextBox.Size = new System.Drawing.Size(106, 20);
             this.ItbistextBox.TabIndex = 29;
             // 
-            // CantidadnumericUpDown
-            // 
-            this.CantidadnumericUpDown.Location = new System.Drawing.Point(97, 195);
-            this.CantidadnumericUpDown.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.CantidadnumericUpDown.Name = "CantidadnumericUpDown";
-            this.CantidadnumericUpDown.Size = new System.Drawing.Size(110, 20);
-            this.CantidadnumericUpDown.TabIndex = 30;
-            // 
-            // Inventariobutton
-            // 
-            this.Inventariobutton.BackColor = System.Drawing.Color.Teal;
-            this.Inventariobutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Inventariobutton.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Inventariobutton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Inventariobutton.Location = new System.Drawing.Point(313, 90);
-            this.Inventariobutton.Name = "Inventariobutton";
-            this.Inventariobutton.Size = new System.Drawing.Size(75, 21);
-            this.Inventariobutton.TabIndex = 31;
-            this.Inventariobutton.Text = "+";
-            this.Inventariobutton.UseVisualStyleBackColor = false;
-            this.Inventariobutton.Click += new System.EventHandler(this.Inventariobutton_Click);
-            // 
             // ItbiscomboBox
             // 
             this.ItbiscomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -417,22 +380,36 @@
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             // 
+            // ProductotextBox
+            // 
+            this.ProductotextBox.Location = new System.Drawing.Point(97, 90);
+            this.ProductotextBox.Name = "ProductotextBox";
+            this.ProductotextBox.Size = new System.Drawing.Size(195, 20);
+            this.ProductotextBox.TabIndex = 37;
+            // 
+            // CantidadtextBox
+            // 
+            this.CantidadtextBox.Location = new System.Drawing.Point(97, 195);
+            this.CantidadtextBox.Name = "CantidadtextBox";
+            this.CantidadtextBox.ReadOnly = true;
+            this.CantidadtextBox.Size = new System.Drawing.Size(110, 20);
+            this.CantidadtextBox.TabIndex = 38;
+            // 
             // rProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(404, 451);
+            this.Controls.Add(this.CantidadtextBox);
+            this.Controls.Add(this.ProductotextBox);
             this.Controls.Add(this.ItbiscomboBox);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.Inventariobutton);
-            this.Controls.Add(this.CantidadnumericUpDown);
             this.Controls.Add(this.ItbistextBox);
             this.Controls.Add(this.GananciatextBox);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.CostonumericUpDown);
-            this.Controls.Add(this.ProductocomboBox);
             this.Controls.Add(this.SeccioncomboBox);
             this.Controls.Add(this.ProveedorcomboBox);
             this.Controls.Add(this.Eliminarbutton);
@@ -466,7 +443,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CostonumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -494,19 +470,18 @@
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.ComboBox ProveedorcomboBox;
         private System.Windows.Forms.ComboBox SeccioncomboBox;
-        private System.Windows.Forms.ComboBox ProductocomboBox;
         private System.Windows.Forms.NumericUpDown CostonumericUpDown;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
         private System.Windows.Forms.TextBox ItbistextBox;
         private System.Windows.Forms.TextBox GananciatextBox;
-        private System.Windows.Forms.NumericUpDown CantidadnumericUpDown;
-        private System.Windows.Forms.Button Inventariobutton;
         private System.Windows.Forms.ComboBox ItbiscomboBox;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker FechadateTimePicker;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button Vencimientobutton;
+        private System.Windows.Forms.TextBox CantidadtextBox;
+        private System.Windows.Forms.TextBox ProductotextBox;
     }
 }

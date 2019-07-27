@@ -13,14 +13,16 @@ namespace Entidades
     {
         [Key]
         public int InventarioId { get; set; }
-        public string Producto { get; set; }
+        public int ProductoId { get; set; }
+        public int Cantidad { get; set; }
         public DateTime Fecha { get; set; }
         [Browsable(false)]
         public int UsuarioId { get; set; }
         public Inventarios()
         {
             InventarioId = 0;
-            Producto = string.Empty;
+            Cantidad = 0;
+            ProductoId = 0;
             Fecha = DateTime.Now;
             UsuarioId = 0;
         }

@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.ProductotextBox = new System.Windows.Forms.TextBox();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
@@ -40,8 +39,12 @@
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.CantidadnumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.ProductocomboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -69,17 +72,10 @@
             this.IDnumericUpDown.Size = new System.Drawing.Size(65, 20);
             this.IDnumericUpDown.TabIndex = 4;
             // 
-            // ProductotextBox
-            // 
-            this.ProductotextBox.Location = new System.Drawing.Point(119, 65);
-            this.ProductotextBox.Name = "ProductotextBox";
-            this.ProductotextBox.Size = new System.Drawing.Size(217, 20);
-            this.ProductotextBox.TabIndex = 5;
-            // 
             // Eliminarbutton
             // 
             this.Eliminarbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.garbage_78344;
-            this.Eliminarbutton.Location = new System.Drawing.Point(275, 148);
+            this.Eliminarbutton.Location = new System.Drawing.Point(275, 176);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(61, 65);
             this.Eliminarbutton.TabIndex = 6;
@@ -89,7 +85,7 @@
             // Guardarbutton
             // 
             this.Guardarbutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.save_78348;
-            this.Guardarbutton.Location = new System.Drawing.Point(161, 148);
+            this.Guardarbutton.Location = new System.Drawing.Point(161, 176);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(61, 65);
             this.Guardarbutton.TabIndex = 7;
@@ -99,7 +95,7 @@
             // Nuevobutton
             // 
             this.Nuevobutton.Image = global::ProyectoFinalAplicadaI_JuanElias.Properties.Resources.controller_78338;
-            this.Nuevobutton.Location = new System.Drawing.Point(40, 148);
+            this.Nuevobutton.Location = new System.Drawing.Point(40, 176);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(61, 65);
             this.Nuevobutton.TabIndex = 8;
@@ -123,7 +119,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(37, 108);
+            this.label4.Location = new System.Drawing.Point(37, 135);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 10;
@@ -133,24 +129,56 @@
             // 
             this.FechadateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechadateTimePicker.Location = new System.Drawing.Point(119, 108);
+            this.FechadateTimePicker.Location = new System.Drawing.Point(119, 135);
             this.FechadateTimePicker.Name = "FechadateTimePicker";
-            this.FechadateTimePicker.Size = new System.Drawing.Size(103, 20);
+            this.FechadateTimePicker.Size = new System.Drawing.Size(120, 20);
             this.FechadateTimePicker.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(37, 99);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Cantidad";
+            // 
+            // CantidadnumericUpDown
+            // 
+            this.CantidadnumericUpDown.Location = new System.Drawing.Point(119, 99);
+            this.CantidadnumericUpDown.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.CantidadnumericUpDown.Name = "CantidadnumericUpDown";
+            this.CantidadnumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.CantidadnumericUpDown.TabIndex = 13;
+            // 
+            // ProductocomboBox
+            // 
+            this.ProductocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ProductocomboBox.FormattingEnabled = true;
+            this.ProductocomboBox.Location = new System.Drawing.Point(119, 65);
+            this.ProductocomboBox.Name = "ProductocomboBox";
+            this.ProductocomboBox.Size = new System.Drawing.Size(121, 21);
+            this.ProductocomboBox.TabIndex = 14;
             // 
             // rInventarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(360, 229);
+            this.ClientSize = new System.Drawing.Size(360, 272);
+            this.Controls.Add(this.ProductocomboBox);
+            this.Controls.Add(this.CantidadnumericUpDown);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.FechadateTimePicker);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.Eliminarbutton);
-            this.Controls.Add(this.ProductotextBox);
             this.Controls.Add(this.IDnumericUpDown);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -161,8 +189,10 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Entrada de Inventario";
+            this.Load += new System.EventHandler(this.RInventarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,7 +203,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown IDnumericUpDown;
-        private System.Windows.Forms.TextBox ProductotextBox;
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Nuevobutton;
@@ -181,5 +210,8 @@
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker FechadateTimePicker;
+        private System.Windows.Forms.ComboBox ProductocomboBox;
+        private System.Windows.Forms.NumericUpDown CantidadnumericUpDown;
+        private System.Windows.Forms.Label label3;
     }
 }

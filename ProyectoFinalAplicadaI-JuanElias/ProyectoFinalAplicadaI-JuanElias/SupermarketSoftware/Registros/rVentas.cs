@@ -274,6 +274,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             {
                 this.Detalle.Add(new VentasDetalle()
                 {
+                    VentaDetalleId = (int)IDnumericUpDown.Value,
                     ProductoId = (int)ProductocomboBox.SelectedValue,
                     Cantidad = (int)CantidadnumericUpDown.Value,
                     Precio = Convert.ToDecimal(PreciotextBox.Text),

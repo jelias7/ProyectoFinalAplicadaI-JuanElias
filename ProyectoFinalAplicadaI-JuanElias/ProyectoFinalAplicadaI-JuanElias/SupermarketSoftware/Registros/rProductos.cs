@@ -22,19 +22,10 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
         {
             this.id = id;
             InitializeComponent();
-            Producto();
             Proveedor();
             Seccion();
         }
-        private void Producto()
-        {
-            RepositorioBase<Inventarios> db = new RepositorioBase<Inventarios>();
-            var listado = new List<Inventarios>();
-            listado = db.GetList(p => true);
-            ProductocomboBox.DataSource = listado;
-            ProductocomboBox.DisplayMember = "Producto";
-            ProductocomboBox.ValueMember = "InventarioId";
-        }
+
         private void Proveedor()
         {
             RepositorioBase<Proveedores> db = new RepositorioBase<Proveedores>();
@@ -68,10 +59,10 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
         {
             IDnumericUpDown.Value = 0;
             CodigonumericUpDown.Value = 0;
-            ProductocomboBox.Text = null;
+            ProductotextBox.Text = null;
             ProveedorcomboBox.Text = null;
             SeccioncomboBox.Text = null;
-            CantidadnumericUpDown.Value = 0;
+            CantidadtextBox.Text = null;
             PrecionumericUpDown.Value = 0;
             CostonumericUpDown.Value = 0;
             GananciatextBox.Text = string.Empty;
@@ -89,10 +80,10 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
         {
             IDnumericUpDown.Value = p.ProductoId;
             CodigonumericUpDown.Value = p.Codigo;
-            ProductocomboBox.Text = p.Producto;
+            ProductotextBox.Text = p.Producto;
             ProveedorcomboBox.Text = p.Proveedor;
             SeccioncomboBox.Text = p.Seccion;
-            CantidadnumericUpDown.Value = p.Cantidad;
+            CantidadtextBox.Text = p.Cantidad.ToString();
             PrecionumericUpDown.Value = p.Precio;
             CostonumericUpDown.Value = p.Costo;
             GananciatextBox.Text = p.Ganancia.ToString();
@@ -105,10 +96,9 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             Productos p = new Productos();
             p.ProductoId = Convert.ToInt32(IDnumericUpDown.Value);
             p.Codigo = Convert.ToInt32(CodigonumericUpDown.Value);
-            p.Producto = ProductocomboBox.Text;
+            p.Producto = ProductotextBox.Text;
             p.Proveedor = ProveedorcomboBox.Text;
             p.Seccion = SeccioncomboBox.Text;
-            p.Cantidad = (int)CantidadnumericUpDown.Value;
             p.Precio = PrecionumericUpDown.Value;
             p.Costo = CostonumericUpDown.Value;
             p.Ganancia = Convert.ToDecimal(GananciatextBox.Text);
@@ -199,9 +189,9 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                 MyErrorProvider.SetError(CodigonumericUpDown, "No se pueden repetir.");
                 paso = false;
             }
-            if (RepetirProducto(ProductocomboBox.Text))
+            if (RepetirProducto(ProductotextBox.Text))
             {
-                MyErrorProvider.SetError(ProductocomboBox, "No se pueden repetir.");
+                MyErrorProvider.SetError(ProductotextBox, "No se pueden repetir.");
                 paso = false;
             }
             return paso;
@@ -210,9 +200,9 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
         {
             bool paso = true;
             MyErrorProvider.Clear();
-            if (string.IsNullOrWhiteSpace(ProductocomboBox.Text))
+            if (string.IsNullOrWhiteSpace(ProductotextBox.Text))
             {
-                MyErrorProvider.SetError(ProductocomboBox, "No puede ser vacio.");
+                MyErrorProvider.SetError(ProductotextBox, "No puede ser vacio.");
                 paso = false;
             }
             if (string.IsNullOrWhiteSpace(ProveedorcomboBox.Text))
@@ -223,11 +213,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             if (string.IsNullOrWhiteSpace(SeccioncomboBox.Text))
             {
                 MyErrorProvider.SetError(SeccioncomboBox, "No puede ser vacio.");
-                paso = false;
-            }
-            if(CantidadnumericUpDown.Value == 0)
-            {
-                MyErrorProvider.SetError(CantidadnumericUpDown, "No puede ser cero.");
                 paso = false;
             }
             if (PrecionumericUpDown.Value == 0)

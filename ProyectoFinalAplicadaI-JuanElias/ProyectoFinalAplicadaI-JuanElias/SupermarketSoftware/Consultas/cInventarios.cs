@@ -47,8 +47,17 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Consultas
                             }
                             break;
 
-                        case "Producto":
-                            listado = r.GetList(p => p.Producto.Contains(CriteriotextBox.Text));
+                        case "Cantidad":
+                            int parse2;
+                            if (!int.TryParse(CriteriotextBox.Text, out parse2))
+                            {
+                                MessageBox.Show("Solo numeros.");
+                            }
+                            else
+                            {
+                                int c = Convert.ToInt32(CriteriotextBox.Text);
+                                listado = r.GetList(p => p.Cantidad == c);
+                            }
                             break;
 
                     }
@@ -97,8 +106,17 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Consultas
                             }
                             break;
 
-                        case "Producto":
-                            listado = r.GetList(p => p.Producto.Contains(CriteriotextBox.Text));
+                        case "Cantidad":
+                            int parse2;
+                            if (!int.TryParse(CriteriotextBox.Text, out parse2))
+                            {
+                                MessageBox.Show("Solo numeros.");
+                            }
+                            else
+                            {
+                                int c = Convert.ToInt32(CriteriotextBox.Text);
+                                listado = r.GetList(p => p.Cantidad == c);
+                            }
                             break;
                     }
                 }

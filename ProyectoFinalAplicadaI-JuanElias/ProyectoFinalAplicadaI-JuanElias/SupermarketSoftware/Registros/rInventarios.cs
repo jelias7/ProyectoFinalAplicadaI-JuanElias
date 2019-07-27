@@ -20,12 +20,23 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
         {
             this.id = id;
             InitializeComponent();
+            Producto();
+        }
+        private void Producto()
+        {
+            RepositorioBase<Productos> db = new RepositorioBase<Productos>();
+            var listado = new List<Productos>();
+            listado = db.GetList(p => true);
+            ProductocomboBox.DataSource = listado;
+            ProductocomboBox.DisplayMember = "Producto";
+            ProductocomboBox.ValueMember = "ProductoId";
         }
         private void Limpiar()
         {
 
             IDnumericUpDown.Value = 0;
-            ProductotextBox.Text = string.Empty;
+            ProductocomboBox.Text = null;
+            CantidadnumericUpDown.Value = 0;
             FechadateTimePicker.Value = DateTime.Now;
             MyErrorProvider.Clear();
 
@@ -34,7 +45,8 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
         {
             Inventarios i = new Inventarios();
             i.InventarioId = Convert.ToInt32(IDnumericUpDown.Value);
-            i.Producto = ProductotextBox.Text;
+            i.ProductoId = Convert.ToInt32(ProductocomboBox.SelectedValue);
+            i.Cantidad = Convert.ToInt32(CantidadnumericUpDown.Value);
             i.Fecha = FechadateTimePicker.Value;
             i.UsuarioId = id;
             return i;
@@ -43,7 +55,8 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
         private void LlenaCampo(Inventarios i)
         {
             IDnumericUpDown.Value = i.InventarioId;
-            ProductotextBox.Text = i.Producto;
+            ProductocomboBox.SelectedValue = i.ProductoId;
+            CantidadnumericUpDown.Value = i.Cantidad;
             FechadateTimePicker.Value = i.Fecha;
         }
 
@@ -78,9 +91,14 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             bool paso = true;
             MyErrorProvider.Clear();
 
-            if (string.IsNullOrWhiteSpace(ProductotextBox.Text))
+            if (string.IsNullOrWhiteSpace(ProductocomboBox.Text))
             {
-                MyErrorProvider.SetError(ProductotextBox, "No puede ser vacio.");
+                MyErrorProvider.SetError(ProductocomboBox, "No puede ser vacio.");
+                paso = false;
+            }
+            if(CantidadnumericUpDown.Value == 0)
+            {
+                MyErrorProvider.SetError(CantidadnumericUpDown, "No puede ser 0.");
                 paso = false;
             }
             if(FechadateTimePicker.Value > DateTime.Now)
@@ -90,9 +108,38 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             }
             return paso;
         }
+        public static bool RepetirProducto(int descripcion)
+        {
+            bool paso = false;
+            Contexto db = new Contexto();
+
+            try
+            {
+                if (db.Inventarios.Any(p => p.ProductoId.Equals(descripcion)))
+                {
+                    paso = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return paso;
+        }
+        private bool ValidarRepeticion()
+        {
+            bool paso = true;
+            MyErrorProvider.Clear();
+
+            if (RepetirProducto((int)ProductocomboBox.SelectedValue))
+            {
+                MyErrorProvider.SetError(ProductocomboBox, "No se pueden repetir.");
+                paso = false;
+            }
+            return paso;
+        }
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            RepositorioBase<Inventarios> Repositorio = new RepositorioBase<Inventarios>();
             Inventarios i = new Inventarios();
             bool paso = false;
 
@@ -105,7 +152,10 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
 
             if (IDnumericUpDown.Value == 0)
             {
-                paso = Repositorio.Guardar(i);
+                if (!ValidarRepeticion())
+                    return;
+
+                paso = InventarioBLL.Guardar(i);
             }
             else
             {
@@ -114,7 +164,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                     MessageBox.Show("No se puede guardar.", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                paso = Repositorio.Modificar(i);
+                paso = InventarioBLL.Modificar(i);
             }
 
             if (paso)
@@ -126,7 +176,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            RepositorioBase<Inventarios> Repositorio = new RepositorioBase<Inventarios>();
 
             MyErrorProvider.Clear();
 
@@ -136,11 +185,15 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
 
             Limpiar();
 
-            if (Repositorio.Eliminar(id))
+            if (InventarioBLL.Eliminar(id))
                 MessageBox.Show("Eliminado");
             else
                 MyErrorProvider.SetError(IDnumericUpDown, "No existe.");
         }
 
+        private void RInventarios_Load(object sender, EventArgs e)
+        {
+            Nuevobutton.PerformClick();
+        }
     }
 }
