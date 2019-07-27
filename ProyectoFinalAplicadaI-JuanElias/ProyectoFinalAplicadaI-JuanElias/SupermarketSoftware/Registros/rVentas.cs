@@ -92,8 +92,8 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
         private void Limpiar()
         {
             IDnumericUpDown.Value = 0;
-            ClientecomboBox.Text = string.Empty;
-            ProductocomboBox.Text = string.Empty;
+            ClientecomboBox.Text = null;
+            ProductocomboBox.Text = null;
             PreciotextBox.Text = string.Empty;
             CantidadnumericUpDown.Value = 1;
             DisponiblestextBox.Text = string.Empty;
@@ -101,7 +101,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             ITBIStextBox.Text = string.Empty;
             SubtotaltextBox.Text = string.Empty;
             TotaltextBox.Text = string.Empty;
-            ModocomboBox.Text = string.Empty;
+            ModocomboBox.Text = null;
             this.Detalle = new List<VentasDetalle>();
             MyErrorProvider.Clear();
             CargarGrid();
@@ -231,31 +231,15 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             else
                 MyErrorProvider.SetError(IDnumericUpDown, "No existe.");
         }
-        private bool Existe()
-        {
-            bool paso = true;
 
-            string id_prod = ProductocomboBox.SelectedValue.ToString();
-
-            if (DetalledataGridView.RowCount > 0)
-            {
-                for (int i = 0; i < DetalledataGridView.RowCount; i++)
-                {
-                    if (Convert.ToInt16(DetalledataGridView.Rows[i].Cells["ProductoId"].Value) == Convert.ToInt16(id_prod))
-                    {
-                        MessageBox.Show("El producto ya ha sido ingresado");
-                    }
-                    paso = false;
-
-                }
-            }
-            return paso;
-        }
         private void ProductocomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             Productos p = ProductocomboBox.SelectedItem as Productos;
-            PreciotextBox.Text = Convert.ToString(p.Precio);
-            DisponiblestextBox.Text = Convert.ToString(p.Cantidad);
+            if (p != null)
+            {
+                PreciotextBox.Text = Convert.ToString(p.Precio);
+                DisponiblestextBox.Text = Convert.ToString(p.Cantidad);
+            }
         }
 
         private void Addbutton_Click(object sender, EventArgs e)
@@ -266,18 +250,26 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                 this.Detalle = (List<VentasDetalle>)DetalledataGridView.DataSource;
 
             MyErrorProvider.Clear();
-           /* if (Existe() == false)
-            {
-                MyErrorProvider.SetError(Addbutton, "Seleccione un producto diferente.");
-                return;
-            }*/
 
-            if (CantidadnumericUpDown.Value > Convert.ToInt32(DisponiblestextBox.Text))
+            if (ProductocomboBox.SelectedValue != null)
             {
-                MyErrorProvider.SetError(DisponiblestextBox, "No quedan disponibles.");
-                return;
+                int d = (int)ProductocomboBox.SelectedValue;
+
+                foreach (var item in Detalle)
+                {
+                    if (d == item.ProductoId)
+                    {
+                        MyErrorProvider.SetError(Addbutton, "El producto ya esta en el grid.");
+                        return;
+                    }
+                }
+
+                if (CantidadnumericUpDown.Value > Convert.ToInt32(DisponiblestextBox.Text))
+                {
+                    MyErrorProvider.SetError(DisponiblestextBox, "No quedan disponibles.");
+                    return;
+                }
             }
-
             if (PreciotextBox.Text != string.Empty)
             {
                 this.Detalle.Add(new VentasDetalle()
@@ -307,6 +299,11 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                 CalcularTotal();
             }
           //  DisponiblestextBox.Text = Convert.ToString(p.Cantidad + CantidadnumericUpDown.Value);
+        }
+
+        private void RVentas_Load(object sender, EventArgs e)
+        {
+            Nuevobutton.PerformClick();
         }
     }
 }

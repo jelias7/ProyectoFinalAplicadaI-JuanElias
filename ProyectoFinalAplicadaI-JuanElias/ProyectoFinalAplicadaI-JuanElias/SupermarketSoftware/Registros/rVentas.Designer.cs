@@ -169,7 +169,6 @@
             0,
             0,
             0});
-           
             // 
             // DetalledataGridView
             // 
@@ -412,6 +411,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Venta de Producto";
+            this.Load += new System.EventHandler(this.RVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).EndInit();

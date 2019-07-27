@@ -15,7 +15,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
 {
     public partial class rSecciones : Form
     {
-        private int id;
+       private int id;
         public rSecciones(int id)
         {
             this.id = id;

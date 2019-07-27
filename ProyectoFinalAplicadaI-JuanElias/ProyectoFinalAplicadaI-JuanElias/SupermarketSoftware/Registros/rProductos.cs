@@ -17,7 +17,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
 {
     public partial class rProductos : Form
     {
-        private int id;
+       private int id;
         public rProductos(int id)
         {
             this.id = id;
@@ -68,9 +68,9 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
         {
             IDnumericUpDown.Value = 0;
             CodigonumericUpDown.Value = 0;
-            ProductocomboBox.Text = string.Empty;
-            ProveedorcomboBox.Text = string.Empty;
-            SeccioncomboBox.Text = string.Empty;
+            ProductocomboBox.Text = null;
+            ProveedorcomboBox.Text = null;
+            SeccioncomboBox.Text = null;
             CantidadnumericUpDown.Value = 0;
             PrecionumericUpDown.Value = 0;
             CostonumericUpDown.Value = 0;
@@ -339,6 +339,11 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             {
                 FechadateTimePicker.Enabled = true;
             }
+        }
+
+        private void RProductos_Load(object sender, EventArgs e)
+        {
+            Nuevobutton.PerformClick();
         }
     }
 }
