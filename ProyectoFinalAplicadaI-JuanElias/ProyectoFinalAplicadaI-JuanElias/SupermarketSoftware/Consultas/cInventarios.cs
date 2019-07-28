@@ -1,5 +1,6 @@
 ﻿using BLL;
 using Entidades;
+using ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Consultas
 {
     public partial class cInventarios : Form
     {
+        private List<Inventarios> Lista;
         public cInventarios()
         {
             InitializeComponent();
@@ -74,13 +76,13 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Consultas
                     {
                         if (CriteriotextBox.Text == string.Empty)
                         {
-                            MessageBox.Show("Al seleccionar uno de ID o Producto necesita escribir algo en el criterio.");
+                            MessageBox.Show("Al seleccionar uno de ID o Cantidad necesita escribir algo en el criterio.");
                         }
                     }
                     listado = r.GetList(p => true);
                     listado = listado.Where(c => c.Fecha.Date >= DesdedateTimePicker.Value.Date && c.Fecha.Date <= HastadateTimePicker.Value.Date).ToList();
                 }
-                ConsultadataGridView.DataSource = null;
+                Lista = listado;
                 ConsultadataGridView.DataSource = listado;
             }
             else
@@ -128,21 +130,34 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Consultas
                     }
                     else
                        if ((string)FiltrocomboBox.Text != "Todo")
-                       {
-                            if (CriteriotextBox.Text == string.Empty)
-                            {
-                                MessageBox.Show("Al seleccionar uno de ID o Producto necesita escribir algo en el criterio.");
-                            }
+                    {
+                        if (CriteriotextBox.Text == string.Empty)
+                        {
+                            MessageBox.Show("Al seleccionar uno de ID o Cantidad necesita escribir algo en el criterio.");
                         }
+                    }
                     else
                     {
                         listado = r.GetList(p => true);
                     }
                 }
-                ConsultadataGridView.DataSource = null;
+                Lista = listado;
                 ConsultadataGridView.DataSource = listado;
             }
         }
 
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+            if (ConsultadataGridView.RowCount == 0)
+            {
+                MessageBox.Show("No se puede imprimir");
+                return;
+            }
+            else
+            {
+                InventarioReport r = new InventarioReport(Lista);
+                r.ShowDialog();
+            }
+        }
     }
 }

@@ -278,6 +278,9 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                     Impuesto = p.ITBIS * CantidadnumericUpDown.Value
                 });
             }
+            ProductocomboBox.Text = null;
+            DisponiblestextBox.Text = null;
+            PreciotextBox.Text = null;
             CargarGrid();
             CalcularItbis();
             CalcularSubtotal();
