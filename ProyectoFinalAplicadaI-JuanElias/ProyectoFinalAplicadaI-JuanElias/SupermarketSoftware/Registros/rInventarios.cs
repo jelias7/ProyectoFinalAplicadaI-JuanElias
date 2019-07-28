@@ -86,6 +86,36 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
         {
             Limpiar();
         }
+        public static bool RepetirProducto(int descripcion)
+        {
+            bool paso = false;
+            Contexto db = new Contexto();
+
+            try
+            {
+                if (db.Inventarios.Any(p => p.ProductoId.Equals(descripcion)))
+                {
+                    paso = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return paso;
+        }
+        private bool ValidarRepeticion()
+        {
+            bool paso = true;
+            MyErrorProvider.Clear();
+
+            if (RepetirProducto((int)ProductocomboBox.SelectedValue))
+            {
+                MyErrorProvider.SetError(ProductocomboBox, "No se pueden repetir.");
+                paso = false;
+            }
+            return paso;
+        }
         private bool Validar()
         {
             bool paso = true;
@@ -123,6 +153,9 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
 
             if (IDnumericUpDown.Value == 0)
             {
+                if (!ValidarRepeticion())
+                    return;
+
                 paso = InventarioBLL.Guardar(i);
             }
             else
