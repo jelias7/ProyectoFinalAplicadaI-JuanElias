@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProyectoFinalAplicadaI_JuanElias
 {
-    public partial class Ayuda : Form
+    public partial class About : Form
     {
-        public Ayuda()
+        public About()
         {
             InitializeComponent();
         }

@@ -117,14 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AyudarichTextBox.Text" xml:space="preserve">
-    <value>Sistema de ventas - Supermercado Software.
-Creado por Juan Elias Rosario Mena 2016-0631.
-Ingenieria en Sistemas y Computacion en la Universidad Catolica Nordestana (UCNE).
+  <data name="label3.Text" xml:space="preserve">
+    <value>Es innecesario resaltar la influencia que las ventas tienen en la cuenta de resultados del supermercado,
+por tanto, indicar solamente que la importancia de una buena implantación del sistema es fundamental para conseguir los objetivos económicos del supermercado.
 
-Se trata de una completa aplicación para la gestión de productos y ventas para el supermercado, incluyendo la posibilidad de generar reportes.
-
-Es innecesario resaltar la influencia que las ventas tienen en la cuenta de resultados del supermercado, por tanto, indicar solamente que la importancia de una buena implantación del sistema es fundamental para conseguir los objetivos económicos del supermercado. </value>
+</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

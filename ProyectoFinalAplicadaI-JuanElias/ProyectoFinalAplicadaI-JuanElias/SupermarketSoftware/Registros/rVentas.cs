@@ -285,9 +285,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             CalcularSubtotal();
             CalcularTotal();
             //todo Que no explote
-            //todo Hacer la factura
             //todo Hacer los tests
-            //todo hacer el about me
         }
 
         private void Removerbutton_Click(object sender, EventArgs e)

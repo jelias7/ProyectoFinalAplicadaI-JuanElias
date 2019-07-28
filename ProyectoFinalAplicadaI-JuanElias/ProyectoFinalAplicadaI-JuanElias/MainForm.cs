@@ -54,7 +54,7 @@ namespace ProyectoFinalAplicadaI_JuanElias
 
         private void InformacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Ayuda a = new Ayuda();
+            About a = new About();
             a.Show();
         }
 

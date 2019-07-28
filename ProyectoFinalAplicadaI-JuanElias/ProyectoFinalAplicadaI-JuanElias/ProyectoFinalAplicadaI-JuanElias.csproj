@@ -73,11 +73,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ayuda.cs">
+    <Compile Include="About.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ayuda.Designer.cs">
-      <DependentUpon>Ayuda.cs</DependentUpon>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
     </Compile>
     <Compile Include="SupermarketSoftware\Reportes\ListadoFactura.cs">
       <AutoGen>True</AutoGen>
@@ -278,8 +278,8 @@
     <Compile Include="SupermarketSoftware\Reportes\VentasReport.Designer.cs">
       <DependentUpon>VentasReport.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Ayuda.resx">
-      <DependentUpon>Ayuda.cs</DependentUpon>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SupermarketSoftware\Reportes\ListadoFactura.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -453,6 +453,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user_icon-icons.com_66546.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
