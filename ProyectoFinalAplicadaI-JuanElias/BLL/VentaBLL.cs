@@ -15,7 +15,7 @@ namespace BLL
         public static bool Guardar(Ventas venta)
         {
             bool paso = false;
-            RepositorioBase<Inventarios> prod = new RepositorioBase<Inventarios>();
+            RepositorioBase<Productos> prod = new RepositorioBase<Productos>();
             Contexto db = new Contexto();
             try
             {
@@ -41,7 +41,7 @@ namespace BLL
         {
             bool paso = false;
             Contexto db = new Contexto();
-            RepositorioBase<Inventarios> prod = new RepositorioBase<Inventarios>();
+            RepositorioBase<Productos> prod = new RepositorioBase<Productos>();
 
             try
             {
@@ -70,7 +70,7 @@ namespace BLL
             bool paso = false;
             Contexto db = new Contexto();
             RepositorioBase<Ventas> vent = new RepositorioBase<Ventas>();
-            RepositorioBase<Inventarios> prod = new RepositorioBase<Inventarios>();
+            RepositorioBase<Productos> prod = new RepositorioBase<Productos>();
             try
             {
                 var venta = vent.Buscar(ventas.VentaId);
@@ -80,7 +80,7 @@ namespace BLL
                 {
                     foreach (var item in venta.Detalle)
                     {
-                        db.Inventarios.Find(item.ProductoId).Cantidad += item.Cantidad;
+                        db.Productos.Find(item.ProductoId).Cantidad += item.Cantidad;
                         if (!ventas.Detalle.ToList().Exists(v => v.VentaDetalleId == item.VentaDetalleId))
                         {
 
@@ -90,7 +90,7 @@ namespace BLL
 
                     foreach (var item in ventas.Detalle)
                     {
-                        db.Inventarios.Find(item.ProductoId).Cantidad -= item.Cantidad;
+                        db.Productos.Find(item.ProductoId).Cantidad -= item.Cantidad;
                         var estado = item.VentaDetalleId > 0 ? EntityState.Modified : EntityState.Added;
                         db.Entry(item).State = estado;
                     }
