@@ -79,6 +79,12 @@
     <Compile Include="Ayuda.Designer.cs">
       <DependentUpon>Ayuda.cs</DependentUpon>
     </Compile>
+    <Compile Include="SupermarketSoftware\Reportes\ListadoClientes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadoClientes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,12 @@
     <Compile Include="SupermarketSoftware\Registros\rVentas.Designer.cs">
       <DependentUpon>rVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="SupermarketSoftware\Reportes\ClientesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupermarketSoftware\Reportes\ClientesReport.Designer.cs">
+      <DependentUpon>ClientesReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="SupermarketSoftware\Reportes\ListadoU1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -196,6 +208,10 @@
     </Compile>
     <EmbeddedResource Include="Ayuda.resx">
       <DependentUpon>Ayuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupermarketSoftware\Reportes\ListadoClientes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadoClientes.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -249,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SupermarketSoftware\Registros\rVentas.resx">
       <DependentUpon>rVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupermarketSoftware\Reportes\ClientesReport.resx">
+      <DependentUpon>ClientesReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SupermarketSoftware\Reportes\ListadoU.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

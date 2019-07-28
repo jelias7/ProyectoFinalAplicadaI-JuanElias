@@ -11,21 +11,21 @@ using System.Windows.Forms;
 
 namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Reportes
 {
-    public partial class PersonasReportViewer : Form
+    public partial class ClientesReport : Form
     {
-        private List<Usuarios> ListaUsuarios;
-        public PersonasReportViewer(List<Usuarios> usuarios)
+        private List<Clientes> ListaClientes;
+        public ClientesReport(List<Clientes> clientes)
         {
-            this.ListaUsuarios = usuarios;
+            this.ListaClientes = clientes;
             InitializeComponent();
         }
 
-        private void crystalReportViewer1_Load(object sender, EventArgs e)
+        private void CrystalReportViewer1_Load(object sender, EventArgs e)
         {
-            ListadoU listado = new ListadoU();
-            listado.SetDataSource(ListaUsuarios);
+            ListadoClientes listado = new ListadoClientes();
+            listado.SetDataSource(ListaClientes);
 
-            crystalReportViewer1.ReportSource = ListaUsuarios;
+            crystalReportViewer1.ReportSource = ListaClientes;
             crystalReportViewer1.Refresh();
         }
     }
