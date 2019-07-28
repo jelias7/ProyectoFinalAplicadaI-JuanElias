@@ -79,6 +79,12 @@
     <Compile Include="Ayuda.Designer.cs">
       <DependentUpon>Ayuda.cs</DependentUpon>
     </Compile>
+    <Compile Include="SupermarketSoftware\Reportes\ListadoSecciones.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadoSecciones.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SupermarketSoftware\Reportes\ListadoInventario.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -218,8 +224,18 @@
     <Compile Include="SupermarketSoftware\Reportes\PersonasReportViewer.Designer.cs">
       <DependentUpon>PersonasReportViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="SupermarketSoftware\Reportes\SeccionesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupermarketSoftware\Reportes\SeccionesReport.Designer.cs">
+      <DependentUpon>SeccionesReport.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Ayuda.resx">
       <DependentUpon>Ayuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupermarketSoftware\Reportes\ListadoSecciones.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadoSecciones.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SupermarketSoftware\Reportes\ListadoInventario.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -294,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SupermarketSoftware\Reportes\PersonasReportViewer.resx">
       <DependentUpon>PersonasReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupermarketSoftware\Reportes\SeccionesReport.resx">
+      <DependentUpon>SeccionesReport.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Entidades.Inventarios.datasource" />
