@@ -1,6 +1,6 @@
 ﻿namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Reportes
 {
-    partial class SeccionesReport
+    partial class ProductosReport
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.ListadoSecciones1 = new ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Reportes.ListadoSecciones();
+            this.ListadoProductos1 = new ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Reportes.ListadoProductos();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -40,19 +40,19 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.ListadoSecciones1;
+            this.crystalReportViewer1.ReportSource = this.ListadoProductos1;
             this.crystalReportViewer1.Size = new System.Drawing.Size(800, 450);
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.Load += new System.EventHandler(this.CrystalReportViewer1_Load);
             // 
-            // SeccionesReport
+            // ProductosReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "SeccionesReport";
-            this.Text = "SeccionesReport";
+            this.Name = "ProductosReport";
+            this.Text = "ProductosReport";
             this.ResumeLayout(false);
 
         }
@@ -60,6 +60,6 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private ListadoSecciones ListadoSecciones1;
+        private ListadoProductos ListadoProductos1;
     }
 }

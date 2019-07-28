@@ -1,5 +1,6 @@
 ﻿using BLL;
 using Entidades;
+using ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Consultas
 {
     public partial class cProveedores : Form
     {
+        private List<Proveedores> Lista;
         public cProveedores()
         {
             InitializeComponent();
@@ -83,7 +85,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Consultas
                     listado = r.GetList(p => true);
                     listado = listado.Where(c => c.Fecha.Date >= DesdedateTimePicker.Value.Date && c.Fecha.Date <= HastadateTimePicker.Value.Date).ToList();
                 }
-                ConsultadataGridView.DataSource = null;
+                Lista = listado;
                 ConsultadataGridView.DataSource = listado;
             }
             else
@@ -146,10 +148,23 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Consultas
                         listado = r.GetList(p => true);
                     }
                 }
-                ConsultadataGridView.DataSource = null;
+                Lista = listado;
                 ConsultadataGridView.DataSource = listado;
             }
         }
 
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+            if (ConsultadataGridView.RowCount == 0)
+            {
+                MessageBox.Show("No se puede imprimir");
+                return;
+            }
+            else
+            {
+                ProveedoresReport r = new ProveedoresReport(Lista);
+                r.ShowDialog();
+            }
+        }
     }
 }

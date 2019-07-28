@@ -129,7 +129,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Consultas
 
         private void Imprimirbutton_Click(object sender, EventArgs e)
         {
-           /* if (ConsultadataGridView.RowCount == 0)
+            if (ConsultadataGridView.RowCount == 0)
             {
                 MessageBox.Show("No se puede imprimir");
                 return;
@@ -138,7 +138,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Consultas
             {
                 SeccionesReport r = new SeccionesReport(Lista);
                 r.ShowDialog();
-            }*/
+            }
         }
     }
 }
