@@ -361,6 +361,7 @@
             this.DetalledataGridView.AllowUserToAddRows = false;
             this.DetalledataGridView.AllowUserToDeleteRows = false;
             this.DetalledataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DetalledataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.DetalledataGridView.BackgroundColor = System.Drawing.Color.White;
             this.DetalledataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DetalledataGridView.Location = new System.Drawing.Point(28, 244);
@@ -368,13 +369,14 @@
             this.DetalledataGridView.ReadOnly = true;
             this.DetalledataGridView.Size = new System.Drawing.Size(442, 205);
             this.DetalledataGridView.TabIndex = 39;
+         
             // 
             // rVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(497, 625);
+            this.ClientSize = new System.Drawing.Size(489, 625);
             this.Controls.Add(this.DetalledataGridView);
             this.Controls.Add(this.FechadateTimePicker);
             this.Controls.Add(this.ModocomboBox);

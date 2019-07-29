@@ -16,7 +16,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
     public partial class rVentas : Form
     {
         public List<VentasDetalle> Detalle;
-        private List<VentasDetalle> Ventas;
         private int id;
         public rVentas(int id)
         {
@@ -25,7 +24,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             Producto();
             this.id = id;
             Detalle = new List<VentasDetalle>();
-            Ventas = new List<VentasDetalle>();
         }
         private void Cliente()
         {
@@ -60,7 +58,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
         }
         private void CargarGrid()
         {
-            DetalledataGridView.DataSource = Ventas;
+            DetalledataGridView.DataSource = null;
             DetalledataGridView.DataSource = Detalle;
         }
         public void CalcularItbis()
@@ -106,8 +104,8 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             TotaltextBox.Text = string.Empty;
             ModocomboBox.Text = null;
             this.Detalle = new List<VentasDetalle>();
-            MyErrorProvider.Clear();
             CargarGrid();
+            MyErrorProvider.Clear();
         }
         private void LlenaCampo(Ventas v)
         {
@@ -212,7 +210,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                 MessageBox.Show("Guardado", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MessageBox.Show("No fue posible guardar", "Supermarket Software", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            Factura r = new Factura(Ventas);
+            Factura r = new Factura(Detalle);
             r.ShowDialog();
             Limpiar();
         }
@@ -244,9 +242,6 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
 
         private void Addbutton_Click(object sender, EventArgs e)
         {
-            if (DetalledataGridView.DataSource != null)
-                this.Detalle = (List<VentasDetalle>)DetalledataGridView.DataSource;
-
             if (ProductocomboBox.SelectedValue != null)
             {
                 int d = (int)ProductocomboBox.SelectedValue;
@@ -266,9 +261,14 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
                     return;
                 }
             }
-            if (PreciotextBox.Text != string.Empty)
-            {
+
+            if (DetalledataGridView.DataSource != null)
+                this.Detalle = (List<VentasDetalle>)DetalledataGridView.DataSource;
+
+
                 Productos p = ProductocomboBox.SelectedItem as Productos;
+            if (ProductocomboBox.SelectedValue != null)
+            {
                 this.Detalle.Add(new VentasDetalle()
                 {
                     ProductoId = (int)ProductocomboBox.SelectedValue,
@@ -284,8 +284,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
             CalcularItbis();
             CalcularSubtotal();
             CalcularTotal();
-            //todo Que no explote
-            //todo Hacer los tests
+                //todo Hacer los tests
         }
 
         private void Removerbutton_Click(object sender, EventArgs e)
@@ -304,5 +303,7 @@ namespace ProyectoFinalAplicadaI_JuanElias.SupermarketSoftware.Registros
         {
             Nuevobutton.PerformClick();
         }
+
+
     }
 }
